@@ -1,8 +1,9 @@
 <div align="center">
 
-# R4 · Mobile Manipulation
+<img src="docs/assets/mora-banner.svg" alt="MORA — Mobile Robotic Arm" width="100%" />
 
-**TurtleBot3 Burger × SO-ARM101**
+**MORA · Mobile Robotic Arm**  
+TurtleBot3 Burger × SO-ARM101 · 이동형 로봇팔의 파지와 운반을 연구합니다
 
 CAD에서 물리 시뮬레이션, ROS 실험과 운반 연구까지
 
@@ -11,13 +12,15 @@ CAD에서 물리 시뮬레이션, ROS 실험과 운반 연구까지
 ![Compute](https://img.shields.io/badge/GPU-cloud%20only-7156a5)
 ![Transfer](https://img.shields.io/badge/sim--to--real-planned-b87926)
 
-<img src="cad/R4/R4_Assembly.png" alt="R4 robot assembly" width="680" />
+<img src="cad/R4/R4_Assembly.png" alt="R4 robot assembly" width="600" />
 
-[CAD·애니메이션](docs/FUSION.md) · [검증 범위](docs/EVIDENCE.md) · [연구 계획](research/README.md) · [실행 환경](cloud/README.md) · [Mac ↔ Ubuntu](docs/SYNC.md)
+[자료 다운로드](https://github.com/jhyeong687/MORA/releases/tag/v0.1.0) · [CAD·애니메이션](docs/FUSION.md) · [검증 범위](docs/EVIDENCE.md) · [연구 계획](research/README.md) · [실행 환경](cloud/README.md) · [Mac ↔ Ubuntu](docs/SYNC.md)
 
 </div>
 
 ## 이 프로젝트
+
+**MORA**는 Mobile Robotic Arm에서 가져온 이름이다. `R4`는 현재 장착부의 설계 리비전이며, 기존 CAD·영상·보고서의 파일명과 실험 기록은 보존한다.
 
 저가형 이동 베이스와 짧은 로봇 팔을 결합해 **접근 → 집기 → 확인 → 운반 → 놓기**를 연구한다.
 상부 장착대, 체결부, 손목·belly 카메라, 교체형 출력 파트, 보조 지지 구조를 CAD로 구성했다.
@@ -85,13 +88,13 @@ flowchart LR
 ## 빠르게 확인
 
 ```bash
-python3 scripts/r4.py doctor
-python3 scripts/r4.py verify
+python3 scripts/mora.py doctor
+python3 scripts/mora.py verify
 python3 scripts/run_mujoco.py --list
 ```
 
 위 세 명령은 무거운 시뮬레이션을 시작하지 않는다. 실험 실행은 [cloud 안내](cloud/README.md)를 따른다.
-Mac과 Ubuntu에서 같은 `r4.py` 명령으로 작업·기록·동기화한다. 공개 반영은 [별도 export](docs/SYNC.md)를 사용한다.
+Mac과 Ubuntu에서 같은 `mora.py` 명령으로 작업·기록·동기화한다. 공개 반영은 [별도 export](docs/SYNC.md)를 사용한다.
 
 ## 폴더
 

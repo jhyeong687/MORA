@@ -2,6 +2,7 @@
   "kind": "public",
   "schema_version": 1,
   "gpu_execution": "cloud_only",
-  "project": "R4",
-  "recorded_until": "2026-11-12"
+  "project": "MORA",
+  "recorded_until": "2026-11-12",
+  "design_revision": "R4"
 }

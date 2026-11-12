@@ -40,7 +40,7 @@ def main():
     if a.action=='sync':
         if json.loads((ROOT/'.r4.json').read_text())['kind']!='lab':p.error('sync is for the private lab; publish a reviewed export separately')
         remote=git('remote','get-url','origin',capture=True).stdout.strip()
-        if not remote.endswith(('/r4-mobile-manipulation-lab.git','/r4-mobile-manipulation-lab',':r4-mobile-manipulation-lab.git')):p.error('origin is not the expected private lab repository')
+        if not remote.endswith(('/MORA-Lab.git','/MORA-Lab',':MORA-Lab.git','/r4-mobile-manipulation-lab.git','/r4-mobile-manipulation-lab')):p.error('origin is not the expected private lab repository')
         if scan(ROOT,files()):p.error('privacy preflight failed; run verify for details')
         refresh()
         if not verify():raise SystemExit(1)

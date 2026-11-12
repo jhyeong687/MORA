@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="270" viewBox="0 0 1200 270" role="img" aria-labelledby="title description">
+  <title id="title">MORA — Mobile Robotic Arm</title>
+  <desc id="description">TurtleBot3 and SO-ARM101 mobile manipulation research</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#102f3a"/><stop offset="1" stop-color="#116b70"/></linearGradient></defs>
+  <rect width="1200" height="270" rx="24" fill="url(#bg)"/>
+  <path d="M760 222h355M805 245h310M1030 35v210M1080 35v210M1130 35v210" stroke="#b7e6e3" stroke-opacity=".10"/>
+  <circle cx="994" cy="134" r="96" fill="none" stroke="#78d5ce" stroke-opacity=".14" stroke-width="28"/>
+  <text x="58" y="119" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="94" font-weight="750" letter-spacing="8">MORA</text>
+  <text x="64" y="162" fill="#a9e8e0" font-family="Arial,Helvetica,sans-serif" font-size="25" letter-spacing="2">MOBILE ROBOTIC ARM</text>
+  <text x="64" y="216" fill="#e2f2f2" font-family="Arial,Helvetica,sans-serif" font-size="20">TurtleBot3 × SO-ARM101</text>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M883 192h206l-17 24H900z" fill="#d4eeeb" fill-opacity=".12" stroke="#b2e9e2" stroke-width="4"/>
+    <circle cx="920" cy="219" r="12" fill="#102f3a" stroke="#b2e9e2" stroke-width="4"/>
+    <circle cx="1050" cy="219" r="12" fill="#102f3a" stroke="#b2e9e2" stroke-width="4"/>
+    <path d="M977 187v-44l-42-39 47-45 58 28" stroke="#b2e9e2" stroke-width="13"/>
+    <path d="M1039 86l21-9m-20 9 3 23" stroke="#f3bf78" stroke-width="7"/>
+    <circle cx="977" cy="143" r="10" fill="#102f3a" stroke="#b2e9e2" stroke-width="4"/>
+    <circle cx="935" cy="104" r="10" fill="#102f3a" stroke="#b2e9e2" stroke-width="4"/>
+    <circle cx="982" cy="59" r="10" fill="#102f3a" stroke="#b2e9e2" stroke-width="4"/>
+  </g>
+</svg>

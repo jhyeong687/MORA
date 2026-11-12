@@ -10,10 +10,10 @@ GitHub CLI의 `gh auth login --web --git-protocol https`로 각 환경에서 로
 인증 파일·비밀번호·token은 다른 OS에 복사하거나 commit하지 않는다.
 
 ```bash
-gh repo clone OWNER/r4-mobile-manipulation-lab
-cd r4-mobile-manipulation-lab
-python3 scripts/r4.py doctor
-python3 scripts/r4.py verify
+gh repo clone OWNER/MORA-Lab
+cd MORA-Lab
+python3 scripts/mora.py doctor
+python3 scripts/mora.py verify
 ```
 
 `OWNER`는 자신의 GitHub 계정으로 바꾼다. 경로는 어느 폴더라도 된다.
@@ -21,11 +21,11 @@ python3 scripts/r4.py verify
 ## 매번 작업
 
 ```bash
-python3 scripts/r4.py update
-python3 scripts/r4.py new --name turn-pilot --engine gazebo --seed 42
+python3 scripts/mora.py update
+python3 scripts/mora.py new --name turn-pilot --engine gazebo --seed 42
 # RunPod에서 실험하고 해당 run 폴더로 결과를 회수
-python3 scripts/r4.py verify
-python3 scripts/r4.py sync --message "Record turn pilot"
+python3 scripts/mora.py verify
+python3 scripts/mora.py sync --message "Record turn pilot"
 ```
 
 `runs/`는 기본적으로 git에 넣지 않는다. 검토한 run만 `evidence/new/`로 옮긴 뒤 sync한다.
@@ -34,9 +34,15 @@ sync는 개인정보 검사, manifest 갱신, commit, 현재 branch의 origin pu
 
 ## 공개 반영
 
-비공개에서 `python3 scripts/export_public.py --target ../r4-mobile-manipulation`을 실행한다.
+비공개에서 `python3 scripts/export_public.py --target ../MORA`을 실행한다.
 허용된 경로만 복사하고 새 binary/media는 검토 목록과 hash가 맞아야 한다.
 공개 사본에서 diff·개인정보 검사를 마친 뒤 별도 commit/push한다.
 공개용과 비공개용에는 인증정보·개인정보를 모두 넣지 않는다.
 
-새 영상·이미지·CAD를 직접 확인한 뒤 `python3 scripts/r4.py review-media --file evidence/new/FILE --confirm-reviewed`로 hash를 등록한다. 이 명령은 자동으로 개인정보를 지우지 않으며 실제 확인을 대신하지 않는다.
+새 영상·이미지·CAD를 직접 확인한 뒤 `python3 scripts/mora.py review-media --file evidence/new/FILE --confirm-reviewed`로 hash를 등록한다. 이 명령은 자동으로 개인정보를 지우지 않으며 실제 확인을 대신하지 않는다.
+
+## 확인한 연결
+
+2026-11-12에 실제 Mac과 UTM Ubuntu ARM64에서 확인했다. Ubuntu에서 clone·pull·무결성/개인정보 검사·테스트·push를 완료했고, 생성한 환경 확인 기록을 Mac에서 다시 pull했다. 무거운 시뮬레이션이나 유료 GPU 작업은 시작하지 않았다.
+
+`r4.py`는 기존 문서와의 호환을 위해 남겨두며, 새 작업에서는 같은 기능의 `mora.py`를 사용한다.

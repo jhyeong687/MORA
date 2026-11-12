@@ -14,6 +14,6 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/verify_repository.py
-      - run: python scripts/r4.py doctor
+      - run: python scripts/mora.py doctor
       - run: python scripts/run_mujoco.py --list
       - run: python -m unittest discover -s tests -v

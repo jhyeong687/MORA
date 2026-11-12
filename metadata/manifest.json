@@ -8,8 +8,8 @@
     },
     {
       "path": ".github/workflows/verify.yml",
-      "bytes": 627,
-      "sha256": "004623a0d78044e211c2ba6ed684bddf5837887c6046b9f63e97e956be74582c"
+      "bytes": 629,
+      "sha256": "b9e8029a7cdcb26c757d65975a1e586e6b62f3bede08764980e1ec5c26f88a4e"
     },
     {
       "path": ".gitignore",
@@ -18,13 +18,13 @@
     },
     {
       "path": ".r4.json",
-      "bytes": 132,
-      "sha256": "aa5e30ab8204b6c2757b064214ccc783f8b42c64307ca839df8a8f8df2057353"
+      "bytes": 161,
+      "sha256": "0da7330adeda94a8e414379dd524cb3a05ba5aec3d10406ad60f5fa7010aa615"
     },
     {
       "path": "README.md",
-      "bytes": 6532,
-      "sha256": "2bc1a4f96a3b69238b19a169763a535df0ba95ad17344ff8f8109881640e4792"
+      "bytes": 6962,
+      "sha256": "4ffab2125f675d677e9f5d875c6cd63ef017f401f23858cf16119aa01d22e450"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -163,8 +163,13 @@
     },
     {
       "path": "docs/SYNC.md",
-      "bytes": 2131,
-      "sha256": "fb686e176d407832dec4524ca10a60b46cf024b15e3f97bd02dfd595781a0ac5"
+      "bytes": 2535,
+      "sha256": "bccb34ba230f5f4a51870568001fc49582e333d14ac8ccc778761a665dbec404"
+    },
+    {
+      "path": "docs/assets/mora-banner.svg",
+      "bytes": 1885,
+      "sha256": "7d3f1fd79bb291d028d8a1509f8be8115af192a7461536f02ba6cb02de5b80da"
     },
     {
       "path": "docs/ubuntu/APPENDICES.md",
@@ -1407,14 +1412,19 @@
       "sha256": "21bbb6013373eb3f40955ac3e4202a75b151eb3521df4d0d22e290ed897898c2"
     },
     {
+      "path": "scripts/mora.py",
+      "bytes": 151,
+      "sha256": "06925c8a5c8b3f53a75a3b32f2f1ee2d6cb4e7495ff31e58549750f41eb9faf4"
+    },
+    {
       "path": "scripts/privacy_check.py",
       "bytes": 2126,
       "sha256": "05a8b2b3e0372972021639670931bea3d46307543b77b5785c44c43b3865a5e5"
     },
     {
       "path": "scripts/r4.py",
-      "bytes": 3621,
-      "sha256": "06c7575850745cc2b0abf2be82774b233d2f112dc50090839206f4537261c810"
+      "bytes": 3631,
+      "sha256": "622b5f4ba166cb8473e2e8771327a5dc50fbb9f96f1ddcbfc9d3cb1a7585d122"
     },
     {
       "path": "scripts/run_mujoco.py",
