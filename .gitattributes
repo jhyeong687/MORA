@@ -8,3 +8,10 @@
 *.pdf binary
 *.npz binary
 *.png binary
+
+# Preserve the exact bytes of archived numerical evidence.
+*.csv -text
+*.step -text
+*.dxf -text
+evidence/** -text
+simulation/mujoco/results/** -text

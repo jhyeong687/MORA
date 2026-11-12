@@ -3,8 +3,8 @@
   "files": [
     {
       "path": ".gitattributes",
-      "bytes": 141,
-      "sha256": "8a5005d37e6e86ccb4d6f05c6f4cede9c4bf7bec2f27a87997f10b92f2afabd3"
+      "bytes": 291,
+      "sha256": "13e623804fdb790db294079ebea5a132e1b86bc22294e116e68f016e91f1c8dd"
     },
     {
       "path": ".github/workflows/verify.yml",
