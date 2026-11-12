@@ -1,0 +1,31 @@
+{
+  "completed": true,
+  "error": null,
+  "profile": "so101_7v4",
+  "scan_messages": 151,
+  "trajectory_samples": 300,
+  "max_tilt_deg": 2.699869328381916e-06,
+  "max_motor_effort_nm": {
+    "axle_left": 0.037232047771310325,
+    "axle_right": 0.034231020588714925,
+    "shoulder_pan": 0.026715851720996785,
+    "shoulder_lift": 0.1943783026501328,
+    "elbow_flex": 0.26854078933498643,
+    "wrist_flex": 0.11083672874118189,
+    "wrist_roll": 0.015605946863260904,
+    "gripper": 0.013152010652776077
+  },
+  "hardware_calibrated": false,
+  "loop_closure_event_verified": false,
+  "slam_ate_rmse_m": 0.0037648759956901727,
+  "slam_position_error_max_m": 0.013299873615651882,
+  "slam_final_position_error_m": 0.001814093501037067,
+  "truth_return_distance_m": 0.13659017769275109,
+  "occupied_cell_wall_distance_mean_m": 0.015695406727798598,
+  "occupied_cells_within_10cm_of_wall_fraction": 1.0,
+  "map_width": 202,
+  "map_height": 163,
+  "known_map_area_m2": 15.263125454876576,
+  "occupied_map_cells": 876,
+  "baseline_pass": true
+}

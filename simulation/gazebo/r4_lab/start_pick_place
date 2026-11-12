@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -e
+R4_LAB_ROOT="$(cd "$(dirname "$0")" && pwd)"
+exec ${R4_LAB_ROOT}/start_slam --scenario pick_place "$@"

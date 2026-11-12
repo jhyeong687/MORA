@@ -1,0 +1,16 @@
+{
+  "label": "slam_feedback_12m",
+  "started_at_utc": "2026-11-12T01:53:01.519151+00:00",
+  "source": "Actual Xwayland compositor window pixels; aspect-preserving resize into two labeled panels.",
+  "clock": "Wall time; per-frame UTC and monotonic times in frames.jsonl. Simulation may run slower.",
+  "fps_target": 8,
+  "size": [
+    1600,
+    960
+  ],
+  "audio": false,
+  "status": "complete",
+  "frames": 1357,
+  "duration_wall_seconds": 169.62779138600013,
+  "ended_at_utc": "2026-11-12T01:55:51.230355+00:00"
+}

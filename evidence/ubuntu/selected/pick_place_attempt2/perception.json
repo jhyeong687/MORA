@@ -1,0 +1,28 @@
+{
+  "mode": "RGB known-cube bounding-box fit",
+  "prior_base_xyz": [
+    0.2397467038948599,
+    0.009697859093489952,
+    0.276
+  ],
+  "estimated_base_xyz": [
+    0.22927490734751274,
+    -0.012453365780622562,
+    0.276
+  ],
+  "bbox_pixels": [
+    43.0,
+    0.0,
+    96.0,
+    57.0
+  ],
+  "pixel_fit_rmse": 0.45264146824433277,
+  "known_cube_size_m": [
+    0.032,
+    0.032,
+    0.032
+  ],
+  "known_table_height": true,
+  "uses_depth_camera": false,
+  "uses_object_truth_for_control": false
+}

@@ -1,0 +1,9 @@
+{
+  "workaround_enabled": true,
+  "installed_ros_modified": false,
+  "overlay": "/workspace/r4_lab/slam/generated/rviz_overlay",
+  "gl_version": [
+    4,
+    5
+  ]
+}

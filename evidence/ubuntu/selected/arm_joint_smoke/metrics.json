@@ -1,0 +1,22 @@
+{
+  "completed": false,
+  "error": "Missing simulation joint states or clock",
+  "checks": [],
+  "small_motion_pass": false,
+  "max_base_tilt_deg": 0.0,
+  "max_base_translation_m": 0.0,
+  "max_motor_effort_nm": {
+    "shoulder_pan": 0,
+    "shoulder_lift": 0,
+    "elbow_flex": 0,
+    "wrist_flex": 0,
+    "wrist_roll": 0,
+    "gripper": 0
+  },
+  "simulation_only": true,
+  "full_range_verified": false,
+  "grasp_verified": false,
+  "self_collision_verified": false,
+  "command_rate_hz": 20,
+  "joint_state_samples": 0
+}

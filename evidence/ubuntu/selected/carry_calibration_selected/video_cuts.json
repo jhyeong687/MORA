@@ -1,0 +1,16 @@
+{
+  "source": "/workspace/r4_lab/slam/results/research_20261112/videos/20261112T052643Z_carry_calibrated_fixed_view/gazebo_rviz.mp4",
+  "intervals_seconds": [
+    [
+      0,
+      8
+    ],
+    [
+      134,
+      176
+    ]
+  ],
+  "frames": 400,
+  "speed": "Original wall-time speed; middle omitted; original UTC retained. Final arrival at source ~167.36 seconds is included.",
+  "camera": "No automatic follow or camera moves."
+}

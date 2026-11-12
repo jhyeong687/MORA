@@ -1,0 +1,275 @@
+{
+  "version": "3.17.0",
+  "actuators": [
+    "XL430_left",
+    "XL430_right",
+    "STS3215_shoulder_pan",
+    "STS3215_shoulder_lift",
+    "STS3215_elbow_flex",
+    "STS3215_wrist_flex",
+    "STS3215_wrist_roll",
+    "STS3215_gripper"
+  ],
+  "sensors": [
+    "encoder_left",
+    "encoder_right",
+    "gyro",
+    "accelerometer",
+    "angle_shoulder_pan",
+    "angle_shoulder_lift",
+    "angle_elbow_flex",
+    "angle_wrist_flex",
+    "angle_wrist_roll",
+    "angle_gripper"
+  ],
+  "freejoint": "0",
+  "r4_beams": 24,
+  "pct": 6.67,
+  "sectors": {
+    "R4_post_0": {
+      "azimuth_deg": [
+        188,
+        189,
+        190,
+        191,
+        192,
+        193
+      ],
+      "nearest_mm": 61.34
+    },
+    "R4_post_1": {
+      "azimuth_deg": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "nearest_mm": 61.34
+    },
+    "R4_post_2": {
+      "azimuth_deg": [
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "nearest_mm": 61.34
+    },
+    "R4_post_3": {
+      "azimuth_deg": [
+        247,
+        248,
+        249,
+        250,
+        251,
+        252
+      ],
+      "nearest_mm": 64.59
+    }
+  },
+  "calibration_wall_max_abs_error_mm": 0.0,
+  "cases": {
+    "downhill_brake": {
+      "self_hit": [
+        24,
+        24
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        0
+      ],
+      "valid_self_echo": [
+        0,
+        0
+      ]
+    },
+    "downhill_estop": {
+      "self_hit": [
+        24,
+        24
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        0
+      ],
+      "valid_self_echo": [
+        0,
+        0
+      ]
+    },
+    "extend_100g": {
+      "self_hit": [
+        24,
+        24
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        0
+      ],
+      "valid_self_echo": [
+        0,
+        0
+      ]
+    },
+    "flat_drive": {
+      "self_hit": [
+        24,
+        24
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        0
+      ],
+      "valid_self_echo": [
+        0,
+        0
+      ]
+    },
+    "pick_100g": {
+      "self_hit": [
+        24,
+        43
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        19
+      ],
+      "valid_self_echo": [
+        0,
+        19
+      ]
+    },
+    "pick_empty": {
+      "self_hit": [
+        24,
+        42
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        18
+      ],
+      "valid_self_echo": [
+        0,
+        18
+      ]
+    },
+    "side_reach": {
+      "self_hit": [
+        24,
+        24
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        0
+      ],
+      "valid_self_echo": [
+        0,
+        0
+      ]
+    },
+    "step_10mm": {
+      "self_hit": [
+        24,
+        24
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        0
+      ],
+      "valid_self_echo": [
+        0,
+        0
+      ]
+    },
+    "step_20mm": {
+      "self_hit": [
+        24,
+        24
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        0
+      ],
+      "valid_self_echo": [
+        0,
+        0
+      ]
+    },
+    "stow_brake": {
+      "self_hit": [
+        24,
+        24
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        0
+      ],
+      "valid_self_echo": [
+        0,
+        0
+      ]
+    },
+    "tight_turn": {
+      "self_hit": [
+        24,
+        24
+      ],
+      "post": [
+        24,
+        24
+      ],
+      "other_self": [
+        0,
+        0
+      ],
+      "valid_self_echo": [
+        0,
+        0
+      ]
+    }
+  }
+}

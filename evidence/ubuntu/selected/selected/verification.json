@@ -1,0 +1,27 @@
+{
+  "verified_at_utc": "2026-11-12T01:58:38.938473+00:00",
+  "videos": [
+    {
+      "file": "05_encoder_highlights.mp4",
+      "decode_to_end": true,
+      "decoded_frames": 288,
+      "bytes": 12413322
+    },
+    {
+      "file": "06_slam_highlights.mp4",
+      "decode_to_end": true,
+      "decoded_frames": 288,
+      "bytes": 10363674
+    }
+  ],
+  "sha256": {
+    "06_slam_highlights.mp4": "4b8081ec45d9b176be5debbc359dca6de6571fe83193843fbe9feac31c547fc1",
+    "01_robot_setup.png": "581031c7577f44ca59b1aabd608911da898ec7cc7193845e5af2019bbd4aa389",
+    "README.md": "aceb84dbb84399a2347b98f30f50f5af8ef0e77b8e4292fe329a99eeaf44ba86",
+    "03_slam_return.png": "1e5119cc9e84e00f9abd93027bd387e54253dafc2ca701d0a4f1c47ae3858ff9",
+    "04_comparison.png": "7c4946359823fcb3e9528e8c02473ca50cf4dfea9bd989518c8c16be2fead564",
+    "05_encoder_highlights.mp4": "4e58d739aa45b69af921c70341504148fd1713892bf245838a9f5a70a772edcc",
+    "02_encoder_drift.png": "119740d8afcf0dcdd2c25767ae57d1ef67accab10be30bbf864444c7020112ef",
+    "selection.json": "f4d9840a82d095b4a5462e4191db9f2b72aa633c34c3089a382817e9257f9751"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "scope": "Planning bundle; full ROS bags/posegraphs and videos remain in the original VM. PDF contains all selected images. Videos will be separate Notion attachments when possible.",
+  "excluded": [
+    {
+      "path": "slam/results/research_20261112/basic_setup_saved.tar.gz",
+      "bytes": 13141578
+    },
+    {
+      "path": "slam/results/research_20261112/key_materials.tar.gz",
+      "bytes": 22181113
+    },
+    {
+      "path": "slam/results/research_20261112/carry_calibrated_setup_saved.tar.gz",
+      "bytes": 10656509
+    },
+    {
+      "path": "slam/results/research_20261112/basic_setup_selected/06_grasp_lift_partial_success.mp4",
+      "bytes": 7126826
+    },
+    {
+      "path": "slam/results/research_20261112/basic_setup_selected/05_arm_motion_excerpt.mp4",
+      "bytes": 5605872
+    },
+    {
+      "path": "slam/results/research_20261112/selected/06_slam_highlights.mp4",
+      "bytes": 10363674
+    },
+    {
+      "path": "slam/results/research_20261112/selected/05_encoder_highlights.mp4",
+      "bytes": 12413322
+    },
+    {
+      "path": "slam/results/research_20261112/slam_feedback_12m/posegraph.posegraph",
+      "bytes": 3914392
+    },
+    {
+      "path": "slam/results/research_20261112/slam_feedback_12m/posegraph.data",
+      "bytes": 515168
+    },
+    {
+      "path": "slam/results/research_20261112/carry_navigation_calibrated_01/posegraph.posegraph",
+      "bytes": 9020215
+    },
+    {
+      "path": "slam/results/research_20261112/carry_navigation_calibrated_01/posegraph.data",
+      "bytes": 5491349
+    },
+    {
+      "path": "slam/results/research_20261112/carry_navigation_01/posegraph.posegraph",
+      "bytes": 4199567
+    },
+    {
+      "path": "slam/results/research_20261112/carry_navigation_01/posegraph.data",
+      "bytes": 794069
+    },
+    {
+      "path": "slam/results/research_20261112/baseline_12m_fresh/posegraph.posegraph",
+      "bytes": 3899451
+    },
+    {
+      "path": "slam/results/research_20261112/baseline_12m_fresh/posegraph.data",
+      "bytes": 500489
+    },
+    {
+      "path": "slam/results/research_20261112/session_stop/posegraph.posegraph",
+      "bytes": 3945138
+    },
+    {
+      "path": "slam/results/research_20261112/session_stop/posegraph.data",
+      "bytes": 544526
+    },
+    {
+      "path": "slam/results/research_20261112/carry_calibration_selected/04_navigation_excerpt.mp4",
+      "bytes": 11211011
+    },
+    {
+      "path": "slam/results/research_20261112/baseline_12m/rosbag/rosbag_0.mcap",
+      "bytes": 35628886
+    },
+    {
+      "path": "slam/results/research_20261112/slam_feedback_12m/rosbag/rosbag_0.mcap",
+      "bytes": 59900628
+    },
+    {
+      "path": "slam/results/research_20261112/slam_feedback_12m/source_snapshot/slam/build/libr4_motors.so",
+      "bytes": 1602144
+    },
+    {
+      "path": "slam/results/research_20261112/carry_navigation_calibrated_01/source/libr4_motors.so",
+      "bytes": 1602096
+    },
+    {
+      "path": "slam/results/research_20261112/baseline_12m_fresh/rosbag/rosbag_0.mcap",
+      "bytes": 50292948
+    },
+    {
+      "path": "slam/results/research_20261112/baseline_12m_fresh/source_snapshot/slam/build/libr4_motors.so",
+      "bytes": 1602144
+    },
+    {
+      "path": "slam/results/research_20261112/session_stop/source_snapshot/slam/build/libr4_motors.so",
+      "bytes": 1602144
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T022125Z_pick_place_rgb_attempt1/gazebo_rviz.mp4",
+      "bytes": 97240926
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T015301Z_slam_feedback_12m/gazebo_rviz.mp4",
+      "bytes": 40535160
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T020414Z_arm_joint_smoke/gazebo_rviz.mp4",
+      "bytes": 3001740
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T051030Z_carry_navigation_01/gazebo_rviz.mp4",
+      "bytes": 89528745
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T022811Z_pick_place_rgb_attempt2/gazebo_rviz.mp4",
+      "bytes": 82737157
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T023334Z_pick_place_rgb_attempt3/gazebo_rviz.mp4",
+      "bytes": 66921122
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T014303Z_resumed_slam/gazebo_rviz.mp4",
+      "bytes": 26911216
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T021034Z_arm_joint_verified/gazebo_rviz.mp4",
+      "bytes": 28443801
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T052643Z_carry_calibrated_fixed_view/gazebo_rviz.mp4",
+      "bytes": 48022859
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T031539Z_resume_grasp_bench_01/gazebo_rviz.mp4",
+      "bytes": 45769463
+    },
+    {
+      "path": "slam/results/research_20261112/videos/20261112T014756Z_fresh_square_12m/gazebo_rviz.mp4",
+      "bytes": 34567621
+    }
+  ]
+}

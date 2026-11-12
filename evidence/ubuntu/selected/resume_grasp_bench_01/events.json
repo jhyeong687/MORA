@@ -1,0 +1,43 @@
+[
+  {
+    "stage": "grasp_bench_ready",
+    "sim_time": 30.12,
+    "utc": "2026-11-12T03:15:44.672257+00:00"
+  },
+  {
+    "stage": "pickup_rgb_alignment",
+    "sim_time": 30.12,
+    "utc": "2026-11-12T03:15:44.672970+00:00"
+  },
+  {
+    "stage": "pregrasp",
+    "sim_time": 30.62,
+    "utc": "2026-11-12T03:15:45.294390+00:00",
+    "target_base_xyz": [
+      0.23239404978040615,
+      -0.0002591579359757098,
+      0.276
+    ]
+  },
+  {
+    "stage": "grasp_approach",
+    "sim_time": 63.067,
+    "utc": "2026-11-12T05:04:22.333672+00:00"
+  },
+  {
+    "stage": "gripper_closing",
+    "sim_time": 69.796,
+    "utc": "2026-11-12T05:04:30.498641+00:00"
+  },
+  {
+    "stage": "grip_contact_verified",
+    "sim_time": 75.384,
+    "utc": "2026-11-12T05:04:37.348024+00:00",
+    "gripper_target": 0.02084183279345625
+  },
+  {
+    "stage": "lifting",
+    "sim_time": 75.384,
+    "utc": "2026-11-12T05:04:37.348902+00:00"
+  }
+]

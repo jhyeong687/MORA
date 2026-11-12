@@ -1,0 +1,25 @@
+{
+  "saved_utc": "2026-11-12T05:34:27.778023+00:00",
+  "simulation_waypoint_navigation": "3/3 passed",
+  "independent_identification_trial": "odometry_identification_01",
+  "validation_trial": "carry_navigation_calibrated_01",
+  "hardware_tested": false,
+  "camera_auto_follow": false,
+  "recording": "finalized, full source and ~50 s excerpt saved",
+  "syntax_checks": "Python compilation and Bash syntax passed",
+  "interface_audit": "passed, see interface_audit_verified.json",
+  "negative_preflight_no_driver": "correctly failed with 0 commands",
+  "wrong_calibration_scenario": "correctly rejected",
+  "rviz_glsl_sampler_error": "not present after local overlay; actual rendered map captured",
+  "gazebo_exit_cleanup": "ROS processes exited; no orphan nodes; Gazebo internally escalated its GUI shutdown",
+  "remaining_log_messages": [
+    "VM EGL software rendering fallback",
+    "SDF gz_frame_id extension warning",
+    "initial RViz TF cache history informational drop"
+  ],
+  "limits": [
+    "one simulated validation run",
+    "fixed payload, grasp/release not tested",
+    "physical robot calibration and motion validation pending"
+  ]
+}

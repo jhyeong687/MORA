@@ -1,0 +1,6 @@
+{
+  "completed": false,
+  "error": "ROS context invalid while driving; finally block also failed before metrics were written. Exact triggering cause unconfirmed.",
+  "bag_scope": "Contains interrupted attempt, stationary interval, and safety-stop retry. Retry metrics are stored separately in baseline_12m_retry.",
+  "exclude_from_accuracy_claims": true
+}

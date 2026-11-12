@@ -1,0 +1,62 @@
+{
+  "02_fixed_view_payload.png": {
+    "source": "/workspace/r4_lab/slam/results/research_20261112/carry_navigation_calibrated_01/captures/held_payload_ready/gazebo.png",
+    "sha256": "142bdf2dfb4144b7a5042f2faeeb94dc7da2bdbb9b72612f545037c147492123",
+    "capture_metadata": {
+      "captured_at_utc": "2026-11-12T05:26:45.784581+00:00",
+      "label": "held_payload_ready",
+      "note": "Already-held fixed payload; navigation test only, grasp and release not tested.",
+      "source": "actual application window pixels, unedited",
+      "captures": [
+        {
+          "window": "gazebo",
+          "window_id": "0x1600012",
+          "file": "gazebo.png",
+          "saved": true,
+          "usable_nonblank": true,
+          "width": 1446,
+          "height": 880
+        },
+        {
+          "window": "rviz",
+          "window_id": "0xe00106",
+          "file": "rviz.png",
+          "saved": true,
+          "usable_nonblank": true,
+          "width": 604,
+          "height": 880
+        }
+      ]
+    }
+  },
+  "03_rviz_arrival.png": {
+    "source": "/workspace/r4_lab/slam/results/research_20261112/carry_navigation_calibrated_01/captures/carry_navigation_complete/rviz.png",
+    "sha256": "12490c380b42813821507e9b5b5269baa46011af45718f6210a52a44154ffe52",
+    "capture_metadata": {
+      "captured_at_utc": "2026-11-12T05:29:30.749009+00:00",
+      "label": "carry_navigation_complete",
+      "note": "Already-held fixed payload; navigation test only, grasp and release not tested.",
+      "source": "actual application window pixels, unedited",
+      "captures": [
+        {
+          "window": "gazebo",
+          "window_id": "0x1600012",
+          "file": "gazebo.png",
+          "saved": true,
+          "usable_nonblank": true,
+          "width": 1003,
+          "height": 880
+        },
+        {
+          "window": "rviz",
+          "window_id": "0xe00106",
+          "file": "rviz.png",
+          "saved": true,
+          "usable_nonblank": true,
+          "width": 443,
+          "height": 880
+        }
+      ]
+    }
+  }
+}

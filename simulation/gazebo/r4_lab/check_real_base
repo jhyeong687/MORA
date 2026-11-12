@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Read-only check. Does not launch simulation, drivers or a motion controller.
+set -eo pipefail
+TASK_ROOT="$(cd "$(dirname "$0")" && pwd)"
+source /opt/ros/jazzy/setup.bash
+if [[ -z "${ROS_DOMAIN_ID:-}" ]]; then
+  echo 'Set ROS_DOMAIN_ID to the same value as the physical TurtleBot first.' >&2
+  exit 2
+fi
+# Undo the lab's simulation-only localhost setting for this process only.
+unset ROS_LOCALHOST_ONLY GZ_PARTITION
+if [[ "${ROS_AUTOMATIC_DISCOVERY_RANGE:-}" == LOCALHOST ]]; then
+  export ROS_AUTOMATIC_DISCOVERY_RANGE=SUBNET
+fi
+exec python3 "$TASK_ROOT/slam/audit_base.py" "$@"

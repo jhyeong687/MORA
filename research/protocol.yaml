@@ -1,0 +1,29 @@
+# Proposed protocol, not a record of completed trials.
+schema_version: 1
+status: proposed
+gpu_execution: cloud_only
+platform: TurtleBot3_SO101_R4
+sensors: [wrist_rgb, belly_rgb, lidar_2d, joint_state, odometry, imu]
+main_question: route_conditioned_carry_readiness
+fixture_allowed_for_contact_grasp_claim: false
+policy_privileged_inputs: false
+evaluation_only: [object_truth_pose, contact_truth, physical_mass, friction]
+pilot:
+  hold_fresh_resets: 20
+  paired_reset_recipes: 20
+  route_profiles: 4
+  proposed_continuations: 80
+main:
+  proposed_matched_blocks: 60
+  methods: [visual_completion, always_slow, route_conditioned_passive, selective_probe]
+  final_n: decide_from_pilot_before_test
+splits:
+  group_by: [initial_recipe, object_family, branch_family]
+  separate: [training, calibration, held_out_test]
+primary_metrics: [task_completion, drop_after_approval, approval_coverage, total_drops, completion_time, query_cost]
+required_controls: [route_input_removed, fixed_probe, motion_matched_sham, speed_matched]
+sim_to_real:
+  status: future
+  calibrate: [camera_extrinsics, tcp, joint_zero_sign_units, motor_voltage, mass, contact, delay]
+  separate_reports: [zero_shot, calibration_only, additional_training]
+  proposed_exploratory_real_episodes: 40

@@ -1,0 +1,57 @@
+{
+  "downhill_brake": {
+    "step_s": 0.2,
+    "samples": 45,
+    "hits": []
+  },
+  "downhill_estop": {
+    "step_s": 0.2,
+    "samples": 45,
+    "hits": []
+  },
+  "extend_100g": {
+    "step_s": 0.2,
+    "samples": 40,
+    "hits": []
+  },
+  "flat_drive": {
+    "step_s": 0.2,
+    "samples": 35,
+    "hits": []
+  },
+  "pick_100g": {
+    "step_s": 0.2,
+    "samples": 58,
+    "hits": []
+  },
+  "pick_empty": {
+    "step_s": 0.2,
+    "samples": 58,
+    "hits": []
+  },
+  "side_reach": {
+    "step_s": 0.2,
+    "samples": 40,
+    "hits": []
+  },
+  "step_10mm": {
+    "step_s": 0.2,
+    "samples": 40,
+    "hits": []
+  },
+  "step_20mm": {
+    "step_s": 0.2,
+    "samples": 40,
+    "hits": []
+  },
+  "stow_brake": {
+    "step_s": 0.2,
+    "samples": 35,
+    "hits": []
+  },
+  "tight_turn": {
+    "step_s": 0.2,
+    "samples": 35,
+    "hits": []
+  }
+}

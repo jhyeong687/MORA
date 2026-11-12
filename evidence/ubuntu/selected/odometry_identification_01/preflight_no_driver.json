@@ -1,0 +1,29 @@
+{
+  "pass": false,
+  "read_only": true,
+  "motion_commands_sent": 0,
+  "simulation": false,
+  "base_frame": "base_footprint",
+  "map_required": false,
+  "topics": {},
+  "scans_with_exact_timestamp_tf": 0,
+  "tf_errors": {},
+  "discovery_scans_skipped": 0,
+  "raw_scan_timestamp_matches": null,
+  "scan_publisher_qos": {
+    "/scan": [],
+    "/odom": []
+  },
+  "use_sim_time": {},
+  "cmd_vel_driver_types": [],
+  "non_data_plane_nodes_excluded": [],
+  "errors": [
+    "Missing or insufficient data: /scan",
+    "Missing or insufficient data: /odom",
+    "/odom parent frame must be odom",
+    "/odom child frame differs from configured base frame",
+    "Cannot resolve sensor/base/odom transforms at scan timestamps",
+    "/cmd_vel requires one unambiguous Twist or TwistStamped driver input"
+  ],
+  "limits": "Interface preflight only. Does not certify physical calibration, stopping distance, payload stability or obstacle avoidance."
+}

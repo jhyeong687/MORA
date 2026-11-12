@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+R4_LAB_ROOT="$(cd "$(dirname "$0")" && pwd)"
+source ${R4_LAB_ROOT}/slam/env.sh
+exec ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p speed:=0.12 -p turn:=0.5

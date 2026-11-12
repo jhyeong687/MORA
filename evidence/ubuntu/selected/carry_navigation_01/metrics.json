@@ -1,0 +1,79 @@
+{
+  "completed": true,
+  "error": null,
+  "profile": "so101_7v4",
+  "test_kind": "already_held_payload_waypoint_navigation",
+  "requested_side_m": null,
+  "acceptance_version": 2,
+  "controller_feedback_frame": "map",
+  "scan_messages": 688,
+  "trajectory_samples": 1375,
+  "max_tilt_deg": 2.699869328381916e-06,
+  "max_motor_effort_nm": {
+    "axle_left": 0.03347208574851618,
+    "axle_right": 0.036784026048478254,
+    "shoulder_pan": 0.058139566473909866,
+    "shoulder_lift": 0.1891433377476863,
+    "elbow_flex": 0.2879993614540379,
+    "wrist_flex": 0.12363462055437685,
+    "wrist_roll": 0.02521197666106237,
+    "gripper": 0.17007663565165987
+  },
+  "hardware_calibrated": false,
+  "loop_closure_event_verified": false,
+  "slam_ate_rmse_m": 0.007949588806204243,
+  "slam_position_error_max_m": 0.034625362981206206,
+  "slam_final_position_error_m": 0.011287299538483375,
+  "truth_return_distance_m": 2.5000391727890006,
+  "truth_path_length_m": 7.608693497785852,
+  "truth_final_heading_change_deg": 79.98805279527056,
+  "slam_heading_rmse_deg": 4.898140951770203,
+  "map_width": 203,
+  "map_height": 163,
+  "known_map_area_m2": 18.51875055190176,
+  "occupied_map_cells": 1606,
+  "payload_fixed_fixture": true,
+  "payload_mass_kg": 0.01,
+  "simulated_total_mass_kg": 2.7327736694514,
+  "grasp_tested": false,
+  "placement_tested": false,
+  "waypoints": [
+    {
+      "name": "pickup_standby",
+      "goal_world": [
+        -1.5,
+        -0.12,
+        1.5707963267948966
+      ],
+      "map_position_error_m": 0.025507094793719338,
+      "evaluation_position_error_m": 0.022447917105833295,
+      "evaluation_heading_error_deg": -3.9358436472577605,
+      "pass": true
+    },
+    {
+      "name": "transit",
+      "goal_world": [
+        0.0,
+        -0.7,
+        0.0
+      ],
+      "map_position_error_m": 0.02544065036254712,
+      "evaluation_position_error_m": 0.02484746406636152,
+      "evaluation_heading_error_deg": 3.14170771426124,
+      "pass": true
+    },
+    {
+      "name": "delivery_standby",
+      "goal_world": [
+        1.3,
+        -0.7,
+        1.5707963267948966
+      ],
+      "map_position_error_m": 0.025425348093184776,
+      "evaluation_position_error_m": 0.022071693455462484,
+      "evaluation_heading_error_deg": 10.01194615866188,
+      "pass": true
+    }
+  ],
+  "navigation_pass": true
+}

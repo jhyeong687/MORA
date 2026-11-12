@@ -1,0 +1,13 @@
+{
+  "saved_at_utc": "2026-11-12T02:38:53.471788+00:00",
+  "user_explicitly_stopped_experiments": true,
+  "arm_small_motion_pass": true,
+  "arm_targets_verified": 12,
+  "physical_lift_verified_in_attempt2": true,
+  "full_pick_transport_place_pass": false,
+  "latest_trial": "pick_place_attempt3",
+  "latest_trial_error": "Physical grasp failed: object did not lift from the table",
+  "depth_camera_used_in_final_scenario": false,
+  "vla_models_installed_or_run": false,
+  "next_experiment_requires_user_resume": true
+}

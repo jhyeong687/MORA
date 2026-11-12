@@ -1,0 +1,16 @@
+{
+  "label": "arm_joint_smoke",
+  "started_at_utc": "2026-11-12T02:04:14.895325+00:00",
+  "source": "Actual Xwayland compositor window pixels; aspect-preserving resize into two labeled panels.",
+  "clock": "Wall time; per-frame UTC and monotonic times in frames.jsonl. Simulation may run slower.",
+  "fps_target": 8,
+  "size": [
+    1600,
+    960
+  ],
+  "audio": false,
+  "status": "complete",
+  "frames": 1815,
+  "duration_wall_seconds": 226.87645463299987,
+  "ended_at_utc": "2026-11-12T02:08:01.827235+00:00"
+}

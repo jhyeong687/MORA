@@ -1,0 +1,24 @@
+{
+  "videos": [
+    {
+      "file": "05_arm_motion_excerpt.mp4",
+      "decode_to_end": true,
+      "frames": 192
+    },
+    {
+      "file": "06_grasp_lift_partial_success.mp4",
+      "decode_to_end": true,
+      "frames": 187
+    }
+  ],
+  "sha256": {
+    "README.md": "d59280b9656ce0adabaac40ae9ca6a885a6e632602353edf13ff2e88d65704b1",
+    "03_lift_verified_only.png": "a7574f113d556ff8d77717e77c6c64c86a48d24473006e81a93af58aada1c18e",
+    "01_robot_and_table.png": "b028602c2e22b6f1b55ab2882ef89316198530c885fb259fe1cfea29b6dfffe7",
+    "02_slam_map.png": "b6c099fd7afedd154a77f441605855c74150d33bc2dd625bf47f2dabf4e5b3fb",
+    "06_grasp_lift_partial_success.mp4": "9211e86791f34c5b7bf4a5ca4d0a037ec55fdb3bdb5fb1754653f29652edaa93",
+    "04_arm_joint_check.png": "be9fe1023f8bc6028b5d2d5e919983c145f4e441ec3f59abac52accabcdf6247",
+    "05_arm_motion_excerpt.mp4": "7fcb3fda41233cb7ee68e928badf0071b6439dee8f8f02e603faadc93fa9180c",
+    "selection.json": "2f4e49a1cd8f903e518ec30f66563497204cf1b89ff176d6043e194d76c49ad9"
+  }
+}

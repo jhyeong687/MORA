@@ -1,0 +1,3 @@
+experiment,completed,controller_feedback_frame,slam_ate_rmse_m,truth_return_distance_m,truth_final_heading_change_deg,known_map_area_m2,baseline_pass,acceptance_version
+baseline_12m_fresh,True,odom,0.005823268175809401,0.5934849543080641,-37.90754356876133,17.921250534094874,False,2
+slam_feedback_12m,True,map,0.007921483009346541,0.0398345201425173,-10.382610191478305,17.731250528432433,True,2

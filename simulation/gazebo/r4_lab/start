@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -e
+cd "$(dirname "$0")"
+source /opt/ros/jazzy/setup.bash
+export ROS_DOMAIN_ID=46 ROS_LOCALHOST_ONLY=1 GZ_PARTITION=r4_lab
+export GZ_SIM_RESOURCE_PATH="$PWD"
+args=('/cmd_vel@geometry_msgs/msg/Twist]gz.msgs.Twist' '/odom@nav_msgs/msg/Odometry[gz.msgs.Odometry' '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan' '/imu@sensor_msgs/msg/Imu[gz.msgs.IMU' '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock')
+for cam in wrist_cam belly_cam; do args+=("/$cam/image@sensor_msgs/msg/Image[gz.msgs.Image"); done
+for joint in shoulder_pan shoulder_lift elbow_flex wrist_flex wrist_roll gripper; do args+=("/arm/$joint@std_msgs/msg/Float64]gz.msgs.Double"); done
+ros2 run ros_gz_bridge parameter_bridge "${args[@]}" &
+bridge=$!
+if [[ ${1:-} == --headless ]]; then gz sim -r -s --headless-rendering lab.sdf & else gz sim -r lab.sdf & fi
+sim=$!
+trap 'kill "$sim" "$bridge" 2>/dev/null || true; wait || true' EXIT
+trap 'exit 0' INT TERM
+wait "$sim"

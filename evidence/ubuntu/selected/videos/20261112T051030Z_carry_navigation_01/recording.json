@@ -1,0 +1,16 @@
+{
+  "label": "carry_navigation_01",
+  "started_at_utc": "2026-11-12T05:10:30.320861+00:00",
+  "source": "Actual Xwayland compositor window pixels; aspect-preserving resize into two labeled panels.",
+  "clock": "Wall time; per-frame UTC and monotonic times in frames.jsonl. Simulation may run slower.",
+  "fps_target": 8,
+  "size": [
+    1600,
+    960
+  ],
+  "audio": false,
+  "status": "complete",
+  "frames": 1764,
+  "duration_wall_seconds": 220.50098757700016,
+  "ended_at_utc": "2026-11-12T05:14:10.893346+00:00"
+}

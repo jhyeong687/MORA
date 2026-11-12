@@ -1,0 +1,47 @@
+{
+  "selection": "Core functional-check evidence only",
+  "full_pick_transport_place_verified": false,
+  "assets": [
+    {
+      "file": "01_robot_and_table.png",
+      "source": "captures/20261112T023000Z_pick_place_current/gazebo.png"
+    },
+    {
+      "file": "02_slam_map.png",
+      "source": "pick_place_attempt3/captures/mapping_complete/rviz.png"
+    },
+    {
+      "file": "03_lift_verified_only.png",
+      "source": "pick_place_attempt2/captures/lift_verified/gazebo.png"
+    },
+    {
+      "file": "04_arm_joint_check.png",
+      "source": "arm_joint_smoke_retry/arm_check.png"
+    },
+    {
+      "file": "05_arm_motion_excerpt.mp4",
+      "source": "videos/20261112T021034Z_arm_joint_verified/gazebo_rviz.mp4",
+      "source_intervals_seconds": [
+        [
+          0,
+          24
+        ]
+      ],
+      "frames": 192,
+      "full_mission_success": false
+    },
+    {
+      "file": "06_grasp_lift_partial_success.mp4",
+      "source": "videos/20261112T022811Z_pick_place_rgb_attempt2/gazebo_rviz.mp4",
+      "source_intervals_seconds": [
+        [
+          152.14543,
+          175.586536
+        ]
+      ],
+      "frames": 187,
+      "scope": "Grasp and single lift only. Subsequent carry-pose transition failed and cube fell.",
+      "full_mission_success": false
+    }
+  ]
+}

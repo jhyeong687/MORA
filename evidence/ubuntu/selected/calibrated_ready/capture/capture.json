@@ -1,0 +1,26 @@
+{
+  "captured_at_utc": "2026-11-12T05:33:22.153463+00:00",
+  "label": "calibrated_ready",
+  "note": "Default calibrated carry configuration. Stationary visualizer only; no controller or recording running.",
+  "source": "actual application window pixels, unedited",
+  "captures": [
+    {
+      "window": "gazebo",
+      "window_id": "0x1600012",
+      "file": "gazebo.png",
+      "saved": true,
+      "usable_nonblank": true,
+      "width": 723,
+      "height": 880
+    },
+    {
+      "window": "rviz",
+      "window_id": "0xe00106",
+      "file": "rviz.png",
+      "saved": true,
+      "usable_nonblank": true,
+      "width": 723,
+      "height": 880
+    }
+  ]
+}

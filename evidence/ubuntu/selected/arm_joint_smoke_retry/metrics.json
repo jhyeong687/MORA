@@ -1,0 +1,95 @@
+{
+  "completed": true,
+  "error": null,
+  "checks": [
+    {
+      "joint": "shoulder_pan",
+      "target_rad": 0.18,
+      "hold_mean_abs_error_rad": 0.0008327821422142861,
+      "pass": true
+    },
+    {
+      "joint": "shoulder_pan",
+      "target_rad": -0.18,
+      "hold_mean_abs_error_rad": 0.0008242027374760457,
+      "pass": true
+    },
+    {
+      "joint": "shoulder_lift",
+      "target_rad": 0.18,
+      "hold_mean_abs_error_rad": 0.005223952362658278,
+      "pass": true
+    },
+    {
+      "joint": "shoulder_lift",
+      "target_rad": 0.32,
+      "hold_mean_abs_error_rad": 0.003094415962049496,
+      "pass": true
+    },
+    {
+      "joint": "elbow_flex",
+      "target_rad": 0.18,
+      "hold_mean_abs_error_rad": 0.013940006298296328,
+      "pass": true
+    },
+    {
+      "joint": "elbow_flex",
+      "target_rad": -0.18,
+      "hold_mean_abs_error_rad": 0.009545998632561562,
+      "pass": true
+    },
+    {
+      "joint": "wrist_flex",
+      "target_rad": -0.18,
+      "hold_mean_abs_error_rad": 0.008739171256011697,
+      "pass": true
+    },
+    {
+      "joint": "wrist_flex",
+      "target_rad": -0.32,
+      "hold_mean_abs_error_rad": 0.009311598677108346,
+      "pass": true
+    },
+    {
+      "joint": "wrist_roll",
+      "target_rad": 0.25,
+      "hold_mean_abs_error_rad": 0.0015256039734638683,
+      "pass": true
+    },
+    {
+      "joint": "wrist_roll",
+      "target_rad": -0.25,
+      "hold_mean_abs_error_rad": 0.001542272579378623,
+      "pass": true
+    },
+    {
+      "joint": "gripper",
+      "target_rad": 0.3,
+      "hold_mean_abs_error_rad": 0.0015151380074249431,
+      "pass": true
+    },
+    {
+      "joint": "gripper",
+      "target_rad": -0.2,
+      "hold_mean_abs_error_rad": 0.0009737871359324441,
+      "pass": true
+    }
+  ],
+  "small_motion_pass": true,
+  "max_base_tilt_deg": 2.831646840510158e-06,
+  "max_base_translation_m": 0.001958689285204812,
+  "max_motor_effort_nm": {
+    "shoulder_pan": 0.07054089463480687,
+    "shoulder_lift": 0.4280247644244709,
+    "elbow_flex": 0.4055627326667661,
+    "wrist_flex": 0.2538788650950996,
+    "wrist_roll": 0.08908290428929261,
+    "gripper": 0.08603248060589785
+  },
+  "simulation_only": true,
+  "full_range_verified": false,
+  "grasp_verified": false,
+  "self_collision_verified": false,
+  "command_rate_hz": 20,
+  "joint_state_samples": 1182
+}

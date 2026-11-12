@@ -1,0 +1,8 @@
+{
+  "bag_pid": 17557,
+  "experiment_pid": 17558,
+  "fresh_world": true,
+  "side_m": 1.2,
+  "controller_feedback_frame": "map",
+  "truth_used_for_control": false
+}

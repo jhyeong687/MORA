@@ -1,0 +1,64 @@
+{
+  "pass": false,
+  "read_only": true,
+  "motion_commands_sent": 0,
+  "simulation": true,
+  "base_frame": "base_footprint",
+  "map_required": true,
+  "topics": {
+    "/scan": {
+      "messages": 64,
+      "stamp_hz": 5.000000000000018,
+      "timestamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "age_p95_s": 0.13500000000000156,
+      "frame": "lds",
+      "rays": 360,
+      "range_min": 0.1599999964237213,
+      "range_max": 8.0
+    },
+    "/odom": {
+      "messages": 640,
+      "stamp_hz": 50.000000000001066,
+      "timestamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "age_p95_s": 0.0019999999999988916,
+      "frame": "odom",
+      "child_frame": "base_footprint"
+    }
+  },
+  "scans_with_exact_timestamp_tf": 59,
+  "tf_errors": {
+    "\"lds\" passed to lookupTransform argument source_frame does not exist. ": 1
+  },
+  "raw_scan_timestamp_matches": 64,
+  "scan_publisher_qos": {
+    "/scan": [
+      {
+        "node": "r4_scan_pipeline",
+        "reliability": "1"
+      }
+    ],
+    "/odom": [
+      {
+        "node": "ros_gz_bridge",
+        "reliability": "1"
+      }
+    ]
+  },
+  "use_sim_time": {
+    "/ros_gz_bridge": true,
+    "/robot_state_publisher": true,
+    "/r4_scan_pipeline": true,
+    "/slam_toolbox": true,
+    "/rviz": true,
+    "/r4_experiment": true
+  },
+  "non_data_plane_nodes_excluded": [
+    "launch_ros_74566"
+  ],
+  "errors": [
+    "Scan-time TF failures after discovery warmup"
+  ],
+  "limits": "Interface preflight only. Does not certify physical calibration, stopping distance, payload stability or obstacle avoidance."
+}

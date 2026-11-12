@@ -1,0 +1,13 @@
+{
+  "captured_utc": "2026-11-12T05:39:40.294260+00:00",
+  "architecture": "aarch64",
+  "python": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+  "kernel": "Linux-6.17.0-23-generic-aarch64-with-glibc2.39",
+  "timezone": "Asia/Seoul",
+  "ROS_distribution": "jazzy",
+  "workspace": "/workspace/r4_lab",
+  "os": "Ubuntu 24.04.4 LTS\n",
+  "ros_packages": "ros-jazzy-nav2-map-server\t1.3.11-1noble.20260412.212221\nros-jazzy-robot-state-publisher\t3.3.3-3noble.20260412.190640\nros-jazzy-ros-gz-bridge\t1.0.22-1noble.20260412.183823\nros-jazzy-rviz2\t14.1.20-2noble.20260413.043237\nros-jazzy-slam-toolbox\t2.8.4-1noble.20260412.223850\n",
+  "gazebo_packages": "",
+  "processes": ""
+}

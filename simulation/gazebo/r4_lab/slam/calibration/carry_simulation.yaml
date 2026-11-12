@@ -1,0 +1,21 @@
+kind: simulation_identification
+hardware_calibrated: false
+wheel_radius: 0.032999241791190966
+wheel_separation: 0.17799008683790468
+identified_utc: '2026-11-12T05:25:05.027558+00:00'
+source_trial: /workspace/r4_lab/slam/results/research_20261112/odometry_identification_01
+scenario: carry
+payload_mass_kg: 0.01
+tire_friction: 0.7
+seed: 42
+radius_forward_reverse_m:
+- 0.03299931358476568
+- 0.0329991698607
+separation_ccw_cw_m:
+- 0.17799327591438754
+- 0.1779868977614218
+scope: Effective encoder odometry for this simulation condition; independent waypoint
+  validation required.
+profile: so101_7v4
+nominal_wheel_radius: 0.033
+nominal_wheel_separation: 0.16

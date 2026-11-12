@@ -1,0 +1,192 @@
+{
+  "scope": "Generated model initial zero-joint geometry. Not a measurement of the physical robot or its dynamic COM.",
+  "total_mass_kg": 2.7227736694513998,
+  "initial_model_com_m": [
+    -0.03358734040182678,
+    0.00034914016012859637,
+    0.14237105262000357
+  ],
+  "links": [
+    {
+      "link": "burger",
+      "mass_kg": 0.82573504,
+      "com_model_frame_m": [
+        -0.033912153516,
+        0.0,
+        0.080047686687
+      ]
+    },
+    {
+      "link": "wheel_left",
+      "mass_kg": 0.02849894,
+      "com_model_frame_m": [
+        0.0,
+        0.08,
+        0.0332
+      ]
+    },
+    {
+      "link": "wheel_right",
+      "mass_kg": 0.02849894,
+      "com_model_frame_m": [
+        0.0,
+        -0.08,
+        0.0332
+      ]
+    },
+    {
+      "link": "rear_caster",
+      "mass_kg": 0.005,
+      "com_model_frame_m": [
+        -0.081,
+        0.0,
+        0.0062
+      ]
+    },
+    {
+      "link": "lds",
+      "mass_kg": 0.131,
+      "com_model_frame_m": [
+        -0.032,
+        0.0,
+        0.1822
+      ]
+    },
+    {
+      "link": "R4_mount",
+      "mass_kg": 0.905505737021,
+      "com_model_frame_m": [
+        -0.029032352651,
+        9.2789525888e-05,
+        0.06579819973800001
+      ]
+    },
+    {
+      "link": "guard_0_0",
+      "mass_kg": 0.0328820031076,
+      "com_model_frame_m": [
+        0.064,
+        -0.076,
+        0.0107
+      ]
+    },
+    {
+      "link": "guard_0_1",
+      "mass_kg": 0.0328820031076,
+      "com_model_frame_m": [
+        0.064,
+        0.076,
+        0.0107
+      ]
+    },
+    {
+      "link": "guard_1_0",
+      "mass_kg": 0.0328820031076,
+      "com_model_frame_m": [
+        -0.128,
+        -0.076,
+        0.0107
+      ]
+    },
+    {
+      "link": "guard_1_1",
+      "mass_kg": 0.0328820031076,
+      "com_model_frame_m": [
+        -0.128,
+        0.076,
+        0.0107
+      ]
+    },
+    {
+      "link": "base_link",
+      "mass_kg": 0.147,
+      "com_model_frame_m": [
+        -0.057117543400000005,
+        -5.19711e-05,
+        0.2415843
+      ]
+    },
+    {
+      "link": "shoulder_link",
+      "mass_kg": 0.100006,
+      "com_model_frame_m": [
+        -0.0017229547508779489,
+        0.005430792554973982,
+        0.29577131441099536
+      ]
+    },
+    {
+      "link": "upper_arm_link",
+      "mass_kg": 0.103,
+      "com_model_frame_m": [
+        -0.09090400390036579,
+        -0.010465926831713865,
+        0.3261641940817505
+      ]
+    },
+    {
+      "link": "lower_arm_link",
+      "mass_kg": 0.104,
+      "com_model_frame_m": [
+        -0.07614394720317866,
+        -0.00793818336601538,
+        0.4339623199707141
+      ]
+    },
+    {
+      "link": "wrist_link",
+      "mass_kg": 0.079,
+      "com_model_frame_m": [
+        -0.031080173104056735,
+        0.010160727487678836,
+        0.4489121454214347
+      ]
+    },
+    {
+      "link": "gripper_link",
+      "mass_kg": 0.087,
+      "com_model_frame_m": [
+        0.011169287077876061,
+        0.007836917877614317,
+        0.42487457177118665
+      ]
+    },
+    {
+      "link": "gripper_frame_link",
+      "mass_kg": 1e-06,
+      "com_model_frame_m": [
+        0.0744937287459,
+        0.0110046546388,
+        0.387910697037
+      ]
+    },
+    {
+      "link": "moving_jaw_so101_v1_link",
+      "mass_kg": 0.012,
+      "com_model_frame_m": [
+        0.032925225787979524,
+        0.03569298745384899,
+        0.41447699436121516
+      ]
+    },
+    {
+      "link": "wrist_camera_mount_link",
+      "mass_kg": 0.02,
+      "com_model_frame_m": [
+        -0.035032328628587434,
+        0.008605810825169893,
+        0.393652935922112
+      ]
+    },
+    {
+      "link": "wrist_camera_link",
+      "mass_kg": 0.015,
+      "com_model_frame_m": [
+        -0.04757811187916915,
+        0.009983015641016413,
+        0.3781558446526011
+      ]
+    }
+  ],
+  "mass_effect_tested": false
+}

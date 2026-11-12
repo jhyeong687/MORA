@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+R4_LAB_ROOT="$(cd "$(dirname "$0")" && pwd)"
+source ${R4_LAB_ROOT}/slam/env.sh
+exec python3 ${R4_LAB_ROOT}/slam/run_experiment.py "$@"

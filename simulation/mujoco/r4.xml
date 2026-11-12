@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="R4 mobile manipulator">
+  <compiler angle="radian" meshdir="assets" inertiafromgeom="false" fusestatic="false" autolimits="true" />
+  <option timestep=".002" integrator="implicitfast" gravity="0 0 -9.81" iterations="65" tolerance="1e-9" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="720" azimuth="132" elevation="-16" />
+    <map znear=".002" zfar="20" />
+  </visual>
+  <asset>
+    <texture name="tile" type="2d" builtin="checker" rgb1=".75 .79 .77" rgb2=".87 .89 .86" width="256" height="256" />
+    <material name="groundmat" texture="tile" texrepeat="22 22" reflectance=".03" />
+    <mesh name="burger_frame" file="burger_frame.stl" maxhullvert="40" />
+    <mesh name="tire_left" file="tire_left.stl" maxhullvert="40" />
+    <mesh name="tire_right" file="tire_right.stl" maxhullvert="40" />
+    <mesh name="lds_housing" file="lds_housing.stl" maxhullvert="40" />
+    <mesh name="R4_top" file="R4_top.stl" maxhullvert="40" />
+    <mesh name="R4_post_0" file="R4_post_0.stl" maxhullvert="40" />
+    <mesh name="R4_post_1" file="R4_post_1.stl" maxhullvert="40" />
+    <mesh name="R4_post_2" file="R4_post_2.stl" maxhullvert="40" />
+    <mesh name="R4_post_3" file="R4_post_3.stl" maxhullvert="40" />
+    <mesh name="R4_brackets" file="R4_brackets.stl" maxhullvert="40" />
+    <mesh name="R4_hardware" file="R4_hardware.stl" maxhullvert="40" />
+    <mesh name="R4_belly_pcb" file="R4_belly_pcb.stl" maxhullvert="40" />
+    <mesh name="base_link_0" file="base_link_0.stl" maxhullvert="40" />
+    <mesh name="base_link_1" file="base_link_1.stl" maxhullvert="40" />
+    <mesh name="base_link_2" file="base_link_2.stl" maxhullvert="40" />
+    <mesh name="base_link_3" file="base_link_3.stl" maxhullvert="40" />
+    <mesh name="shoulder_link_0" file="shoulder_link_0.stl" maxhullvert="40" />
+    <mesh name="shoulder_link_1" file="shoulder_link_1.stl" maxhullvert="40" />
+    <mesh name="shoulder_link_2" file="shoulder_link_2.stl" maxhullvert="40" />
+    <mesh name="upper_arm_link_0" file="upper_arm_link_0.stl" maxhullvert="40" />
+    <mesh name="upper_arm_link_1" file="upper_arm_link_1.stl" maxhullvert="40" />
+    <mesh name="hull_upper_arm_link" file="hull_upper_arm_link.stl" maxhullvert="60" />
+    <mesh name="lower_arm_link_0" file="lower_arm_link_0.stl" maxhullvert="40" />
+    <mesh name="lower_arm_link_1" file="lower_arm_link_1.stl" maxhullvert="40" />
+    <mesh name="lower_arm_link_2" file="lower_arm_link_2.stl" maxhullvert="40" />
+    <mesh name="hull_lower_arm_link" file="hull_lower_arm_link.stl" maxhullvert="60" />
+    <mesh name="wrist_link_0" file="wrist_link_0.stl" maxhullvert="40" />
+    <mesh name="wrist_link_1" file="wrist_link_1.stl" maxhullvert="40" />
+    <mesh name="hull_wrist_link" file="hull_wrist_link.stl" maxhullvert="60" />
+    <mesh name="gripper_link_0" file="gripper_link_0.stl" maxhullvert="40" />
+    <mesh name="gripper_link_1" file="gripper_link_1.stl" maxhullvert="40" />
+    <mesh name="hull_gripper_link" file="hull_gripper_link.stl" maxhullvert="60" />
+    <mesh name="moving_jaw_so101_v1_link_0" file="moving_jaw_so101_v1_link_0.stl" maxhullvert="40" />
+    <mesh name="hull_moving_jaw_so101_v1_link" file="hull_moving_jaw_so101_v1_link.stl" maxhullvert="60" />
+    <mesh name="wrist_camera_mount_link_0" file="wrist_camera_mount_link_0.stl" maxhullvert="40" />
+    <mesh name="hull_wrist_camera_mount_link" file="hull_wrist_camera_mount_link.stl" maxhullvert="60" />
+    <mesh name="wrist_camera_link_0" file="wrist_camera_link_0.stl" maxhullvert="40" />
+    <mesh name="hull_wrist_camera_link" file="hull_wrist_camera_link.stl" maxhullvert="60" />
+  </asset>
+  <worldbody>
+    <light pos="-.4 -.8 2" dir=".2 .3 -1" diffuse=".85 .85 .85" castshadow="true" />
+    <light pos=".8 .5 1.4" dir="-.4 -.2 -1" diffuse=".5 .5 .5" castshadow="false" />
+    <geom name="floor" type="plane" size="2.5 2.5 .08" material="groundmat" group="0" contype="1" conaffinity="2" friction=".7 .001 .0001" solref=".006 1" solimp=".97 .995 .001" condim="3" />
+    <geom name="wall_east" type="box" pos="2.02 0 0.25" size="0.02 2 0.25" rgba=".68 .73 .72 1" group="0" contype="1" conaffinity="2" friction=".7 .001 .0001" solref=".006 1" solimp=".97 .995 .001" condim="3" />
+    <geom name="wall_west" type="box" pos="-2.02 0 0.25" size="0.02 2 0.25" rgba=".68 .73 .72 1" group="0" contype="1" conaffinity="2" friction=".7 .001 .0001" solref=".006 1" solimp=".97 .995 .001" condim="3" />
+    <geom name="wall_north" type="box" pos="0 2.02 0.25" size="2 0.02 0.25" rgba=".68 .73 .72 1" group="0" contype="1" conaffinity="2" friction=".7 .001 .0001" solref=".006 1" solimp=".97 .995 .001" condim="3" />
+    <geom name="wall_south" type="box" pos="0 -2.02 0.25" size="2 0.02 0.25" rgba=".68 .73 .72 1" group="0" contype="1" conaffinity="2" friction=".7 .001 .0001" solref=".006 1" solimp=".97 .995 .001" condim="3" />
+    <geom name="step" type="box" pos="1.2 0 -.05" size=".06 .5 .05" rgba=".72 .5 .28 1" group="0" contype="1" conaffinity="2" friction=".7 .001 .0001" solref=".006 1" solimp=".97 .995 .001" condim="3" />
+    <geom name="approach_deck" type="box" pos="-.55 0 -.24" size=".8 .55 .04" rgba=".69 .73 .70 1" group="0" contype="1" conaffinity="2" friction=".7 .001 .0001" solref=".006 1" solimp=".97 .995 .001" condim="3" />
+    <body name="burger" pos="0 0 .0002">
+      <freejoint name="floating_base" />
+      <inertial pos="-0.033912153516 0 0.079847686687" mass="0.82573504" fullinertia="0.0022124416 0.0021193702 0.0020064271 -1.2294101e-05 3.4938785e-05 -5.0120904e-06" />
+      <geom name="burger_frame" type="mesh" mesh="burger_frame" rgba=".36 .44 .43 1" contype="0" conaffinity="0" group="2" />
+      <geom name="chassis_lower" type="box" pos="-0.032 0 0.018" size="0.064 0.058 0.008" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+      <geom name="chassis_upper" type="box" pos="-0.032 0 0.146" size="0.064 0.064 0.004" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+      <body name="wheel_left" pos="0 0.08 0.033">
+        <joint name="axle_left" type="hinge" axis="0 1 0" armature=".00012" damping=".0002" />
+        <inertial pos="0 0 0" mass="0.02849894" fullinertia="1.118e-05 2.071e-05 1.119e-05 0 0 0" />
+        <geom name="tire_left" type="mesh" mesh="tire_left" rgba=".15 .18 .17 1" contype="0" conaffinity="0" group="2" />
+        <geom name="contact_left" type="cylinder" pos="0 0 0" size="0.033 0.009" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".70 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" quat="0.70710678119 0.70710678119 0 0" />
+      </body>
+      <body name="wheel_right" pos="0 -0.08 0.033">
+        <joint name="axle_right" type="hinge" axis="0 1 0" armature=".00012" damping=".0002" />
+        <inertial pos="0 0 0" mass="0.02849894" fullinertia="1.118e-05 2.071e-05 1.119e-05 0 0 0" />
+        <geom name="tire_right" type="mesh" mesh="tire_right" rgba=".15 .18 .17 1" contype="0" conaffinity="0" group="2" />
+        <geom name="contact_right" type="cylinder" pos="0 0 0" size="0.033 0.009" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".70 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" quat="0.70710678119 0.70710678119 0 0" />
+      </body>
+      <body name="rear_caster" pos="-0.081 0 0.006">
+        <joint name="rear_caster_spin" type="ball" damping=".00001" frictionloss=".00001" armature=".000001" />
+        <inertial pos="0 0 0" mass="0.005" fullinertia="7.2e-08 7.2e-08 7.2e-08 0 0 0" />
+        <geom name="contact_rear_caster" type="sphere" pos="0 0 0" size="0.006" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".42 .0001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+      </body>
+      <body name="lds" pos="-.032 0 .182">
+        <inertial pos="0 0 0" mass="0.131" fullinertia="7.2748666667e-05 0.000107682 0.00014191666667 0 0 0" />
+        <geom name="lds_housing" type="mesh" mesh="lds_housing" rgba=".16 .19 .18 1" contype="0" conaffinity="0" group="1" />
+        <site name="laser_origin" size=".001" rgba=".2 .8 .6 0" />
+      </body>
+      <site name="imu" pos="-.032 0 .078" size=".002" rgba="0 0 0 0" />
+      <body name="R4_mount">
+        <geom name="top_plate_collision" type="box" pos="-0.032 0 0.202" size="0.061 0.064 0.0035" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="bumper_B05_bumper_0" type="box" pos="0.079 0 0.0394" size="0.003 0.058 0.003" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="catch_housing_D01_ball_socket_0_0" type="box" pos="0.063999998093 -0.075999998093 0.018449999809" size="0.019497667313 0.012699998856 0.0079499998093" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="catch_housing_D02_ball_retainer_0_0" type="box" pos="0.063999998093 -0.075999998093 0.008" size="0.019497667313 0.012699998856 0.0025" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="catch_housing_D01_ball_socket_0_1" type="box" pos="0.063999998093 0.075999998093 0.018449999809" size="0.019497667313 0.012699998856 0.0079499998093" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="catch_housing_D02_ball_retainer_0_1" type="box" pos="0.063999998093 0.075999998093 0.008" size="0.019497667313 0.012699998856 0.0025" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="bumper_B05_bumper_1" type="box" pos="-0.143 0 0.0394" size="0.003 0.058 0.003" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="catch_housing_D01_ball_socket_1_0" type="box" pos="-0.128 -0.075999998093 0.018449999809" size="0.019497665405 0.012699998856 0.0079499998093" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="catch_housing_D02_ball_retainer_1_0" type="box" pos="-0.128 -0.075999998093 0.008" size="0.019497665405 0.012699998856 0.0025" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="catch_housing_D01_ball_socket_1_1" type="box" pos="-0.128 0.075999998093 0.018449999809" size="0.019497665405 0.012699998856 0.0079499998093" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="catch_housing_D02_ball_retainer_1_1" type="box" pos="-0.128 0.075999998093 0.008" size="0.019497665405 0.012699998856 0.0025" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".7 .001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="R4_top" type="mesh" mesh="R4_top" rgba=".08 .43 .47 1" contype="0" conaffinity="0" group="2" />
+        <geom name="R4_post_0" type="mesh" mesh="R4_post_0" rgba=".68 .47 .25 1" contype="0" conaffinity="0" group="2" />
+        <geom name="R4_post_1" type="mesh" mesh="R4_post_1" rgba=".68 .47 .25 1" contype="0" conaffinity="0" group="2" />
+        <geom name="R4_post_2" type="mesh" mesh="R4_post_2" rgba=".68 .47 .25 1" contype="0" conaffinity="0" group="2" />
+        <geom name="R4_post_3" type="mesh" mesh="R4_post_3" rgba=".68 .47 .25 1" contype="0" conaffinity="0" group="2" />
+        <geom name="R4_brackets" type="mesh" mesh="R4_brackets" rgba=".08 .43 .47 1" contype="0" conaffinity="0" group="2" />
+        <geom name="R4_hardware" type="mesh" mesh="R4_hardware" rgba=".56 .62 .62 1" contype="0" conaffinity="0" group="2" />
+        <geom name="R4_belly_pcb" type="mesh" mesh="R4_belly_pcb" rgba=".12 .46 .35 1" contype="0" conaffinity="0" group="2" />
+        <inertial pos="-0.029032352651 9.2789525888e-05 0.065598199738" mass="0.905505737021" fullinertia="0.0042322904421 0.0090614795832 0.0076006721215 -1.2279211354e-05 -2.4160320254e-05 -1.1460676452e-05" />
+      </body>
+      <body name="guard_0_0" pos="0.064 -0.076 0.0105">
+        <joint name="guard_0_0_spin" type="ball" damping=".00001" frictionloss=".00001" armature=".000001" />
+        <inertial pos="0 0 0" mass="0.0328820031076" fullinertia="1.3152801243e-06 1.3152801243e-06 1.3152801243e-06 0 0 0" />
+        <geom name="contact_guard_0_0" type="sphere" pos="0 0 0" size="0.01" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".42 .0001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="visual_guard_0_0" type="sphere" size="0.01" group="2" contype="0" conaffinity="0" rgba=".56 .62 .62 1" />
+      </body>
+      <body name="guard_0_1" pos="0.064 0.076 0.0105">
+        <joint name="guard_0_1_spin" type="ball" damping=".00001" frictionloss=".00001" armature=".000001" />
+        <inertial pos="0 0 0" mass="0.0328820031076" fullinertia="1.3152801243e-06 1.3152801243e-06 1.3152801243e-06 0 0 0" />
+        <geom name="contact_guard_0_1" type="sphere" pos="0 0 0" size="0.01" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".42 .0001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="visual_guard_0_1" type="sphere" size="0.01" group="2" contype="0" conaffinity="0" rgba=".56 .62 .62 1" />
+      </body>
+      <body name="guard_1_0" pos="-0.128 -0.076 0.0105">
+        <joint name="guard_1_0_spin" type="ball" damping=".00001" frictionloss=".00001" armature=".000001" />
+        <inertial pos="0 0 0" mass="0.0328820031076" fullinertia="1.3152801243e-06 1.3152801243e-06 1.3152801243e-06 0 0 0" />
+        <geom name="contact_guard_1_0" type="sphere" pos="0 0 0" size="0.01" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".42 .0001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="visual_guard_1_0" type="sphere" size="0.01" group="2" contype="0" conaffinity="0" rgba=".56 .62 .62 1" />
+      </body>
+      <body name="guard_1_1" pos="-0.128 0.076 0.0105">
+        <joint name="guard_1_1_spin" type="ball" damping=".00001" frictionloss=".00001" armature=".000001" />
+        <inertial pos="0 0 0" mass="0.0328820031076" fullinertia="1.3152801243e-06 1.3152801243e-06 1.3152801243e-06 0 0 0" />
+        <geom name="contact_guard_1_1" type="sphere" pos="0 0 0" size="0.01" contype="2" conaffinity="1" group="3" rgba="0 0 0 0" friction=".42 .0001 .0001" priority="1" solref=".005 1" solimp=".97 .995 .0005" condim="3" />
+        <geom name="visual_guard_1_1" type="sphere" size="0.01" group="2" contype="0" conaffinity="0" rgba=".56 .62 .62 1" />
+      </body>
+      <body name="base_link" pos="-.0708354434 0 .2079">
+        <geom name="base_link_0" type="mesh" mesh="base_link_0" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+        <geom name="base_link_1" type="mesh" mesh="base_link_1" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+        <geom name="base_link_2" type="mesh" mesh="base_link_2" rgba=".21 .25 .24 1" contype="0" conaffinity="0" group="2" />
+        <geom name="base_link_3" type="mesh" mesh="base_link_3" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+        <inertial pos="0.0137179 -5.19711e-05 0.0334843" mass="0.147" fullinertia="0.000114686 0.000136117 0.000130364 -4.59787e-07 4.97151e-06 9.75275e-08" />
+        <body name="shoulder_link" pos="0.0388353 -8.97657e-09 0.0624" quat="1.7603637852e-12 1.3267948967e-06 -1 -1.3267948967e-06">
+          <joint name="shoulder_pan" type="hinge" axis="0 0 1" range="-1.91986 1.91986" damping=".018" armature=".00055" />
+          <geom name="shoulder_link_0" type="mesh" mesh="shoulder_link_0" rgba=".21 .25 .24 1" contype="0" conaffinity="0" group="2" />
+          <geom name="shoulder_link_1" type="mesh" mesh="shoulder_link_1" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+          <geom name="shoulder_link_2" type="mesh" mesh="shoulder_link_2" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+          <inertial pos="-0.0307604 -1.66727e-05 -0.0252713" mass="0.100006" fullinertia="8.3759e-05 8.10403e-05 2.39783e-05 7.55525e-08 -1.16342e-06 1.54663e-07" />
+          <body name="upper_arm_link" pos="-0.0303992 -0.0182778 -0.0542" quat="0.4999981634 -0.5 -0.5 -0.5000018366">
+            <joint name="shoulder_lift" type="hinge" axis="0 0 1" range="-1.74533 1.74533" damping=".018" armature=".00055" />
+            <geom name="upper_arm_link_0" type="mesh" mesh="upper_arm_link_0" rgba=".21 .25 .24 1" contype="0" conaffinity="0" group="2" />
+            <geom name="upper_arm_link_1" type="mesh" mesh="upper_arm_link_1" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+            <inertial pos="-0.0898471 -0.00838224 0.0184089" mass="0.103" fullinertia="4.08002e-05 0.000147318 0.000142487 -1.97819e-05 -4.03016e-08 8.97326e-09" />
+            <geom name="hull_upper_arm_link" type="mesh" mesh="hull_upper_arm_link" group="3" contype="2" conaffinity="1" rgba="0 0 0 0" friction=".5 .001 .0001" />
+            <body name="lower_arm_link" pos="-0.11257 -0.028 1.73763e-16" quat="0.70710548251 -4.3766725581e-16 1.8055643788e-16 0.70710807986">
+              <joint name="elbow_flex" type="hinge" axis="0 0 1" range="-1.69 1.69" damping=".018" armature=".00055" />
+              <geom name="lower_arm_link_0" type="mesh" mesh="lower_arm_link_0" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+              <geom name="lower_arm_link_1" type="mesh" mesh="lower_arm_link_1" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+              <geom name="lower_arm_link_2" type="mesh" mesh="lower_arm_link_2" rgba=".21 .25 .24 1" contype="0" conaffinity="0" group="2" />
+              <inertial pos="-0.0980701 0.00324376 0.0182831" mass="0.104" fullinertia="2.87438e-05 0.000159844 0.00014529 7.41152e-06 1.26409e-06 -4.90188e-08" />
+              <geom name="hull_lower_arm_link" type="mesh" mesh="hull_lower_arm_link" group="3" contype="2" conaffinity="1" rgba="0 0 0 0" friction=".5 .001 .0001" />
+              <body name="wrist_link" pos="-0.1349 0.0052 3.62355e-17" quat="0.70710548251 1.7295535595e-15 -1.1162412342e-15 -0.70710807986">
+                <joint name="wrist_flex" type="hinge" axis="0 0 1" range="-1.65806 1.65806" damping=".018" armature=".00055" />
+                <geom name="wrist_link_0" type="mesh" mesh="wrist_link_0" rgba=".21 .25 .24 1" contype="0" conaffinity="0" group="2" />
+                <geom name="wrist_link_1" type="mesh" mesh="wrist_link_1" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+                <inertial pos="-0.000103312 -0.0386143 0.0281156" mass="0.079" fullinertia="3.68263e-05 2.5391e-05 2.1e-05 1.7893e-08 -5.28128e-08 3.6412e-06" />
+                <geom name="hull_wrist_link" type="mesh" mesh="hull_wrist_link" group="3" contype="2" conaffinity="1" rgba="0 0 0 0" friction=".5 .001 .0001" />
+                <body name="gripper_link" pos="5.55112e-17 -0.0611 0.0181" quat="0.017210072493 -0.017208133465 0.70689865933 0.70689601709">
+                  <joint name="wrist_roll" type="hinge" axis="0 0 1" range="-2.74385 2.84121" damping=".018" armature=".00055" />
+                  <geom name="gripper_link_0" type="mesh" mesh="gripper_link_0" rgba=".21 .25 .24 1" contype="0" conaffinity="0" group="2" />
+                  <geom name="gripper_link_1" type="mesh" mesh="gripper_link_1" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+                  <inertial pos="0.000213627 0.000245138 -0.025187" mass="0.087" fullinertia="2.75087e-05 4.33657e-05 3.45059e-05 -3.35241e-07 -5.7352e-06 -5.17847e-08" />
+                  <geom name="hull_gripper_link" type="mesh" mesh="hull_gripper_link" group="3" contype="2" conaffinity="1" rgba="0 0 0 0" friction=".5 .001 .0001" />
+                  <body name="gripper_frame_link" pos="-0.0079 -0.000218121 -0.0981274" quat="1.3267948967e-06 0 1 0">
+                    <site name="tcp" size=".001" rgba="0 0 0 0" />
+                    <inertial pos="0 0 0" mass="1e-06" fullinertia="1e-10 1e-10 1e-10 0 0 0" />
+                    <geom name="test_payload" type="sphere" size=".017" group="2" rgba=".96 .43 .09 0" contype="2" conaffinity="1" friction=".5 .001 .0001" />
+                  </body>
+                  <body name="moving_jaw_so101_v1_link" pos="0.0202 0.0188 -0.0234" quat="0.70710548251 0.70710807986 -1.853620504e-08 1.8536272127e-08">
+                    <joint name="gripper" type="hinge" axis="0 0 1" range="-0.174533 1.74533" damping=".018" armature=".00055" />
+                    <geom name="moving_jaw_so101_v1_link_0" type="mesh" mesh="moving_jaw_so101_v1_link_0" rgba=".8 .76 .63 1" contype="0" conaffinity="0" group="2" />
+                    <inertial pos="-0.00157495 -0.0300244 0.0192755" mass="0.012" fullinertia="6.61427e-06 1.89032e-06 5.28738e-06 -3.19807e-07 -5.90717e-09 -1.09945e-07" />
+                    <geom name="hull_moving_jaw_so101_v1_link" type="mesh" mesh="hull_moving_jaw_so101_v1_link" group="3" contype="2" conaffinity="1" rgba="0 0 0 0" friction=".5 .001 .0001" />
+                  </body>
+                  <body name="wrist_camera_mount_link" pos="-0.0150 0.0240 -0.0315" quat="0.49979812267 -0.50019995999 0.49980179734 -0.50019995999">
+                    <geom name="wrist_camera_mount_link_0" type="mesh" mesh="wrist_camera_mount_link_0" rgba=".68 .47 .25 1" contype="0" conaffinity="0" group="2" />
+                    <inertial pos="-0.026652798327 -0.030072041034 0.016986591793" mass="0.02" fullinertia="3.7620066458e-06 9.2084440874e-06 8.865966241e-06 -2.2054145639e-06 2.0060151174e-07 1.5865101568e-07" />
+                    <geom name="hull_wrist_camera_mount_link" type="mesh" mesh="hull_wrist_camera_mount_link" group="3" contype="2" conaffinity="1" rgba="0 0 0 0" friction=".5 .001 .0001" />
+                    <body name="wrist_camera_link" pos="-0.04941 -0.03813 0.0175" quat="0.37978693649 -0.59645843094 -0.37978833153 -0.59645624003">
+                      <geom name="wrist_camera_link_0" type="mesh" mesh="wrist_camera_link_0" rgba=".16 .19 .18 1" contype="0" conaffinity="0" group="2" />
+                      <inertial pos="0.00025418297235 0.0004693084055 0.0060402173593" mass="0.015" fullinertia="1.788717121e-06 1.7484866859e-06 1.6227709762e-06 -6.1408876383e-08 4.295847047e-08 7.9306707084e-08" />
+                      <geom name="hull_wrist_camera_link" type="mesh" mesh="hull_wrist_camera_link" group="3" contype="2" conaffinity="1" rgba="0 0 0 0" friction=".5 .001 .0001" />
+                      <camera name="wrist_cam" pos="0 0 .0273" xyaxes="1 0 0 0 -1 0" fovy="36" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <camera name="belly_cam" pos=".0612 0 .1173" xyaxes="0 -1 0 .309017 0 .951057" fovy="36" />
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="XL430_left" joint="axle_left" ctrllimited="true" ctrlrange="-1.4 1.4" />
+    <motor name="XL430_right" joint="axle_right" ctrllimited="true" ctrlrange="-1.4 1.4" />
+    <motor name="STS3215_shoulder_pan" joint="shoulder_pan" ctrlrange="-2.942 2.942" ctrllimited="true" />
+    <motor name="STS3215_shoulder_lift" joint="shoulder_lift" ctrlrange="-2.942 2.942" ctrllimited="true" />
+    <motor name="STS3215_elbow_flex" joint="elbow_flex" ctrlrange="-2.942 2.942" ctrllimited="true" />
+    <motor name="STS3215_wrist_flex" joint="wrist_flex" ctrlrange="-2.942 2.942" ctrllimited="true" />
+    <motor name="STS3215_wrist_roll" joint="wrist_roll" ctrlrange="-2.942 2.942" ctrllimited="true" />
+    <motor name="STS3215_gripper" joint="gripper" ctrlrange="-2.942 2.942" ctrllimited="true" />
+  </actuator>
+  <sensor>
+    <jointvel name="encoder_left" joint="axle_left" />
+    <jointvel name="encoder_right" joint="axle_right" />
+    <gyro site="imu" name="gyro" />
+    <accelerometer site="imu" name="accelerometer" />
+    <jointpos name="angle_shoulder_pan" joint="shoulder_pan" />
+    <jointpos name="angle_shoulder_lift" joint="shoulder_lift" />
+    <jointpos name="angle_elbow_flex" joint="elbow_flex" />
+    <jointpos name="angle_wrist_flex" joint="wrist_flex" />
+    <jointpos name="angle_wrist_roll" joint="wrist_roll" />
+    <jointpos name="angle_gripper" joint="gripper" />
+  </sensor>
+</mujoco>

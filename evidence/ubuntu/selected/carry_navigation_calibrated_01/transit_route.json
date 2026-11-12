@@ -1,0 +1,14 @@
+{
+  "frame": "map",
+  "route": [
+    [
+      1.1954539646395606,
+      0.3043584363408329
+    ],
+    [
+      1.2,
+      0.30000000000000004
+    ]
+  ],
+  "source": "SLAM occupancy grid and configured table keepouts"
+}

@@ -1,0 +1,18 @@
+name: already_held_payload_navigation_v1
+payload:
+  size: [0.032, 0.032, 0.032]
+  mass: 0.010
+  center_in_tool: [-0.016, 0.0, -0.012]
+  gripper_joint: 0.06
+  attachment: fixed_joint_initial_fixture
+mapping_side: 1.0
+navigation:
+  inflation_radius: 0.19
+  max_speed: 0.08
+  map_arrival_tolerance: 0.03
+  evaluation_position_tolerance: 0.10
+  evaluation_heading_tolerance_deg: 15
+waypoints:
+  - {name: pickup_standby, world: [-1.50, -0.12, 1.5707963267948966]}
+  - {name: transit, world: [0.0, -0.70, 0.0]}
+  - {name: delivery_standby, world: [1.30, -0.70, 1.5707963267948966]}

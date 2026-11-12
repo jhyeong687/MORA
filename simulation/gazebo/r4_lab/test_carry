@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+TASK_ROOT="$(cd "$(dirname "$0")" && pwd)"
+source "$TASK_ROOT/slam/env.sh"
+exec python3 "$TASK_ROOT/slam/run_carry.py" "$@"

@@ -1,0 +1,1487 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <world name="lab">
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu" />
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <light name="sun" type="directional">
+      <direction>-.4 .2 -1</direction>
+      <diffuse>1 1 1 1</diffuse>
+    </light>
+    <model name="floor">
+      <static>true</static>
+      <link name="link">
+        <pose>0 0 -.025 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>6 6 .05</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>6 6 .05</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <model name="wall">
+      <static>true</static>
+      <link name="link">
+        <pose>1 0 .25 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>.05 2 .5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>.05 2 .5</size>
+            </box>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+    <model name="r4">
+      <link name="burger">
+        <pose>0 0 0.0002 0 0 0</pose>
+        <inertial>
+          <pose>-0.033912153516 0 0.079847686687 0 0 0</pose>
+          <mass>0.82573504</mass>
+          <inertia>
+            <ixx>0.0022124416</ixx>
+            <iyy>0.0021193702</iyy>
+            <izz>0.0020064271</izz>
+            <ixy>-1.2294101e-05</ixy>
+            <ixz>3.4938785e-05</ixz>
+            <iyz>-5.0120904e-06</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_burger_frame">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/burger_frame.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.36 .44 .43 1</ambient>
+            <diffuse>.36 .44 .43 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_chassis_lower">
+          <pose>-0.032 0 0.018 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.128 0.116 0.016</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_chassis_upper">
+          <pose>-0.032 0 0.146 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.128 0.128 0.008</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <sensor name="imu" type="imu">
+          <topic>/imu</topic>
+          <update_rate>50</update_rate>
+          <always_on>true</always_on>
+        </sensor>
+        <sensor name="belly_cam" type="camera">
+          <topic>/belly_cam/image</topic>
+          <update_rate>10</update_rate>
+          <always_on>true</always_on>
+          <pose>0.0612 0 0.1173 0 0.314159194373 0</pose>
+          <camera>
+            <horizontal_fov>0.8176353617659281</horizontal_fov>
+            <image>
+              <width>320</width>
+              <height>240</height>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>8</far>
+            </clip>
+          </camera>
+        </sensor>
+      </link>
+      <link name="wheel_left">
+        <pose>0 0.08 0.0332 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.02849894</mass>
+          <inertia>
+            <ixx>1.118e-05</ixx>
+            <iyy>2.071e-05</iyy>
+            <izz>1.119e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_tire_left">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/tire_left.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.15 .18 .17 1</ambient>
+            <diffuse>.15 .18 .17 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_contact_left">
+          <pose>0 0 0 1.57079632679 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.033</radius>
+              <length>0.018</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.70</mu>
+                <mu2>.70</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+      <joint name="axle_left" type="revolute">
+        <parent>burger</parent>
+        <child>wheel_left</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <dynamics>
+            <damping>.0002</damping>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name="wheel_right">
+        <pose>0 -0.08 0.0332 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.02849894</mass>
+          <inertia>
+            <ixx>1.118e-05</ixx>
+            <iyy>2.071e-05</iyy>
+            <izz>1.119e-05</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_tire_right">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/tire_right.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.15 .18 .17 1</ambient>
+            <diffuse>.15 .18 .17 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_contact_right">
+          <pose>0 0 0 1.57079632679 0 0</pose>
+          <geometry>
+            <cylinder>
+              <radius>0.033</radius>
+              <length>0.018</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.70</mu>
+                <mu2>.70</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+      <joint name="axle_right" type="revolute">
+        <parent>burger</parent>
+        <child>wheel_right</child>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <dynamics>
+            <damping>.0002</damping>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name="rear_caster">
+        <pose>-0.081 0 0.0062 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.005</mass>
+          <inertia>
+            <ixx>7.2e-08</ixx>
+            <iyy>7.2e-08</iyy>
+            <izz>7.2e-08</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision_contact_rear_caster">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.006</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.42</mu>
+                <mu2>.42</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+      <joint name="rear_caster_spin" type="ball">
+        <parent>burger</parent>
+        <child>rear_caster</child>
+      </joint>
+      <link name="lds">
+        <pose>-0.032 0 0.1822 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.131</mass>
+          <inertia>
+            <ixx>7.2748666667e-05</ixx>
+            <iyy>0.000107682</iyy>
+            <izz>0.00014191666667</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_lds_housing">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/lds_housing.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.16 .19 .18 1</ambient>
+            <diffuse>.16 .19 .18 1</diffuse>
+          </material>
+        </visual>
+        <sensor name="laser" type="gpu_lidar">
+          <topic>/scan</topic>
+          <update_rate>5</update_rate>
+          <always_on>true</always_on>
+          <lidar>
+            <scan>
+              <horizontal>
+                <samples>360</samples>
+                <min_angle>-3.141592653589793</min_angle>
+                <max_angle>3.12413936106985</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>0.16</min>
+              <max>8</max>
+            </range>
+          </lidar>
+        </sensor>
+      </link>
+      <joint name="fix_lds" type="fixed">
+        <parent>burger</parent>
+        <child>lds</child>
+      </joint>
+      <link name="R4_mount">
+        <pose>0 0 0.0002 0 0 0</pose>
+        <inertial>
+          <pose>-0.029032352651 9.2789525888e-05 0.065598199738 0 0 0</pose>
+          <mass>0.905505737021</mass>
+          <inertia>
+            <ixx>0.0042322904421</ixx>
+            <iyy>0.0090614795832</iyy>
+            <izz>0.0076006721215</izz>
+            <ixy>-1.2279211354e-05</ixy>
+            <ixz>-2.4160320254e-05</ixz>
+            <iyz>-1.1460676452e-05</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision_top_plate_collision">
+          <pose>-0.032 0 0.202 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.122 0.128 0.007</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_bumper_B05_bumper_0">
+          <pose>0.079 0 0.0394 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.006 0.116 0.006</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_catch_housing_D01_ball_socket_0_0">
+          <pose>0.063999998093 -0.075999998093 0.018449999809 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.038995334626 0.025399997712 0.0158999996186</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_catch_housing_D02_ball_retainer_0_0">
+          <pose>0.063999998093 -0.075999998093 0.008 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.038995334626 0.025399997712 0.005</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_catch_housing_D01_ball_socket_0_1">
+          <pose>0.063999998093 0.075999998093 0.018449999809 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.038995334626 0.025399997712 0.0158999996186</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_catch_housing_D02_ball_retainer_0_1">
+          <pose>0.063999998093 0.075999998093 0.008 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.038995334626 0.025399997712 0.005</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_bumper_B05_bumper_1">
+          <pose>-0.143 0 0.0394 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.006 0.116 0.006</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_catch_housing_D01_ball_socket_1_0">
+          <pose>-0.128 -0.075999998093 0.018449999809 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.03899533081 0.025399997712 0.0158999996186</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_catch_housing_D02_ball_retainer_1_0">
+          <pose>-0.128 -0.075999998093 0.008 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.03899533081 0.025399997712 0.005</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_catch_housing_D01_ball_socket_1_1">
+          <pose>-0.128 0.075999998093 0.018449999809 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.03899533081 0.025399997712 0.0158999996186</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <collision name="collision_catch_housing_D02_ball_retainer_1_1">
+          <pose>-0.128 0.075999998093 0.008 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.03899533081 0.025399997712 0.005</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.7</mu>
+                <mu2>.7</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual_R4_top">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/R4_top.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.08 .43 .47 1</ambient>
+            <diffuse>.08 .43 .47 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_R4_post_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/R4_post_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.68 .47 .25 1</ambient>
+            <diffuse>.68 .47 .25 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_R4_post_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/R4_post_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.68 .47 .25 1</ambient>
+            <diffuse>.68 .47 .25 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_R4_post_2">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/R4_post_2.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.68 .47 .25 1</ambient>
+            <diffuse>.68 .47 .25 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_R4_post_3">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/R4_post_3.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.68 .47 .25 1</ambient>
+            <diffuse>.68 .47 .25 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_R4_brackets">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/R4_brackets.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.08 .43 .47 1</ambient>
+            <diffuse>.08 .43 .47 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_R4_hardware">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/R4_hardware.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.56 .62 .62 1</ambient>
+            <diffuse>.56 .62 .62 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_R4_belly_pcb">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/R4_belly_pcb.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.12 .46 .35 1</ambient>
+            <diffuse>.12 .46 .35 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <joint name="fix_R4_mount" type="fixed">
+        <parent>burger</parent>
+        <child>R4_mount</child>
+      </joint>
+      <link name="guard_0_0">
+        <pose>0.064 -0.076 0.0107 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.0328820031076</mass>
+          <inertia>
+            <ixx>1.3152801243e-06</ixx>
+            <iyy>1.3152801243e-06</iyy>
+            <izz>1.3152801243e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision_contact_guard_0_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.42</mu>
+                <mu2>.42</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual_visual_guard_0_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>.56 .62 .62 1</ambient>
+            <diffuse>.56 .62 .62 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <joint name="guard_0_0_spin" type="ball">
+        <parent>burger</parent>
+        <child>guard_0_0</child>
+      </joint>
+      <link name="guard_0_1">
+        <pose>0.064 0.076 0.0107 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.0328820031076</mass>
+          <inertia>
+            <ixx>1.3152801243e-06</ixx>
+            <iyy>1.3152801243e-06</iyy>
+            <izz>1.3152801243e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision_contact_guard_0_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.42</mu>
+                <mu2>.42</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual_visual_guard_0_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>.56 .62 .62 1</ambient>
+            <diffuse>.56 .62 .62 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <joint name="guard_0_1_spin" type="ball">
+        <parent>burger</parent>
+        <child>guard_0_1</child>
+      </joint>
+      <link name="guard_1_0">
+        <pose>-0.128 -0.076 0.0107 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.0328820031076</mass>
+          <inertia>
+            <ixx>1.3152801243e-06</ixx>
+            <iyy>1.3152801243e-06</iyy>
+            <izz>1.3152801243e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision_contact_guard_1_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.42</mu>
+                <mu2>.42</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual_visual_guard_1_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>.56 .62 .62 1</ambient>
+            <diffuse>.56 .62 .62 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <joint name="guard_1_0_spin" type="ball">
+        <parent>burger</parent>
+        <child>guard_1_0</child>
+      </joint>
+      <link name="guard_1_1">
+        <pose>-0.128 0.076 0.0107 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>0.0328820031076</mass>
+          <inertia>
+            <ixx>1.3152801243e-06</ixx>
+            <iyy>1.3152801243e-06</iyy>
+            <izz>1.3152801243e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name="collision_contact_guard_1_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.42</mu>
+                <mu2>.42</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <visual name="visual_visual_guard_1_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.01</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>.56 .62 .62 1</ambient>
+            <diffuse>.56 .62 .62 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <joint name="guard_1_1_spin" type="ball">
+        <parent>burger</parent>
+        <child>guard_1_1</child>
+      </joint>
+      <link name="base_link">
+        <pose>-0.0708354434 0 0.2081 0 0 0</pose>
+        <inertial>
+          <pose>0.0137179 -5.19711e-05 0.0334843 0 0 0</pose>
+          <mass>0.147</mass>
+          <inertia>
+            <ixx>0.000114686</ixx>
+            <iyy>0.000136117</iyy>
+            <izz>0.000130364</izz>
+            <ixy>-4.59787e-07</ixy>
+            <ixz>4.97151e-06</ixz>
+            <iyz>9.75275e-08</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_base_link_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/base_link_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_base_link_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/base_link_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_base_link_2">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/base_link_2.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.21 .25 .24 1</ambient>
+            <diffuse>.21 .25 .24 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_base_link_3">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/base_link_3.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <joint name="fix_base_link" type="fixed">
+        <parent>burger</parent>
+        <child>base_link</child>
+      </joint>
+      <link name="shoulder_link">
+        <pose>-0.0320001434 -8.97657e-09 0.2705 3.14159004194 4.69910259593e-07 -2.9635664163</pose>
+        <inertial>
+          <pose>-0.0307604 -1.66727e-05 -0.0252713 0 0 0</pose>
+          <mass>0.100006</mass>
+          <inertia>
+            <ixx>8.3759e-05</ixx>
+            <iyy>8.10403e-05</iyy>
+            <izz>2.39783e-05</izz>
+            <ixy>7.55525e-08</ixy>
+            <ixz>-1.16342e-06</ixz>
+            <iyz>1.54663e-07</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_shoulder_link_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/shoulder_link_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.21 .25 .24 1</ambient>
+            <diffuse>.21 .25 .24 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_shoulder_link_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/shoulder_link_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_shoulder_link_2">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/shoulder_link_2.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+      </link>
+      <joint name="shoulder_pan" type="revolute">
+        <parent>base_link</parent>
+        <child>shoulder_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <dynamics>
+            <damping>.018</damping>
+          </dynamics>
+          <limit>
+            <lower>-1.7418364162965783</lower>
+            <upper>2.0978835837034215</upper>
+            <effort>2.942</effort>
+            <velocity>4.71</velocity>
+          </limit>
+        </axis>
+      </joint>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+        <joint_name>shoulder_pan</joint_name>
+        <topic>/arm/shoulder_pan</topic>
+        <p_gain>18</p_gain>
+        <d_gain>0.3</d_gain>
+        <cmd_max>2.942</cmd_max>
+        <cmd_min>-2.942</cmd_min>
+      </plugin>
+      <link name="upper_arm_link">
+        <pose>0.001155368643 -0.0126057608654 0.324699966549 -1.57079370743 -0.0767986302073 0.178029709528</pose>
+        <inertial>
+          <pose>-0.0898471 -0.00838224 0.0184089 0 0 0</pose>
+          <mass>0.103</mass>
+          <inertia>
+            <ixx>4.08002e-05</ixx>
+            <iyy>0.000147318</iyy>
+            <izz>0.000142487</izz>
+            <ixy>-1.97819e-05</ixy>
+            <ixz>-4.03016e-08</ixz>
+            <iyz>8.97326e-09</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_upper_arm_link_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/upper_arm_link_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.21 .25 .24 1</ambient>
+            <diffuse>.21 .25 .24 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_upper_arm_link_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/upper_arm_link_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_hull_upper_arm_link">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/hull_upper_arm_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.5</mu>
+                <mu2>.5</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+      <joint name="shoulder_lift" type="revolute">
+        <parent>shoulder_link</parent>
+        <child>upper_arm_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <dynamics>
+            <damping>.018</damping>
+          </dynamics>
+          <limit>
+            <lower>-0.09773918611735288</lower>
+            <upper>3.392920813882647</upper>
+            <effort>2.942</effort>
+            <velocity>4.71</velocity>
+          </limit>
+        </axis>
+      </joint>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+        <joint_name>shoulder_lift</joint_name>
+        <topic>/arm/shoulder_lift</topic>
+        <p_gain>18</p_gain>
+        <d_gain>0.3</d_gain>
+        <cmd_max>2.942</cmd_max>
+        <cmd_min>-2.942</cmd_min>
+      </plugin>
+      <link name="lower_arm_link">
+        <pose>-0.111423127114 -0.0328626158836 0.343980708699 1.57079023812 1.12748316669 -2.96356824321</pose>
+        <inertial>
+          <pose>-0.0980701 0.00324376 0.0182831 0 0 0</pose>
+          <mass>0.104</mass>
+          <inertia>
+            <ixx>2.87438e-05</ixx>
+            <iyy>0.000159844</iyy>
+            <izz>0.00014529</izz>
+            <ixy>7.41152e-06</ixy>
+            <ixz>1.26409e-06</ixz>
+            <iyz>-4.90188e-08</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_lower_arm_link_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/lower_arm_link_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_lower_arm_link_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/lower_arm_link_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_lower_arm_link_2">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/lower_arm_link_2.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.21 .25 .24 1</ambient>
+            <diffuse>.21 .25 .24 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_hull_lower_arm_link">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/hull_lower_arm_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.5</mu>
+                <mu2>.5</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+      <joint name="elbow_flex" type="revolute">
+        <parent>upper_arm_link</parent>
+        <child>lower_arm_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <dynamics>
+            <damping>.018</damping>
+          </dynamics>
+          <limit>
+            <lower>-2.21010811709431</lower>
+            <upper>1.1698918829056897</upper>
+            <effort>2.942</effort>
+            <velocity>4.71</velocity>
+          </limit>
+        </axis>
+      </joint>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+        <joint_name>elbow_flex</joint_name>
+        <topic>/arm/elbow_flex</topic>
+        <p_gain>18</p_gain>
+        <d_gain>0.3</d_gain>
+        <cmd_max>2.942</cmd_max>
+        <cmd_min>-2.942</cmd_min>
+      </plugin>
+      <link name="wrist_link">
+        <pose>-0.0590974371075 -0.0234477257522 0.468071127383 1.57079108763 1.04894702356 -2.96356728493</pose>
+        <inertial>
+          <pose>-0.000103312 -0.0386143 0.0281156 0 0 0</pose>
+          <mass>0.079</mass>
+          <inertia>
+            <ixx>3.68263e-05</ixx>
+            <iyy>2.5391e-05</iyy>
+            <izz>2.1e-05</izz>
+            <ixy>1.7893e-08</ixy>
+            <ixz>-5.28128e-08</ixz>
+            <iyz>3.6412e-06</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_wrist_link_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/wrist_link_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.21 .25 .24 1</ambient>
+            <diffuse>.21 .25 .24 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_wrist_link_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/wrist_link_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_hull_wrist_link">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/hull_wrist_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.5</mu>
+                <mu2>.5</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+      <joint name="wrist_flex" type="revolute">
+        <parent>lower_arm_link</parent>
+        <child>wrist_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <dynamics>
+            <damping>.018</damping>
+          </dynamics>
+          <limit>
+            <lower>-3.3073961431346417</lower>
+            <upper>0.008723856865358703</upper>
+            <effort>2.942</effort>
+            <velocity>4.71</velocity>
+          </limit>
+        </axis>
+      </joint>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+        <joint_name>wrist_flex</joint_name>
+        <topic>/arm/wrist_flex</topic>
+        <p_gain>18</p_gain>
+        <d_gain>0.3</d_gain>
+        <cmd_max>2.942</cmd_max>
+        <cmd_min>-2.942</cmd_min>
+      </plugin>
+      <link name="gripper_link">
+        <pose>-0.0101724589066 0.00374634166777 0.437613793205 -1.04450918675 -0.123802675629 1.67721627443</pose>
+        <inertial>
+          <pose>0.000213627 0.000245138 -0.025187 0 0 0</pose>
+          <mass>0.087</mass>
+          <inertia>
+            <ixx>2.75087e-05</ixx>
+            <iyy>4.33657e-05</iyy>
+            <izz>3.45059e-05</izz>
+            <ixy>-3.35241e-07</ixy>
+            <ixz>-5.7352e-06</ixz>
+            <iyz>-5.17847e-08</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_gripper_link_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/gripper_link_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.21 .25 .24 1</ambient>
+            <diffuse>.21 .25 .24 1</diffuse>
+          </material>
+        </visual>
+        <visual name="visual_gripper_link_1">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/gripper_link_1.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_hull_gripper_link">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/hull_gripper_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.5</mu>
+                <mu2>.5</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+      <joint name="wrist_roll" type="revolute">
+        <parent>wrist_link</parent>
+        <child>gripper_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <dynamics>
+            <damping>.018</damping>
+          </dynamics>
+          <limit>
+            <lower>-4.2203985471872025</lower>
+            <upper>1.3646614528127972</upper>
+            <effort>2.942</effort>
+            <velocity>4.71</velocity>
+          </limit>
+        </axis>
+      </joint>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+        <joint_name>wrist_roll</joint_name>
+        <topic>/arm/wrist_roll</topic>
+        <p_gain>18</p_gain>
+        <d_gain>0.3</d_gain>
+        <cmd_max>2.942</cmd_max>
+        <cmd_min>-2.942</cmd_min>
+      </plugin>
+      <link name="gripper_frame_link">
+        <pose>0.0744937287459 0.0110046546388 0.387910697037 -2.09708318132 0.123804008597 -1.46437406697</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1e-06</mass>
+          <inertia>
+            <ixx>1e-10</ixx>
+            <iyy>1e-10</iyy>
+            <izz>1e-10</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+      </link>
+      <joint name="fix_gripper_frame_link" type="fixed">
+        <parent>gripper_link</parent>
+        <child>gripper_frame_link</child>
+      </joint>
+      <link name="moving_jaw_so101_v1_link">
+        <pose>-0.00194037583851 0.0282637511266 0.412312223258 0.498989393762 -0.213887631131 1.83917250165</pose>
+        <inertial>
+          <pose>-0.00157495 -0.0300244 0.0192755 0 0 0</pose>
+          <mass>0.012</mass>
+          <inertia>
+            <ixx>6.61427e-06</ixx>
+            <iyy>1.89032e-06</iyy>
+            <izz>5.28738e-06</izz>
+            <ixy>-3.19807e-07</ixy>
+            <ixz>-5.90717e-09</ixz>
+            <iyz>-1.09945e-07</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_moving_jaw_so101_v1_link_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/moving_jaw_so101_v1_link_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.8 .76 .63 1</ambient>
+            <diffuse>.8 .76 .63 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_hull_moving_jaw_so101_v1_link">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/hull_moving_jaw_so101_v1_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.5</mu>
+                <mu2>.5</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+      <joint name="gripper" type="revolute">
+        <parent>gripper_link</parent>
+        <child>moving_jaw_so101_v1_link</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <dynamics>
+            <damping>.018</damping>
+          </dynamics>
+          <limit>
+            <lower>-0.3577925714594046</lower>
+            <upper>1.5620704285405955</upper>
+            <effort>2.942</effort>
+            <velocity>4.71</velocity>
+          </limit>
+        </axis>
+      </joint>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
+        <joint_name>gripper</joint_name>
+        <topic>/arm/gripper</topic>
+        <p_gain>18</p_gain>
+        <d_gain>0.3</d_gain>
+        <cmd_max>2.942</cmd_max>
+        <cmd_min>-2.942</cmd_min>
+      </plugin>
+      <link name="wrist_camera_mount_link">
+        <pose>0.00602452633881 -0.00495103123515 0.399465878799 -1.3276352494 -1.03225574159 -0.103408138654</pose>
+        <inertial>
+          <pose>-0.026652798327 -0.030072041034 0.016986591793 0 0 0</pose>
+          <mass>0.02</mass>
+          <inertia>
+            <ixx>3.7620066458e-06</ixx>
+            <iyy>9.2084440874e-06</iyy>
+            <izz>8.865966241e-06</izz>
+            <ixy>-2.2054145639e-06</ixy>
+            <ixz>2.0060151174e-07</ixz>
+            <iyz>1.5865101568e-07</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_wrist_camera_mount_link_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/wrist_camera_mount_link_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.68 .47 .25 1</ambient>
+            <diffuse>.68 .47 .25 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_hull_wrist_camera_mount_link">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/hull_wrist_camera_mount_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.5</mu>
+                <mu2>.5</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+      </link>
+      <joint name="fix_wrist_camera_mount_link" type="fixed">
+        <parent>gripper_link</parent>
+        <child>wrist_camera_mount_link</child>
+      </joint>
+      <link name="wrist_camera_link">
+        <pose>-0.0535742156758 0.00908048763018 0.378191447464 1.65948087396 -0.123803683828 1.67720752594</pose>
+        <inertial>
+          <pose>0.00025418297235 0.0004693084055 0.0060402173593 0 0 0</pose>
+          <mass>0.015</mass>
+          <inertia>
+            <ixx>1.788717121e-06</ixx>
+            <iyy>1.7484866859e-06</iyy>
+            <izz>1.6227709762e-06</izz>
+            <ixy>-6.1408876383e-08</ixy>
+            <ixz>4.295847047e-08</ixz>
+            <iyz>7.9306707084e-08</iyz>
+          </inertia>
+        </inertial>
+        <visual name="visual_wrist_camera_link_0">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/wrist_camera_link_0.stl</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>.16 .19 .18 1</ambient>
+            <diffuse>.16 .19 .18 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision_hull_wrist_camera_link">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://R4/assets/hull_wrist_camera_link.stl</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>.5</mu>
+                <mu2>.5</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <sensor name="wrist_cam" type="camera">
+          <topic>/wrist_cam/image</topic>
+          <update_rate>10</update_rate>
+          <always_on>true</always_on>
+          <pose>0 0 0.0273 1.57079632679 -1.57079632679 0</pose>
+          <camera>
+            <horizontal_fov>0.8176353617659281</horizontal_fov>
+            <image>
+              <width>320</width>
+              <height>240</height>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>8</far>
+            </clip>
+          </camera>
+        </sensor>
+      </link>
+      <joint name="fix_wrist_camera_link" type="fixed">
+        <parent>wrist_camera_mount_link</parent>
+        <child>wrist_camera_link</child>
+      </joint>
+      <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+        <left_joint>axle_left</left_joint>
+        <right_joint>axle_right</right_joint>
+        <wheel_separation>.16</wheel_separation>
+        <wheel_radius>.033</wheel_radius>
+        <topic>/cmd_vel</topic>
+        <odom_topic>/odom</odom_topic>
+        <frame_id>odom</frame_id>
+        <child_frame_id>burger</child_frame_id>
+      </plugin>
+    </model>
+  </world>
+</sdf>

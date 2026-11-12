@@ -1,0 +1,77 @@
+{
+  "segments": [
+    {
+      "name": "forward",
+      "start": 18.695,
+      "end": 28.695,
+      "v": 0.06,
+      "w": 0.0,
+      "forward_distance_m": 0.47846319897170264,
+      "yaw_change_rad": 2.9423198278968734e-11,
+      "encoder_delta_rad": [
+        14.499186407095081,
+        14.499186407095081
+      ]
+    },
+    {
+      "name": "reverse",
+      "start": 28.695,
+      "end": 38.695,
+      "v": -0.06,
+      "w": 0.0,
+      "forward_distance_m": -0.47800553425644066,
+      "yaw_change_rad": -1.5517712437444072e-10,
+      "encoder_delta_rad": [
+        -14.48538058000411,
+        -14.48538058000411
+      ]
+    },
+    {
+      "name": "counterclockwise",
+      "start": 38.695,
+      "end": 60.695,
+      "v": 0.0,
+      "w": 0.35,
+      "forward_distance_m": -0.00026091800332210795,
+      "yaw_change_rad": 5.7052261418926165,
+      "encoder_delta_rad": [
+        -15.395031187220296,
+        15.378157398553553
+      ]
+    },
+    {
+      "name": "clockwise",
+      "start": 60.695,
+      "end": 82.696,
+      "v": 0.0,
+      "w": -0.35,
+      "forward_distance_m": -0.00027113335463305996,
+      "yaw_change_rad": -5.705146184333581,
+      "encoder_delta_rad": [
+        15.378157398553553,
+        -15.393497206432409
+      ]
+    }
+  ],
+  "result": {
+    "kind": "simulation_identification",
+    "hardware_calibrated": false,
+    "wheel_radius": 0.032999241791190966,
+    "wheel_separation": 0.17799008683790468,
+    "identified_utc": "2026-11-12T05:25:05.027558+00:00",
+    "source_trial": "/workspace/r4_lab/slam/results/research_20261112/odometry_identification_01",
+    "scenario": "carry",
+    "payload_mass_kg": 0.01,
+    "tire_friction": 0.7,
+    "seed": 42,
+    "radius_forward_reverse_m": [
+      0.03299931358476568,
+      0.0329991698607
+    ],
+    "separation_ccw_cw_m": [
+      0.17799327591438754,
+      0.1779868977614218
+    ],
+    "scope": "Effective encoder odometry for this simulation condition; independent waypoint validation required."
+  }
+}

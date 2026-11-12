@@ -1,0 +1,5 @@
+-r requirements-mujoco.txt
+scipy==1.18.1
+matplotlib==3.11.2
+Pillow==13.0.0
+PyYAML>=6,<7

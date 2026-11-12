@@ -1,0 +1,51 @@
+# All hardware identities are inferred from the imported geometry and official BOM.
+# None of these numbers is a measurement of the user's physical robot.
+profile: so101_7v4
+simulation_odometry_calibrations:
+  carry: calibration/carry_simulation.yaml
+seed: 42
+physics_step: 0.001
+base:
+  model: TurtleBot3 Burger
+  wheel_radius: 0.033
+  wheel_separation: 0.160
+  tire_friction: 0.70
+  encoder_counts: 4096
+  command_latency: 0.040  # Assumed; replace from a step response measurement.
+  rotor_inertia_proxy: 0.00012  # Isotropic body inertia proxy, not identified rotor inertia.
+arm:
+  role: follower
+  gear_ratio: 345
+  rotor_inertia_proxy: 0.00055
+  rated_torque_cap: true
+  profiles:
+    so101_7v4: {voltage: 7.4, stall_torque: 1.912, no_load_rpm: 52.0, torque_cap: 0.4903}
+    imported_12v: {voltage: 12.0, stall_torque: 2.942, no_load_rpm: 45.0, torque_cap: 0.981}
+  # The standard kit can run on a 5V supply. The 7.4V profile is a datasheet
+  # reference, NOT a prediction of 5V performance. No invented 5V rating is used.
+motors:
+  axle_left: {model: XL430-W250-T, voltage: 11.1, gear_ratio: 258.5, stall_torque: 1.4, no_load_rpm: 57.0, torque_cap: 1.4, deadband: 0.01, coulomb_friction: 0.0}
+  axle_right: {model: XL430-W250-T, voltage: 11.1, gear_ratio: 258.5, stall_torque: 1.4, no_load_rpm: 57.0, torque_cap: 1.4, deadband: 0.01, coulomb_friction: 0.0}
+  shoulder_pan: {model: STS3215-C001, kp: 15.0, kd: 0.20, deadband: 0.001534, coulomb_friction: 0.0}
+  shoulder_lift: {model: STS3215-C001, kp: 24.0, kd: 0.34, deadband: 0.001534, coulomb_friction: 0.0}
+  elbow_flex: {model: STS3215-C001, kp: 22.0, kd: 0.27, deadband: 0.001534, coulomb_friction: 0.0}
+  wrist_flex: {model: STS3215-C001, kp: 14.0, kd: 0.18, deadband: 0.001534, coulomb_friction: 0.0}
+  wrist_roll: {model: STS3215-C001, kp: 9.0, kd: 0.11, deadband: 0.001534, coulomb_friction: 0.0}
+  gripper: {model: STS3215-C001, kp: 8.0, kd: 0.08, deadband: 0.001534, coulomb_friction: 0.0}
+lidar:
+  model: LDS-02
+  hz: 5.0
+  samples: 360
+  min_range: 0.16
+  max_range: 8.0
+  gaussian_stddev: 0.01 # Baseline only; not a complete LDS-02 error model.
+  stress_relative_stddev: 0.03
+  stress_dropout_probability: 0.01
+  transport_delay: 0.04
+spawn: [-1.2, -1.0, 0.0]
+slam:
+  # Process rotation-only scans too; distance-only gating left the final turn
+  # dependent on drifting encoders. This does not feed truth into SLAM.
+  check_min_dist_and_heading_precisely: true
+  minimum_travel_distance: 0.03
+  minimum_travel_heading: 0.02

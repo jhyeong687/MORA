@@ -1,0 +1,18 @@
+# Target interface contract, NOT a measured hardware calibration or launch file.
+use_sim_time: false
+base_frame: base_footprint
+odometry_frame: odom
+topics:
+  laser_scan: /scan
+  odometry: /odom
+  velocity_command: /cmd_vel
+cmd_vel_type: detect_from_driver  # Twist or TwistStamped; check_real_base reports it.
+tf_required: [odom_to_base, base_to_actual_laser_frame]
+initial_trial_limits:
+  linear_speed_m_s: 0.05
+  angular_speed_rad_s: 0.3
+  command_period_s: 0.05
+  watchdog_s: 0.3
+simulation_truth_available: false
+simulation_odometry_calibration_allowed: false
+physical_calibration_status: pending_hardware_measurement

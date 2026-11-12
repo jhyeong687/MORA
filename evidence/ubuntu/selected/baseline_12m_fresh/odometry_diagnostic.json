@@ -1,0 +1,19 @@
+{
+  "scope": "Single simulated encoder-feedback square. Diagnostic equivalence only; not physical system identification.",
+  "truth_net_turn_unwrapped_deg": 322.09245643123865,
+  "encoder_net_turn_unwrapped_deg": 358.32513427742117,
+  "actual_to_encoder_net_turn_ratio": 0.8988832365353121,
+  "nominal_track_m": 0.16,
+  "equivalent_track_from_net_turn_m": 0.17799864709537774,
+  "encoder_return_distance_m": 0.04008090850725622,
+  "truth_return_distance_m": 0.5934849543080641,
+  "controller_used_truth": false,
+  "mass_causal_effect_tested": false,
+  "causes_not_yet_isolated": [
+    "wheel-ground slip during turns",
+    "effective track width and rolling radius",
+    "caster contact and friction",
+    "mass distribution and inertia",
+    "control transients"
+  ]
+}

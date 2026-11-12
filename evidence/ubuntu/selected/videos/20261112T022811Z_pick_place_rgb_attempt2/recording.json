@@ -1,0 +1,16 @@
+{
+  "label": "pick_place_rgb_attempt2",
+  "started_at_utc": "2026-11-12T02:28:11.736504+00:00",
+  "source": "Actual Xwayland compositor window pixels; aspect-preserving resize into two labeled panels.",
+  "clock": "Wall time; per-frame UTC and monotonic times in frames.jsonl. Simulation may run slower.",
+  "fps_target": 8,
+  "size": [
+    1600,
+    960
+  ],
+  "audio": false,
+  "status": "complete",
+  "frames": 2035,
+  "duration_wall_seconds": 254.3763045740002,
+  "ended_at_utc": "2026-11-12T02:32:26.203659+00:00"
+}

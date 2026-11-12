@@ -1,0 +1,82 @@
+[
+  {
+    "stage": "held_payload_ready",
+    "sim_time": 14.1,
+    "utc": "2026-11-12T05:26:45.742758+00:00"
+  },
+  {
+    "stage": "mapping_started",
+    "sim_time": 14.1,
+    "utc": "2026-11-12T05:26:45.743617+00:00"
+  },
+  {
+    "stage": "mapping_complete",
+    "sim_time": 69.681,
+    "utc": "2026-11-12T05:27:51.975618+00:00"
+  },
+  {
+    "stage": "navigate_pickup_standby",
+    "sim_time": 69.681,
+    "utc": "2026-11-12T05:27:51.976432+00:00"
+  },
+  {
+    "stage": "arrived_pickup_standby",
+    "sim_time": 92.8,
+    "utc": "2026-11-12T05:28:19.614879+00:00",
+    "name": "pickup_standby",
+    "goal_world": [
+      -1.5,
+      -0.12,
+      1.5707963267948966
+    ],
+    "map_position_error_m": 0.02347745045177529,
+    "evaluation_position_error_m": 0.02151294581439784,
+    "evaluation_heading_error_deg": -1.5648111608239534,
+    "pass": true
+  },
+  {
+    "stage": "navigate_transit",
+    "sim_time": 92.8,
+    "utc": "2026-11-12T05:28:19.615477+00:00"
+  },
+  {
+    "stage": "arrived_transit",
+    "sim_time": 124.902,
+    "utc": "2026-11-12T05:28:58.064988+00:00",
+    "name": "transit",
+    "goal_world": [
+      0.0,
+      -0.7,
+      0.0
+    ],
+    "map_position_error_m": 0.023633158146982858,
+    "evaluation_position_error_m": 0.03600877534513582,
+    "evaluation_heading_error_deg": 0.7940899143851406,
+    "pass": true
+  },
+  {
+    "stage": "navigate_delivery_standby",
+    "sim_time": 124.902,
+    "utc": "2026-11-12T05:28:58.065986+00:00"
+  },
+  {
+    "stage": "arrived_delivery_standby",
+    "sim_time": 152.261,
+    "utc": "2026-11-12T05:29:30.694054+00:00",
+    "name": "delivery_standby",
+    "goal_world": [
+      1.3,
+      -0.7,
+      1.5707963267948966
+    ],
+    "map_position_error_m": 0.02966644591881288,
+    "evaluation_position_error_m": 0.031502011430621445,
+    "evaluation_heading_error_deg": 1.0268436326258852,
+    "pass": true
+  },
+  {
+    "stage": "carry_navigation_complete",
+    "sim_time": 152.261,
+    "utc": "2026-11-12T05:29:30.695022+00:00"
+  }
+]

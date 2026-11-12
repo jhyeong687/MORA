@@ -1,0 +1,619 @@
+[
+  {
+    "id": "flat_drive",
+    "mode": "drive",
+    "duration": 7
+  },
+  {
+    "id": "stow_brake",
+    "mode": "drive",
+    "speed": 0.18,
+    "brake_time": 0.04,
+    "duration": 7
+  },
+  {
+    "id": "tight_turn",
+    "mode": "turn",
+    "yaw": 1.8,
+    "speed": 0.035,
+    "duration": 7
+  },
+  {
+    "id": "pick_empty",
+    "mode": "pick",
+    "duration": 11.5
+  },
+  {
+    "id": "pick_100g",
+    "mode": "pick",
+    "load": 0.1,
+    "duration": 11.5
+  },
+  {
+    "id": "extend_100g",
+    "mode": "extend",
+    "load": 0.1,
+    "duration": 8
+  },
+  {
+    "id": "downhill_brake",
+    "mode": "extbrake",
+    "slope": 3,
+    "load": 0.1,
+    "duration": 9
+  },
+  {
+    "id": "downhill_estop",
+    "mode": "extbrake",
+    "slope": 3,
+    "load": 0.1,
+    "brake_time": 0.02,
+    "duration": 9
+  },
+  {
+    "id": "side_reach",
+    "mode": "extend",
+    "slope": 3,
+    "downhill": 90,
+    "load": 0.1,
+    "q_deg": [
+      -90,
+      74,
+      -69,
+      0,
+      0,
+      10.5
+    ],
+    "duration": 8
+  },
+  {
+    "id": "step_10mm",
+    "mode": "drive",
+    "speed": 0.15,
+    "step_height": 0.01,
+    "step_x": 0.29,
+    "duration": 8
+  },
+  {
+    "id": "step_20mm",
+    "mode": "drive",
+    "speed": 0.15,
+    "step_height": 0.02,
+    "step_x": 0.29,
+    "duration": 8
+  },
+  {
+    "id": "edge_30mm",
+    "mode": "drive",
+    "speed": 0.15,
+    "drop": 0.03,
+    "duration": 8
+  },
+  {
+    "id": "edge_80mm",
+    "mode": "drive",
+    "speed": 0.15,
+    "drop": 0.08,
+    "duration": 8
+  },
+  {
+    "id": "edge_120mm",
+    "mode": "drive",
+    "speed": 0.15,
+    "drop": 0.12,
+    "duration": 8
+  },
+  {
+    "id": "balls_disabled",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "guards": false,
+    "duration": 9
+  },
+  {
+    "id": "balls_and_cups_disabled",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "guards": false,
+    "housings": false,
+    "duration": 9
+  },
+  {
+    "id": "positive_control",
+    "mode": "control",
+    "pulse_nm": 7.5,
+    "load": 0.1,
+    "duration": 8
+  },
+  {
+    "id": "sweep_s0_mu0.4_gap0.0005_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 0,
+    "mu": 0.4,
+    "gap": 0.0005,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s0_mu0.4_gap0.0005_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 0,
+    "mu": 0.4,
+    "gap": 0.0005,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s0_mu0.4_gap0.003_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 0,
+    "mu": 0.4,
+    "gap": 0.003,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s0_mu0.4_gap0.003_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 0,
+    "mu": 0.4,
+    "gap": 0.003,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s0_mu0.85_gap0.0005_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 0,
+    "mu": 0.85,
+    "gap": 0.0005,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s0_mu0.85_gap0.0005_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 0,
+    "mu": 0.85,
+    "gap": 0.0005,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s0_mu0.85_gap0.003_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 0,
+    "mu": 0.85,
+    "gap": 0.003,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s0_mu0.85_gap0.003_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 0,
+    "mu": 0.85,
+    "gap": 0.003,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s3_mu0.4_gap0.0005_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "mu": 0.4,
+    "gap": 0.0005,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s3_mu0.4_gap0.0005_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "mu": 0.4,
+    "gap": 0.0005,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s3_mu0.4_gap0.003_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "mu": 0.4,
+    "gap": 0.003,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s3_mu0.4_gap0.003_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "mu": 0.4,
+    "gap": 0.003,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s3_mu0.85_gap0.0005_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "mu": 0.85,
+    "gap": 0.0005,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s3_mu0.85_gap0.0005_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "mu": 0.85,
+    "gap": 0.0005,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s3_mu0.85_gap0.003_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "mu": 0.85,
+    "gap": 0.003,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s3_mu0.85_gap0.003_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "mu": 0.85,
+    "gap": 0.003,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s5_mu0.4_gap0.0005_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 5,
+    "mu": 0.4,
+    "gap": 0.0005,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s5_mu0.4_gap0.0005_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 5,
+    "mu": 0.4,
+    "gap": 0.0005,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s5_mu0.4_gap0.003_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 5,
+    "mu": 0.4,
+    "gap": 0.003,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s5_mu0.4_gap0.003_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 5,
+    "mu": 0.4,
+    "gap": 0.003,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s5_mu0.85_gap0.0005_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 5,
+    "mu": 0.85,
+    "gap": 0.0005,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s5_mu0.85_gap0.0005_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 5,
+    "mu": 0.85,
+    "gap": 0.0005,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s5_mu0.85_gap0.003_cg-1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 5,
+    "mu": 0.85,
+    "gap": 0.003,
+    "cg_shift": [
+      -0.015,
+      -0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "sweep_s5_mu0.85_gap0.003_cg1",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 5,
+    "mu": 0.85,
+    "gap": 0.003,
+    "cg_shift": [
+      0.015,
+      0.012,
+      0.02
+    ],
+    "brake_time": 0.06,
+    "duration": 9
+  },
+  {
+    "id": "servo_7.4_False",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "arm_voltage": 7.4,
+    "rated_cap": false,
+    "duration": 9
+  },
+  {
+    "id": "servo_7.4_True",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "arm_voltage": 7.4,
+    "rated_cap": true,
+    "duration": 9
+  },
+  {
+    "id": "servo_12_True",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "arm_voltage": 12,
+    "rated_cap": true,
+    "duration": 9
+  },
+  {
+    "id": "front_ball_gap_0.0005",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "gap": 0.0005,
+    "duration": 9
+  },
+  {
+    "id": "front_ball_gap_0.0015",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "gap": 0.0015,
+    "duration": 9
+  },
+  {
+    "id": "front_ball_gap_0.003",
+    "mode": "extbrake",
+    "load": 0.1,
+    "slope": 3,
+    "gap": 0.003,
+    "duration": 9
+  },
+  {
+    "id": "convergence_flat_drive_0.001",
+    "mode": "drive",
+    "duration": 7,
+    "dt": 0.001
+  },
+  {
+    "id": "convergence_downhill_brake_0.001",
+    "mode": "extbrake",
+    "slope": 3,
+    "load": 0.1,
+    "duration": 9,
+    "dt": 0.001
+  },
+  {
+    "id": "convergence_step_10mm_0.001",
+    "mode": "drive",
+    "speed": 0.15,
+    "step_height": 0.01,
+    "step_x": 0.29,
+    "duration": 8,
+    "dt": 0.001
+  },
+  {
+    "id": "convergence_edge_80mm_0.001",
+    "mode": "drive",
+    "speed": 0.15,
+    "drop": 0.08,
+    "duration": 8,
+    "dt": 0.001
+  },
+  {
+    "id": "convergence_positive_control_0.001",
+    "mode": "control",
+    "pulse_nm": 7.5,
+    "load": 0.1,
+    "duration": 8,
+    "dt": 0.001
+  },
+  {
+    "id": "convergence_flat_drive_0.0005",
+    "mode": "drive",
+    "duration": 7,
+    "dt": 0.0005
+  },
+  {
+    "id": "convergence_downhill_brake_0.0005",
+    "mode": "extbrake",
+    "slope": 3,
+    "load": 0.1,
+    "duration": 9,
+    "dt": 0.0005
+  },
+  {
+    "id": "convergence_step_10mm_0.0005",
+    "mode": "drive",
+    "speed": 0.15,
+    "step_height": 0.01,
+    "step_x": 0.29,
+    "duration": 8,
+    "dt": 0.0005
+  },
+  {
+    "id": "convergence_edge_80mm_0.0005",
+    "mode": "drive",
+    "speed": 0.15,
+    "drop": 0.08,
+    "duration": 8,
+    "dt": 0.0005
+  },
+  {
+    "id": "convergence_positive_control_0.0005",
+    "mode": "control",
+    "pulse_nm": 7.5,
+    "load": 0.1,
+    "duration": 8,
+    "dt": 0.0005
+  }
+]

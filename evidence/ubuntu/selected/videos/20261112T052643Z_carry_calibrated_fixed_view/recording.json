@@ -1,0 +1,16 @@
+{
+  "label": "carry_calibrated_fixed_view",
+  "started_at_utc": "2026-11-12T05:26:43.336888+00:00",
+  "source": "Actual Xwayland compositor window pixels; aspect-preserving resize into two labeled panels.",
+  "clock": "Wall time; per-frame UTC and monotonic times in frames.jsonl. Simulation may run slower.",
+  "fps_target": 8,
+  "size": [
+    1600,
+    960
+  ],
+  "audio": false,
+  "status": "complete",
+  "frames": 1494,
+  "duration_wall_seconds": 186.75086761500006,
+  "ended_at_utc": "2026-11-12T05:29:50.141432+00:00"
+}

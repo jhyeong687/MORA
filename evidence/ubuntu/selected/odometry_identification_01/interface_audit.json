@@ -1,0 +1,63 @@
+{
+  "pass": false,
+  "read_only": true,
+  "motion_commands_sent": 0,
+  "simulation": true,
+  "base_frame": "base_footprint",
+  "map_required": true,
+  "topics": {
+    "/scan": {
+      "messages": 63,
+      "stamp_hz": 4.999999999999929,
+      "timestamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "age_p95_s": 0.14499999999999602,
+      "frame": "lds",
+      "rays": 360,
+      "range_min": 0.1599999964237213,
+      "range_max": 8.0
+    },
+    "/odom": {
+      "messages": 604,
+      "stamp_hz": 47.619047619045816,
+      "timestamp_regressions": 0,
+      "duplicate_stamps": 0,
+      "age_p95_s": 0.001999999999995339,
+      "frame": "odom",
+      "child_frame": "base_footprint"
+    }
+  },
+  "scans_with_exact_timestamp_tf": 61,
+  "tf_errors": {
+    "Lookup would require extrapolation into the past.  Requested time 62.200000 but the earliest data is at time 62.500000, when looking up transform from frame [base_footprint] to frame [map]": 1,
+    "Lookup would require extrapolation into the past.  Requested time 62.400000 but the earliest data is at time 62.500000, when looking up transform from frame [base_footprint] to frame [map]": 1
+  },
+  "raw_scan_timestamp_matches": 63,
+  "scan_publisher_qos": {
+    "/scan": [
+      {
+        "node": "r4_scan_pipeline",
+        "reliability": "1"
+      }
+    ],
+    "/odom": [
+      {
+        "node": "ros_gz_bridge",
+        "reliability": "1"
+      }
+    ]
+  },
+  "use_sim_time": {
+    "/launch_ros_73804": false,
+    "/ros_gz_bridge": true,
+    "/robot_state_publisher": true,
+    "/r4_scan_pipeline": true,
+    "/slam_toolbox": true,
+    "/rviz": true,
+    "/r4_experiment": true
+  },
+  "errors": [
+    "use_sim_time mismatch: /launch_ros_73804"
+  ],
+  "limits": "Interface preflight only. Does not certify physical calibration, stopping distance, payload stability or obstacle avoidance."
+}

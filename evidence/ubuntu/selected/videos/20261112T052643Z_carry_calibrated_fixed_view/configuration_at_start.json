@@ -1,0 +1,412 @@
+{
+  "profile": "so101_7v4",
+  "seed": 42,
+  "physics_step": 0.001,
+  "base": {
+    "model": "TurtleBot3 Burger",
+    "wheel_radius": 0.033,
+    "wheel_separation": 0.16,
+    "tire_friction": 0.7,
+    "encoder_counts": 4096,
+    "command_latency": 0.04,
+    "rotor_inertia_proxy": 0.00012
+  },
+  "arm": {
+    "role": "follower",
+    "gear_ratio": 345,
+    "rotor_inertia_proxy": 0.00055,
+    "rated_torque_cap": true,
+    "profiles": {
+      "so101_7v4": {
+        "voltage": 7.4,
+        "stall_torque": 1.912,
+        "no_load_rpm": 52.0,
+        "torque_cap": 0.4903
+      },
+      "imported_12v": {
+        "voltage": 12.0,
+        "stall_torque": 2.942,
+        "no_load_rpm": 45.0,
+        "torque_cap": 0.981
+      }
+    }
+  },
+  "motors": {
+    "axle_left": {
+      "model": "XL430-W250-T",
+      "voltage": 11.1,
+      "gear_ratio": 258.5,
+      "stall_torque": 1.4,
+      "no_load_rpm": 57.0,
+      "torque_cap": 1.4,
+      "deadband": 0.01,
+      "coulomb_friction": 0.0
+    },
+    "axle_right": {
+      "model": "XL430-W250-T",
+      "voltage": 11.1,
+      "gear_ratio": 258.5,
+      "stall_torque": 1.4,
+      "no_load_rpm": 57.0,
+      "torque_cap": 1.4,
+      "deadband": 0.01,
+      "coulomb_friction": 0.0
+    },
+    "shoulder_pan": {
+      "model": "STS3215-C001",
+      "kp": 15.0,
+      "kd": 0.2,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0
+    },
+    "shoulder_lift": {
+      "model": "STS3215-C001",
+      "kp": 24.0,
+      "kd": 0.34,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0
+    },
+    "elbow_flex": {
+      "model": "STS3215-C001",
+      "kp": 22.0,
+      "kd": 0.27,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0
+    },
+    "wrist_flex": {
+      "model": "STS3215-C001",
+      "kp": 14.0,
+      "kd": 0.18,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0
+    },
+    "wrist_roll": {
+      "model": "STS3215-C001",
+      "kp": 9.0,
+      "kd": 0.11,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0
+    },
+    "gripper": {
+      "model": "STS3215-C001",
+      "kp": 8.0,
+      "kd": 0.08,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0
+    }
+  },
+  "lidar": {
+    "model": "LDS-02",
+    "hz": 5.0,
+    "samples": 360,
+    "min_range": 0.16,
+    "max_range": 8.0,
+    "gaussian_stddev": 0.01,
+    "stress_relative_stddev": 0.03,
+    "stress_dropout_probability": 0.01,
+    "transport_delay": 0.04
+  },
+  "spawn": [
+    -1.2,
+    -1.0,
+    0.0
+  ],
+  "slam": {
+    "check_min_dist_and_heading_precisely": true,
+    "minimum_travel_distance": 0.03,
+    "minimum_travel_heading": 0.02
+  },
+  "encoder_odometry": {
+    "kind": "simulation_identification",
+    "hardware_calibrated": false,
+    "wheel_radius": 0.032999241791190966,
+    "wheel_separation": 0.17799008683790468,
+    "identified_utc": "2026-11-12T05:25:05.027558+00:00",
+    "source_trial": "/workspace/r4_lab/slam/results/research_20261112/odometry_identification_01",
+    "scenario": "carry",
+    "payload_mass_kg": 0.01,
+    "tire_friction": 0.7,
+    "seed": 42,
+    "radius_forward_reverse_m": [
+      0.03299931358476568,
+      0.0329991698607
+    ],
+    "separation_ccw_cw_m": [
+      0.17799327591438754,
+      0.1779868977614218
+    ],
+    "scope": "Effective encoder odometry for this simulation condition; independent waypoint validation required.",
+    "file": "/workspace/r4_lab/slam/calibration/carry_simulation.yaml"
+  },
+  "scenario": "carry",
+  "task": {
+    "name": "already_held_payload_navigation_v1",
+    "payload": {
+      "size": [
+        0.032,
+        0.032,
+        0.032
+      ],
+      "mass": 0.01,
+      "center_in_tool": [
+        -0.016,
+        0.0,
+        -0.012
+      ],
+      "gripper_joint": 0.06,
+      "attachment": "fixed_joint_initial_fixture"
+    },
+    "mapping_side": 1.0,
+    "navigation": {
+      "inflation_radius": 0.19,
+      "max_speed": 0.08,
+      "map_arrival_tolerance": 0.03,
+      "evaluation_position_tolerance": 0.1,
+      "evaluation_heading_tolerance_deg": 15
+    },
+    "waypoints": [
+      {
+        "name": "pickup_standby",
+        "world": [
+          -1.5,
+          -0.12,
+          1.5707963267948966
+        ]
+      },
+      {
+        "name": "transit",
+        "world": [
+          0.0,
+          -0.7,
+          0.0
+        ]
+      },
+      {
+        "name": "delivery_standby",
+        "world": [
+          1.3,
+          -0.7,
+          1.5707963267948966
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "pickup_table",
+        "center": [
+          -1.5,
+          0.45
+        ],
+        "size": [
+          0.5,
+          0.4
+        ],
+        "top_height": 0.26
+      },
+      {
+        "name": "delivery_table",
+        "center": [
+          1.3,
+          -0.25
+        ],
+        "size": [
+          0.5,
+          0.4
+        ],
+        "top_height": 0.26
+      }
+    ],
+    "grasp_tested": false,
+    "placement_tested": false
+  },
+  "resolved_motors": {
+    "axle_left": {
+      "model": "XL430-W250-T",
+      "voltage": 11.1,
+      "gear_ratio": 258.5,
+      "stall_torque": 1.4,
+      "no_load_rpm": 57.0,
+      "torque_cap": 1.4,
+      "deadband": 0.01,
+      "coulomb_friction": 0.0,
+      "no_load_speed": 5.969026041820607
+    },
+    "axle_right": {
+      "model": "XL430-W250-T",
+      "voltage": 11.1,
+      "gear_ratio": 258.5,
+      "stall_torque": 1.4,
+      "no_load_rpm": 57.0,
+      "torque_cap": 1.4,
+      "deadband": 0.01,
+      "coulomb_friction": 0.0,
+      "no_load_speed": 5.969026041820607
+    },
+    "shoulder_pan": {
+      "voltage": 7.4,
+      "stall_torque": 1.912,
+      "no_load_rpm": 52.0,
+      "torque_cap": 0.4903,
+      "model": "STS3215-C001",
+      "kp": 15.0,
+      "kd": 0.2,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0,
+      "no_load_speed": 5.445427266222309
+    },
+    "shoulder_lift": {
+      "voltage": 7.4,
+      "stall_torque": 1.912,
+      "no_load_rpm": 52.0,
+      "torque_cap": 0.4903,
+      "model": "STS3215-C001",
+      "kp": 24.0,
+      "kd": 0.34,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0,
+      "no_load_speed": 5.445427266222309
+    },
+    "elbow_flex": {
+      "voltage": 7.4,
+      "stall_torque": 1.912,
+      "no_load_rpm": 52.0,
+      "torque_cap": 0.4903,
+      "model": "STS3215-C001",
+      "kp": 22.0,
+      "kd": 0.27,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0,
+      "no_load_speed": 5.445427266222309
+    },
+    "wrist_flex": {
+      "voltage": 7.4,
+      "stall_torque": 1.912,
+      "no_load_rpm": 52.0,
+      "torque_cap": 0.4903,
+      "model": "STS3215-C001",
+      "kp": 14.0,
+      "kd": 0.18,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0,
+      "no_load_speed": 5.445427266222309
+    },
+    "wrist_roll": {
+      "voltage": 7.4,
+      "stall_torque": 1.912,
+      "no_load_rpm": 52.0,
+      "torque_cap": 0.4903,
+      "model": "STS3215-C001",
+      "kp": 9.0,
+      "kd": 0.11,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0,
+      "no_load_speed": 5.445427266222309
+    },
+    "gripper": {
+      "voltage": 7.4,
+      "stall_torque": 1.912,
+      "no_load_rpm": 52.0,
+      "torque_cap": 0.4903,
+      "model": "STS3215-C001",
+      "kp": 8.0,
+      "kd": 0.08,
+      "deadband": 0.001534,
+      "coulomb_friction": 0.0,
+      "no_load_speed": 5.445427266222309
+    }
+  },
+  "imported_mass_kg": 2.7327736694514,
+  "walls": [
+    {
+      "name": "east",
+      "xyz": [
+        2.55,
+        0,
+        0.5
+      ],
+      "size": [
+        0.1,
+        4.2,
+        1
+      ]
+    },
+    {
+      "name": "west",
+      "xyz": [
+        -2.55,
+        0,
+        0.5
+      ],
+      "size": [
+        0.1,
+        4.2,
+        1
+      ]
+    },
+    {
+      "name": "north",
+      "xyz": [
+        0,
+        2.05,
+        0.5
+      ],
+      "size": [
+        5.2,
+        0.1,
+        1
+      ]
+    },
+    {
+      "name": "south",
+      "xyz": [
+        0,
+        -2.05,
+        0.5
+      ],
+      "size": [
+        5.2,
+        0.1,
+        1
+      ]
+    },
+    {
+      "name": "partition",
+      "xyz": [
+        0.9,
+        0.65,
+        0.4
+      ],
+      "size": [
+        0.12,
+        1.1,
+        0.8
+      ]
+    },
+    {
+      "name": "cabinet",
+      "xyz": [
+        -0.9,
+        1.2,
+        0.35
+      ],
+      "size": [
+        0.65,
+        0.45,
+        0.7
+      ]
+    },
+    {
+      "name": "pillar",
+      "xyz": [
+        1.7,
+        -1.0,
+        0.4
+      ],
+      "size": [
+        0.3,
+        0.4,
+        0.8
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "selection": "Four key images and two short video excerpts; original data retained separately.",
+  "video_edits": "First 12 and last 24 seconds around each recorded trial, joined chronologically. Middle omitted; original UTC labels and playback speed preserved.",
+  "assets": [
+    {
+      "file": "02_encoder_drift.png",
+      "source": "baseline_12m_fresh/captures/20261112_104918_completed/rviz.png",
+      "utc": "2026-11-12T01:49:18.927820+00:00"
+    },
+    {
+      "file": "05_encoder_highlights.mp4",
+      "source": "videos/20261112T014756Z_fresh_square_12m/gazebo_rviz.mp4",
+      "source_wall_time_intervals_seconds": [
+        [
+          3.724514,
+          15.724514
+        ],
+        [
+          60.015021000000004,
+          84.015021
+        ]
+      ],
+      "frames": 288,
+      "encoded_eos_verified": true
+    },
+    {
+      "file": "03_slam_return.png",
+      "source": "slam_feedback_12m/captures/20261112_105413_completed/rviz.png",
+      "utc": "2026-11-12T01:54:13.937131+00:00"
+    },
+    {
+      "file": "01_robot_setup.png",
+      "source": "captures/20261112T014019Z_smoke_complete/gazebo.png",
+      "note": "Closer robot view at smoke-test completion; same imported robot geometry."
+    },
+    {
+      "file": "06_slam_highlights.mp4",
+      "source": "videos/20261112T015301Z_slam_feedback_12m/gazebo_rviz.mp4",
+      "source_wall_time_intervals_seconds": [
+        [
+          1.8594339999999998,
+          13.859434
+        ],
+        [
+          50.41798,
+          74.41798
+        ]
+      ],
+      "frames": 288,
+      "encoded_eos_verified": true
+    },
+    {
+      "file": "04_comparison.png",
+      "source": "Measured trajectory.json and metrics.json for both trials",
+      "derived_figure": true
+    }
+  ]
+}

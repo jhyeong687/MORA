@@ -1,0 +1,5 @@
+{
+  "pid": 9028,
+  "command": "test_slam --side 1.2",
+  "reason_for_retry": "Prior process exited with invalid ROS context; no metrics were saved. Cause unconfirmed."
+}

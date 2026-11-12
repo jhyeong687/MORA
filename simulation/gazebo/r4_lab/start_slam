@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -eo pipefail
+TASK_ROOT="$(cd "$(dirname "$0")" && pwd)"
+source "$TASK_ROOT/slam/env.sh"
+gui=true
+rviz=true
+profile=so101_7v4
+stress=false
+scenario=slam
+spawn_args=()
+calibration_args=()
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --headless) gui=false; rviz=false; shift ;;
+    --no-rviz) rviz=false; shift ;;
+    --profile) profile="$2"; shift 2 ;;
+    --stress) stress=true; shift ;;
+    --scenario) scenario="$2"; shift 2 ;;
+    --spawn) spawn_args=(--spawn "$2" "$3" "$4"); shift 4 ;;
+    --odom-calibration) calibration_args=(--odom-calibration "$2"); shift 2 ;;
+    *) echo "Usage: $0 [--headless] [--no-rviz] [--profile so101_7v4|imported_12v] [--stress] [--scenario slam|pick_place|carry] [--spawn X Y YAW] [--odom-calibration FILE]"; exit 2 ;;
+  esac
+done
+python3 "$TASK_ROOT/slam/prepare.py" --profile "$profile" --scenario "$scenario" "${spawn_args[@]}" "${calibration_args[@]}"
+if [[ "$rviz" == true ]]; then python3 "$TASK_ROOT/slam/prepare_rviz.py"; fi
+cmake -S "$TASK_ROOT/slam" -B "$TASK_ROOT/slam/build" > "$TASK_ROOT/slam/build-configure.log"
+cmake --build "$TASK_ROOT/slam/build" -j 4
+exec ros2 launch "$TASK_ROOT/slam/experiment.launch.py" gui:="$gui" rviz:="$rviz" stress:="$stress"

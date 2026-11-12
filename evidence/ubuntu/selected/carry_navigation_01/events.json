@@ -1,0 +1,82 @@
+[
+  {
+    "stage": "held_payload_ready",
+    "sim_time": 38.103,
+    "utc": "2026-11-12T05:10:33.889056+00:00"
+  },
+  {
+    "stage": "mapping_started",
+    "sim_time": 38.103,
+    "utc": "2026-11-12T05:10:33.889947+00:00"
+  },
+  {
+    "stage": "mapping_complete",
+    "sim_time": 92.88,
+    "utc": "2026-11-12T05:11:40.593006+00:00"
+  },
+  {
+    "stage": "navigate_pickup_standby",
+    "sim_time": 92.88,
+    "utc": "2026-11-12T05:11:40.594270+00:00"
+  },
+  {
+    "stage": "arrived_pickup_standby",
+    "sim_time": 115.943,
+    "utc": "2026-11-12T05:12:08.337900+00:00",
+    "name": "pickup_standby",
+    "goal_world": [
+      -1.5,
+      -0.12,
+      1.5707963267948966
+    ],
+    "map_position_error_m": 0.025507094793719338,
+    "evaluation_position_error_m": 0.022447917105833295,
+    "evaluation_heading_error_deg": -3.9358436472577605,
+    "pass": true
+  },
+  {
+    "stage": "navigate_transit",
+    "sim_time": 115.943,
+    "utc": "2026-11-12T05:12:08.338476+00:00"
+  },
+  {
+    "stage": "arrived_transit",
+    "sim_time": 147.31,
+    "utc": "2026-11-12T05:12:46.300775+00:00",
+    "name": "transit",
+    "goal_world": [
+      0.0,
+      -0.7,
+      0.0
+    ],
+    "map_position_error_m": 0.02544065036254712,
+    "evaluation_position_error_m": 0.02484746406636152,
+    "evaluation_heading_error_deg": 3.14170771426124,
+    "pass": true
+  },
+  {
+    "stage": "navigate_delivery_standby",
+    "sim_time": 147.31,
+    "utc": "2026-11-12T05:12:46.301571+00:00"
+  },
+  {
+    "stage": "arrived_delivery_standby",
+    "sim_time": 174.221,
+    "utc": "2026-11-12T05:13:18.814959+00:00",
+    "name": "delivery_standby",
+    "goal_world": [
+      1.3,
+      -0.7,
+      1.5707963267948966
+    ],
+    "map_position_error_m": 0.025425348093184776,
+    "evaluation_position_error_m": 0.022071693455462484,
+    "evaluation_heading_error_deg": 10.01194615866188,
+    "pass": true
+  },
+  {
+    "stage": "carry_navigation_complete",
+    "sim_time": 174.221,
+    "utc": "2026-11-12T05:13:18.816188+00:00"
+  }
+]
