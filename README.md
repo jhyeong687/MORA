@@ -14,9 +14,25 @@ CAD에서 물리 시뮬레이션, ROS 실험과 운반 연구까지
 
 <img src="cad/R4/R4_Assembly.png" alt="R4 robot assembly" width="600" />
 
-[자료 다운로드](https://github.com/jhyeong687/MORA/releases/tag/v0.1.0) · [CAD·애니메이션](docs/FUSION.md) · [검증 범위](docs/EVIDENCE.md) · [연구 계획](research/README.md) · [실행 환경](cloud/README.md) · [Mac ↔ Ubuntu](docs/SYNC.md)
+[영상 갤러리](media/README.md) · [자료 다운로드](https://github.com/jhyeong687/MORA/releases/tag/v0.1.0) · [CAD·애니메이션](docs/FUSION.md) · [검증 범위](docs/EVIDENCE.md) · [연구 계획](research/README.md) · [실행 환경](cloud/README.md) · [Mac ↔ Ubuntu](docs/SYNC.md)
 
 </div>
+
+## SLAM과 로봇 실험 영상
+
+**SLAM 지도 작성과 피드백 주행 · 36초**  
+Gazebo의 로봇 움직임과 RViz의 지도·궤적을 함께 본다. 중간 구간을 생략한 선별 영상이다.
+
+https://github.com/user-attachments/assets/9e905b3d-3407-4002-bb9c-686936f740d7
+
+**SLAM waypoint 이동과 고정 물체 운반 · 50초**  
+그리퍼에 물체를 fixed joint로 부착한 이동 시험이다. 실제 접촉 파지 성공과 구분한다.
+
+https://github.com/user-attachments/assets/cc5a4715-9705-4967-aacf-9fbe3a0dd602
+
+**[전체 영상 16개 보기 →](media/README.md)** · [실험 조건과 결과](docs/EVIDENCE.md)
+
+
 
 ## 이 프로젝트
 

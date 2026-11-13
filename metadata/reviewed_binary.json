@@ -172,5 +172,9 @@
   "media/ubuntu/R4_Encoder_Drift_36s.mp4": "4e58d739aa45b69af921c70341504148fd1713892bf245838a9f5a70a772edcc",
   "media/ubuntu/R4_Partial_Lift_Subsequent_Failure_23s.mp4": "9211e86791f34c5b7bf4a5ca4d0a037ec55fdb3bdb5fb1754653f29652edaa93",
   "media/ubuntu/R4_Carry_Fixed_Fixture_50s.mp4": "b6b96daa2d3afe2c0f54c3f550d98dd823b1bdaab6d3165b33d6d23ff32eccc0",
-  "media/ubuntu/R4_Arm_Small_Motion_24s.mp4": "7fcb3fda41233cb7ee68e928badf0071b6439dee8f8f02e603faadc93fa9180c"
+  "media/ubuntu/R4_Arm_Small_Motion_24s.mp4": "7fcb3fda41233cb7ee68e928badf0071b6439dee8f8f02e603faadc93fa9180c",
+  "media/watch/carry.mp4": "6e5e70d7abb9cbb0ef7162ea7ef451cb381226069ae3b196adf6e815c5eab439",
+  "media/watch/slam.mp4": "20a884519b9632722b8f10f3e862d4fc239a79514aff1eeec1fcf3086590dc87",
+  "media/watch/overview.mp4": "02e8649ee783dbac70e0f3cdca0cb8cb40f836ec99497fdd0e6f92abb8038f1e",
+  "media/watch/encoder.mp4": "27bee56f0c0caf4473f1bf14f16882d26edfaee12a1947aec685b6d5a12cf385"
 }

@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6962,
-      "sha256": "4ffab2125f675d677e9f5d875c6cd63ef017f401f23858cf16119aa01d22e450"
+      "bytes": 7649,
+      "sha256": "c671f85d29301f8d46c8bc0ed0869a5dff92a185e626192894ff004795ea589b"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -1287,6 +1287,11 @@
       "sha256": "0d11f8be9066298e8cb47d83d47ba7b728a9c27cb7c66e53e7fd02970034f42a"
     },
     {
+      "path": "media/README.md",
+      "bytes": 6898,
+      "sha256": "a0eece7d92fbc863d45a55b89e0d651f688fe157980b1452ef6e0e923b4a88f5"
+    },
+    {
       "path": "media/fusion/R4_Robot_Only.mp4",
       "bytes": 5847502,
       "sha256": "1851bb3dac095a5218c65e814638faa08b495aa421e295d1963f952f6d587821"
@@ -1372,9 +1377,34 @@
       "sha256": "4b8081ec45d9b176be5debbc359dca6de6571fe83193843fbe9feac31c547fc1"
     },
     {
+      "path": "media/watch/carry.mp4",
+      "bytes": 980102,
+      "sha256": "6e5e70d7abb9cbb0ef7162ea7ef451cb381226069ae3b196adf6e815c5eab439"
+    },
+    {
+      "path": "media/watch/encoder.mp4",
+      "bytes": 1114632,
+      "sha256": "27bee56f0c0caf4473f1bf14f16882d26edfaee12a1947aec685b6d5a12cf385"
+    },
+    {
+      "path": "media/watch/overview.mp4",
+      "bytes": 6660416,
+      "sha256": "02e8649ee783dbac70e0f3cdca0cb8cb40f836ec99497fdd0e6f92abb8038f1e"
+    },
+    {
+      "path": "media/watch/slam.mp4",
+      "bytes": 827052,
+      "sha256": "20a884519b9632722b8f10f3e862d4fc239a79514aff1eeec1fcf3086590dc87"
+    },
+    {
       "path": "metadata/reviewed_binary.json",
-      "bytes": 20792,
-      "sha256": "54d969e8efa8815af13d71680532f7ccb5a3dc1f379069bc0bae00e20530d95f"
+      "bytes": 21176,
+      "sha256": "a47adc43cb1dcc22bb4efff49e1ab873be159b25baec91c663970250da3291da"
+    },
+    {
+      "path": "metadata/video_gallery.json",
+      "bytes": 12753,
+      "sha256": "18629279bbedace71e1c19470180b1c0a3d384ed22e647bbcf20761994644da1"
     },
     {
       "path": "requirements-mujoco.txt",
