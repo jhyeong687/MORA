@@ -1,0 +1,74 @@
+{
+  "A01_Top_7mm": {
+    "layers": 36,
+    "volume_cm3": 60.5479,
+    "support_cm3": 0.201,
+    "mass_g": 76.896
+  },
+  "A02_Sleeve_47mm": {
+    "layers": 235,
+    "volume_cm3": 2.8713,
+    "support_cm3": 0.0,
+    "mass_g": 3.646
+  },
+  "B01_Low_rail": {
+    "layers": 127,
+    "volume_cm3": 36.3932,
+    "support_cm3": 0.0,
+    "mass_g": 46.219
+  },
+  "B02_Clamp_cap_long": {
+    "layers": 127,
+    "volume_cm3": 1.4173,
+    "support_cm3": 0.0,
+    "mass_g": 1.8
+  },
+  "B03_Clamp_cap_short": {
+    "layers": 104,
+    "volume_cm3": 1.3318,
+    "support_cm3": 0.0,
+    "mass_g": 1.691
+  },
+  "B05_Replaceable_bumper": {
+    "layers": 30,
+    "volume_cm3": 6.1554,
+    "support_cm3": 0.0,
+    "mass_g": 7.386
+  },
+  "C01_Belly_camera_bridge": {
+    "layers": 183,
+    "volume_cm3": 9.8754,
+    "support_cm3": 5.515,
+    "mass_g": 12.542
+  },
+  "C02_Belly_cap": {
+    "layers": 50,
+    "volume_cm3": 1.131,
+    "support_cm3": 0.0,
+    "mass_g": 1.436
+  },
+  "C03_PCB_spacer_3mm": {
+    "layers": 15,
+    "volume_cm3": 0.0357,
+    "support_cm3": 0.0,
+    "mass_g": 0.045
+  },
+  "D01_Ball_socket_20mm": {
+    "layers": 79,
+    "volume_cm3": 7.3147,
+    "support_cm3": 0.0,
+    "mass_g": 9.29
+  },
+  "D02_Ball_retainer": {
+    "layers": 25,
+    "volume_cm3": 1.8182,
+    "support_cm3": 0.051,
+    "mass_g": 2.309
+  },
+  "D03_Optional_shim_0p4": {
+    "layers": 2,
+    "volume_cm3": 0.273,
+    "support_cm3": 0.0,
+    "mass_g": 0.347
+  }
+}

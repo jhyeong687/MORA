@@ -1,14 +1,14 @@
 # MORA · 영상 갤러리
 
-SLAM 지도 작성과 주행, 팔 동작, 물체 운반, CAD와 MuJoCo 영상을 GitHub에서 바로 재생한다.
+SLAM 지도와 주행, **macOS에서 진행한 설계·전복 안정성 시험**, CAD 애니메이션을 바로 재생한다.
 
-[SLAM](#slam) · [엔코더 비교](#encoder) · [고정 물체 운반](#carry) · [팔 동작](#arm) · [파지 시도](#grasp) · [CAD](#fusion) · [MuJoCo](#overview)
+[Ubuntu SLAM](#slam) · [엔코더 비교](#encoder) · [고정 물체 운반](#carry) · **[Mac 설계·전복 시험](#stability)** · [CAD·전체 모음](#cad)
 
-현재 공유 자료에 정리된 영상 **16개**다. 아래 플레이어의 ▶ 버튼을 누르면 된다. 원본 MP4 링크도 함께 보존했다. 크기가 큰 영상 4개는 같은 길이의 H.264 재생본을 사용하며 배속·새 자막은 추가하지 않았다.
+현재 공유 자료의 영상 **16개**를 모았다. 각 플레이어의 ▶ 버튼으로 재생하고 원본 MP4도 받을 수 있다. 큰 영상 4개는 H.264 재생본을 사용하며 새 자막이나 배속은 추가하지 않았다.
 
 ## Ubuntu · ROS 2 / Gazebo / RViz
 
-영상은 시뮬레이터와 RViz의 실제 녹화 화면이다. 선별 영상의 중간 생략, 부분 성공과 실패는 각 영상 아래 조건을 따른다.
+선별 녹화의 중간 생략과 시험 조건은 각 영상 설명을 따른다.
 
 <a id="slam"></a>
 
@@ -18,7 +18,7 @@ SLAM 지도 작성과 주행, 팔 동작, 물체 운반, CAD와 MuJoCo 영상을
 
 https://github.com/user-attachments/assets/9e905b3d-3407-4002-bb9c-686936f740d7
 
-[원본 MP4](ubuntu/R4_SLAM_Feedback_36s.mp4) · [시험 지표](../evidence/ubuntu/selected/slam_feedback_12m/metrics.json)
+[원본 MP4](ubuntu/R4_SLAM_Feedback_36s.mp4)
 
 <a id="encoder"></a>
 
@@ -60,54 +60,16 @@ https://github.com/user-attachments/assets/9f32ac26-2215-4e06-b8b9-ce71ade58952
 
 [원본 MP4](ubuntu/R4_Partial_Lift_Subsequent_Failure_23s.mp4)
 
-## Fusion · CAD
+<a id="stability"></a>
 
-설계 시각화와 물리 시험을 구분한다.
+## macOS · MuJoCo 설계·전복 안정성 테스트
 
-<a id="fusion"></a>
+“터틀봇에 팔을 올린 상태로 주행·제동하면 넘어지는가?”를 확인했던 기존 시험이다. 급정지·회전·경사·단차·보조 지지·라이다·모터 근사를 구분해 본다.
 
-### 로봇만 보이는 CAD 애니메이션
+**[57행 시험 결과와 무게중심·출력 검토 보기 →](../docs/STABILITY.md)**
 
-27.0초 · 설계 형상과 조립 동작을 보여주는 시각화. 물리 검증 영상과 구분한다.
-
-https://github.com/user-attachments/assets/f1a39649-3adb-438b-8176-429ac38505c2
-
-[원본 MP4](fusion/R4_Robot_Only.mp4)
-
-## MuJoCo · 설계와 물리 시험
-
-<details>
-<summary>MuJoCo·발표 영상 10개 펼치기</summary>
-
-<a id="overview"></a>
-
-### 전체 발표용 영상
-
-140.4초 · 설계 애니메이션과 물리 시험을 이어 놓은 기존 발표용 모음. 개별 시험 조건은 아래 원본과 검증 문서를 따른다.
-
-https://github.com/user-attachments/assets/8c2bbf45-e404-47fa-b072-9ff24f0fe9c7
-
-[원본 MP4](mujoco/presentation/00_발표_전체.mp4)
-
-<a id="assembly"></a>
-
-### 설계 조립과 전체 동작
-
-27.0초 · 조립 형상과 동작 시각화 구간. 물리적 안정성을 입증하는 시험과 구분한다.
-
-https://github.com/user-attachments/assets/8f76428a-4609-4059-a661-8d43e5cb1c40
-
-[원본 MP4](mujoco/presentation/01_설계_조립과_전체동작.mp4)
-
-<a id="mount"></a>
-
-### 체결부·카메라·보조 강구
-
-23.0초 · 장착부와 카메라, 보조 지지 구조를 살펴보는 설계 시각화.
-
-https://github.com/user-attachments/assets/d9fc3aad-55f3-4f26-99cf-d83d06cd3105
-
-[원본 MP4](mujoco/presentation/02_체결부_카메라와_보조강구.mp4)
+<details open>
+<summary>설계·물리 시험 영상 7개</summary>
 
 <a id="drive"></a>
 
@@ -139,16 +101,6 @@ https://github.com/user-attachments/assets/26352c2f-a8b0-4174-8f21-9d62c5ba5202
 
 [원본 MP4](mujoco/presentation/05_오르는_턱과_내려가는_단차.mp4)
 
-<a id="lidar"></a>
-
-### 라이다 시야와 가림
-
-13.0초 · 라이다와 구조물의 배치를 검토하는 시각화. 이 장면 자체는 SLAM 성능 검증이 아니다.
-
-https://github.com/user-attachments/assets/88f0e9aa-1f8d-4020-b737-e4e19397861f
-
-[원본 MP4](mujoco/presentation/06_라이다_시야와_가림.mp4)
-
 <a id="support"></a>
 
 ### 보조 강구 접촉 조건 비교
@@ -158,6 +110,16 @@ https://github.com/user-attachments/assets/88f0e9aa-1f8d-4020-b737-e4e19397861f
 https://github.com/user-attachments/assets/a11f809b-dec7-43c9-b98f-817f401eb122
 
 [원본 MP4](mujoco/presentation/07_보조강구_왼쪽_정상_오른쪽_접촉해제.mp4)
+
+<a id="lidar"></a>
+
+### 라이다 시야와 가림
+
+13.0초 · 라이다와 구조물의 배치를 검토하는 시각화. 이 장면 자체는 SLAM 성능 검증이 아니다.
+
+https://github.com/user-attachments/assets/88f0e9aa-1f8d-4020-b737-e4e19397861f
+
+[원본 MP4](mujoco/presentation/06_라이다_시야와_가림.mp4)
 
 <a id="motor"></a>
 
@@ -181,10 +143,57 @@ https://github.com/user-attachments/assets/a3e8268b-6383-4e0e-ad34-fb09c7dd1501
 
 </details>
 
+<a id="cad"></a>
+
+## CAD 애니메이션과 전체 모음
+
+<details>
+<summary>로봇 전용·조립·체결부·발표 모음 4개 펼치기</summary>
+
+<a id="fusion"></a>
+
+### 로봇만 보이는 CAD 애니메이션
+
+27.0초 · 설계 형상과 조립 동작을 보여주는 시각화. 물리 검증 영상과 구분한다.
+
+https://github.com/user-attachments/assets/f1a39649-3adb-438b-8176-429ac38505c2
+
+[원본 MP4](fusion/R4_Robot_Only.mp4)
+
+<a id="assembly"></a>
+
+### 설계 조립과 전체 동작
+
+27.0초 · 조립 형상과 동작 시각화 구간. 물리적 안정성을 입증하는 시험과 구분한다.
+
+https://github.com/user-attachments/assets/8f76428a-4609-4059-a661-8d43e5cb1c40
+
+[원본 MP4](mujoco/presentation/01_설계_조립과_전체동작.mp4)
+
+<a id="mount"></a>
+
+### 체결부·카메라·보조 강구
+
+23.0초 · 장착부와 카메라, 보조 지지 구조를 살펴보는 설계 시각화.
+
+https://github.com/user-attachments/assets/d9fc3aad-55f3-4f26-99cf-d83d06cd3105
+
+[원본 MP4](mujoco/presentation/02_체결부_카메라와_보조강구.mp4)
+
+<a id="overview"></a>
+
+### 전체 발표용 영상
+
+140.4초 · 설계 애니메이션과 물리 시험을 이어 놓은 기존 발표용 모음. 개별 시험 조건은 아래 원본과 검증 문서를 따른다.
+
+https://github.com/user-attachments/assets/8c2bbf45-e404-47fa-b072-9ff24f0fe9c7
+
+[원본 MP4](mujoco/presentation/00_발표_전체.mp4)
+
+</details>
+
 ## 기록과 해석
 
-- [실험 검증 범위](../docs/EVIDENCE.md) · [71쪽 실험 보고서](../docs/ubuntu/R4_Engineering_Handoff.pdf)
-- [영상별 원본·재생본 SHA-256과 출처](../metadata/video_gallery.json)
-- [GitHub 영상 보관 문서](https://github.com/jhyeong687/MORA/issues/1)
+[설계·안정성 기록](../docs/STABILITY.md) · [실험 검증 범위](../docs/EVIDENCE.md) · [Ubuntu 보고서](../docs/ubuntu/R4_Engineering_Handoff.pdf) · [원본·재생본 SHA-256](../metadata/video_gallery.json)
 
-Ubuntu의 수분 길이 녹화 원본·ROS bag 전체는 이 갤러리의 선별 MP4와 별개다. fixed-joint 운반과 실제 접촉 파지, CAD 애니메이션과 물리 시뮬레이션을 같은 성공 결과로 합치지 않는다.
+16개는 현재 공유용으로 정리한 영상 전체다. Ubuntu의 수분 길이 녹화 원본·ROS bag 전체는 이 선별 MP4와 별개로 원래 VM에 보관한다. fixed-joint 운반과 접촉 파지, CAD 애니메이션과 물리 시뮬레이션을 같은 성공 결과로 합치지 않는다.

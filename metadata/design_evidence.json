@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "organized_on": "2026-11-13",
+  "dynamic_summary_rows": 57,
+  "new_physics_run": false,
+  "records": [
+    {
+      "path": "evidence/design/R4_Static_Screening.json",
+      "source_label": "Existing R4 macOS design archive",
+      "sha256": "c7f0f1505e13249c0b4b4cda3f9b952db115ea39b71bd3b70b22bfe6c63906a1",
+      "new_experiment": false
+    },
+    {
+      "path": "evidence/design/R4_Print_Slicing.json",
+      "source_label": "Existing R4 macOS design archive",
+      "sha256": "efe3f3b12c75ac4e78ea4da95ea362bc4ff14f67b0d89d2bdc723318591c71b4",
+      "new_experiment": false
+    }
+  ]
+}

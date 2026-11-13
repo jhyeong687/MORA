@@ -14,7 +14,7 @@ CAD에서 물리 시뮬레이션, ROS 실험과 운반 연구까지
 
 <img src="cad/R4/R4_Assembly.png" alt="R4 robot assembly" width="600" />
 
-[영상 갤러리](media/README.md) · [자료 다운로드](https://github.com/jhyeong687/MORA/releases/tag/v0.1.0) · [CAD·애니메이션](docs/FUSION.md) · [검증 범위](docs/EVIDENCE.md) · [연구 계획](research/README.md) · [실행 환경](cloud/README.md) · [Mac ↔ Ubuntu](docs/SYNC.md)
+[영상 갤러리](media/README.md) · [Mac 설계·안정성](docs/STABILITY.md) · [자료 다운로드](https://github.com/jhyeong687/MORA/releases/tag/v0.1.0) · [CAD·애니메이션](docs/FUSION.md) · [검증 범위](docs/EVIDENCE.md) · [연구 계획](research/README.md) · [실행 환경](cloud/README.md) · [Mac ↔ Ubuntu](docs/SYNC.md)
 
 </div>
 
@@ -33,6 +33,21 @@ https://github.com/user-attachments/assets/cc5a4715-9705-4967-aacf-9fbe3a0dd602
 **[전체 영상 16개 보기 →](media/README.md)** · [실험 조건과 결과](docs/EVIDENCE.md)
 
 
+
+
+## macOS 설계·전복 안정성 테스트
+
+팔을 올린 터틀봇이 **급정지·회전·경사·단차에서 넘어지는지** 확인한 기존 MuJoCo 시험이다. 조건별 57행의 결과와 CAD 무게중심 계산·3D 출력 검토를 함께 정리했다.
+
+**급정지·회전 시험**
+
+https://github.com/user-attachments/assets/636ecd89-ff41-4040-94a9-424342eaef85
+
+**8 cm 하강 단차: 전도 관측**
+
+https://github.com/user-attachments/assets/a3e8268b-6383-4e0e-ad34-fb09c7dd1501
+
+**[설계·전복 안정성 결과표 →](docs/STABILITY.md)** · [관련 영상 7개](media/README.md#stability)
 
 ## 이 프로젝트
 

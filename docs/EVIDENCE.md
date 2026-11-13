@@ -2,6 +2,8 @@
 
 ## MuJoCo 기록
 
+영상과 주요 수치, CAD 무게중심·출력 검토는 [Mac 설계·전복 안정성 기록](STABILITY.md)에 모았다.
+
 `simulation/mujoco/results/scenarios.csv`가 조건별 요약, `cases.json`이 조건 정의,
 `*_trace.csv`와 `*_poses.npz`가 시간 기록이다. 주요 source는 `engine.py`, `r4.xml`, `run_tests.py`다.
 

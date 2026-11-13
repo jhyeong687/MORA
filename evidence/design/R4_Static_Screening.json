@@ -1,0 +1,73 @@
+{
+  "fold_screen": {
+    "cam_deck_candidates": 5694,
+    "cam_belly_candidates": 1683,
+    "folded_candidates": 163,
+    "folded_total": 1213
+  },
+  "n": 65536,
+  "stowed_n": 1213,
+  "arm_mass": 0.667006001,
+  "mount_mass": 1.0370337494508264,
+  "mount_cog": [
+    -29.40870405997417,
+    0.08102093888323111,
+    58.61028213188977
+  ],
+  "cases": {
+    "travel": {
+      "tripod_nominal": 19.48,
+      "tripod_uncertain": 6.83,
+      "catch_nominal": 67.38,
+      "catch_uncertain": 53.72
+    },
+    "static_0g": {
+      "tripod_nominal": -9.89,
+      "tripod_uncertain": -23.72,
+      "catch_nominal": 36.51,
+      "catch_uncertain": 23.07
+    },
+    "static_50g": {
+      "tripod_nominal": -17.08,
+      "tripod_uncertain": -30.67,
+      "catch_nominal": 29.31,
+      "catch_uncertain": 16.45
+    },
+    "static_100g": {
+      "tripod_nominal": -24.02,
+      "tripod_uncertain": -37.37,
+      "catch_nominal": 22.37,
+      "catch_uncertain": 10.05
+    },
+    "moving_100g": {
+      "tripod_nominal": -38.34,
+      "tripod_uncertain": -53.32,
+      "catch_nominal": 8.01,
+      "catch_uncertain": -5.28
+    },
+    "moving_empty": {
+      "tripod_nominal": -23.51,
+      "tripod_uncertain": -39.01,
+      "catch_nominal": 22.86,
+      "catch_uncertain": 8.65
+    }
+  },
+  "example_deg": [
+    -25.34,
+    99.04,
+    77.62,
+    94.65,
+    -156.25,
+    8.39
+  ],
+  "example_tip": [
+    -33.99,
+    2.21,
+    425.45
+  ],
+  "example_armCG": [
+    -9.82,
+    10.93,
+    292.39
+  ]
+}

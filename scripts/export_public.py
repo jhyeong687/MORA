@@ -4,8 +4,8 @@ import argparse,hashlib,json,shutil,sys,subprocess
 from pathlib import Path
 from privacy_check import inspect_file
 ROOT=Path(__file__).resolve().parents[1]
-ALLOWED=('cad/R4/','media/','simulation/','research/','cloud/','scripts/','tests/','docs/FUSION.md','docs/EVIDENCE.md','docs/SYNC.md','docs/PRIVACY.md','docs/ubuntu/','docs/assets/','evidence/ubuntu/figures/','evidence/ubuntu/metadata/','evidence/ubuntu/selected/')
-ROOT_FILES={'.gitignore','.gitattributes','requirements-mujoco.txt','requirements-plots.txt','THIRD_PARTY_NOTICES.md'}
+ALLOWED=('cad/R4/','media/','simulation/','research/','cloud/','scripts/','tests/','docs/FUSION.md','docs/EVIDENCE.md','docs/STABILITY.md','evidence/design/','docs/SYNC.md','docs/PRIVACY.md','docs/ubuntu/','docs/assets/','evidence/ubuntu/figures/','evidence/ubuntu/metadata/','evidence/ubuntu/selected/')
+ROOT_FILES={'metadata/video_gallery.json','metadata/design_evidence.json','.gitignore','.gitattributes','requirements-mujoco.txt','requirements-plots.txt','THIRD_PARTY_NOTICES.md'}
 REVIEWED={'.png','.jpg','.jpeg','.gif','.mp4','.f3d','.step','.stl','.npz','.pdf','.html'}
 
 def main():

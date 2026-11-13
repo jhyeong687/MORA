@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7649,
-      "sha256": "c671f85d29301f8d46c8bc0ed0869a5dff92a185e626192894ff004795ea589b"
+      "bytes": 8309,
+      "sha256": "e74e94433af4491f98bad63951eed5bf29df31e93e15e820f2117279e2fcf6fe"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -148,8 +148,8 @@
     },
     {
       "path": "docs/EVIDENCE.md",
-      "bytes": 2546,
-      "sha256": "4d31272b526e5817556c389b60c53bca967734cfcdfb1d2d55dac163cc6d00b5"
+      "bytes": 2673,
+      "sha256": "e6c759559c10d7fdaa26796ec13089a183bf3ea4f951fe73d493c7f9ed27755b"
     },
     {
       "path": "docs/FUSION.md",
@@ -160,6 +160,11 @@
       "path": "docs/PRIVACY.md",
       "bytes": 1251,
       "sha256": "d7693150ca06e7c55bfc42cc39863773f6cb58df9e09c60401cda06618b99596"
+    },
+    {
+      "path": "docs/STABILITY.md",
+      "bytes": 6399,
+      "sha256": "32f1f7be3909fb2e304c0ac2bbce59ff062ebb29a61f9af66d61455c0fb1d024"
     },
     {
       "path": "docs/SYNC.md",
@@ -280,6 +285,16 @@
       "path": "docs/ubuntu/assets/17_identification.png",
       "bytes": 107019,
       "sha256": "d1a665763acfd2ca4e2220b7d2fbfbd4cdc262a9aa521141a5c7642bd7d65e55"
+    },
+    {
+      "path": "evidence/design/R4_Print_Slicing.json",
+      "bytes": 1433,
+      "sha256": "efe3f3b12c75ac4e78ea4da95ea362bc4ff14f67b0d89d2bdc723318591c71b4"
+    },
+    {
+      "path": "evidence/design/R4_Static_Screening.json",
+      "bytes": 1479,
+      "sha256": "c7f0f1505e13249c0b4b4cda3f9b952db115ea39b71bd3b70b22bfe6c63906a1"
     },
     {
       "path": "evidence/ubuntu/figures/01_robot_setup.png",
@@ -1288,8 +1303,8 @@
     },
     {
       "path": "media/README.md",
-      "bytes": 6898,
-      "sha256": "a0eece7d92fbc863d45a55b89e0d651f688fe157980b1452ef6e0e923b4a88f5"
+      "bytes": 7164,
+      "sha256": "9590618620d42923f0c4a0c7340e041c08a7c4c1c990fedd896ad269a2a23c9c"
     },
     {
       "path": "media/fusion/R4_Robot_Only.mp4",
@@ -1397,6 +1412,11 @@
       "sha256": "20a884519b9632722b8f10f3e862d4fc239a79514aff1eeec1fcf3086590dc87"
     },
     {
+      "path": "metadata/design_evidence.json",
+      "bytes": 618,
+      "sha256": "c3c5aaa6636bde032f54d4011020dcc1fad5926b6d2282cebb26bfb97d586e90"
+    },
+    {
       "path": "metadata/reviewed_binary.json",
       "bytes": 21176,
       "sha256": "a47adc43cb1dcc22bb4efff49e1ab873be159b25baec91c663970250da3291da"
@@ -1438,8 +1458,8 @@
     },
     {
       "path": "scripts/export_public.py",
-      "bytes": 2650,
-      "sha256": "21bbb6013373eb3f40955ac3e4202a75b151eb3521df4d0d22e290ed897898c2"
+      "bytes": 2751,
+      "sha256": "7393f6f33e6ff65ca2fcda699775ae39da3b42adad5081a1da30399282fb45ef"
     },
     {
       "path": "scripts/mora.py",
