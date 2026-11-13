@@ -1,0 +1,229 @@
+{
+  "review_date": "2026-11-13",
+  "status": "proposed_not_experiment_results",
+  "decision": "integration_alone_insufficient; narrowed_contribution_needs_empirical_evidence",
+  "scope": "targeted_primary_source_review_not_exhaustive_prior_art_search",
+  "user_constraints": {
+    "local_gpu": false,
+    "hardware_in_about_weeks": 2,
+    "submission_in_about_days": 30
+  },
+  "rows": [
+    {
+      "source": "R01",
+      "name": "AMP1",
+      "overlap": "직접 조작·재관측·재시도, 여러 robot의 agentic harness",
+      "proposed_difference": "일반 agent 조합이 신규하다는 주장은 포기. 같은 Fable와 도구로 passive/active를 비교.",
+      "overlap_level": "높음"
+    },
+    {
+      "source": "R02",
+      "name": "TAMPAgent",
+      "overlap": "belief 아래 관측·조작 행동을 교차 계획",
+      "proposed_difference": "한 단계의 운반 전 확인 선택과 비용을 좁혀 평가. 범용 belief planning 최초 주장 금지.",
+      "overlap_level": "높음"
+    },
+    {
+      "source": "R03",
+      "name": "DiMuRe",
+      "overlap": "증거·전제조건으로 재사용/복구/재계획 결정",
+      "proposed_difference": "실패 후 복구 자체 대신 출발 전 route-specific 증거 획득을 분리.",
+      "overlap_level": "높음"
+    },
+    {
+      "source": "R04",
+      "name": "CheckVLA",
+      "overlap": "현재 실행 중 action-conditioned mismatch와 suffix repair",
+      "proposed_difference": "예정된 base route에 대해 사전 진단 행동을 고르는 문제로 제한. 전체 CheckVLA 재현이라고 부르지 않음.",
+      "overlap_level": "높음"
+    },
+    {
+      "source": "R05",
+      "name": "VeriVLA",
+      "overlap": "선택적 검증과 latent world-model 행동 후보 평가",
+      "proposed_difference": "VLA noise 후보 대신 현실에서 수행할 확인 행동의 결과·비용을 다룸. adaptive verification 자체는 기존.",
+      "overlap_level": "높음"
+    },
+    {
+      "source": "R06",
+      "name": "Cracking Mobile Manipulation",
+      "overlap": "fixed VLA 위 memory·base 조정·EEF 교정",
+      "proposed_difference": "base가 있다는 것과 재시도만으로는 차별화 불가. 운반 중 잔여 낙하 문제에 초점.",
+      "overlap_level": "높음"
+    },
+    {
+      "source": "R07",
+      "name": "ProbeAct",
+      "overlap": "grasp/transport/place의 운동 동기화 검증과 복구",
+      "proposed_difference": "probe는 hidden-state 추출. 물리적 정보 수집 행동과 동일시하지 않되 운동 동기화 baseline은 포함.",
+      "overlap_level": "중간"
+    },
+    {
+      "source": "R08",
+      "name": "ATAP",
+      "overlap": "task affordance 중심 능동 시야 확인",
+      "proposed_difference": "grasp 전 형상/손잡이 찾기와, grasp 뒤 운반 유지 판단의 차이를 검증. active view 최초 주장 금지.",
+      "overlap_level": "중간"
+    },
+    {
+      "source": "R09/R10",
+      "name": "GraspCorrect / Grasp-MPC",
+      "overlap": "VLM 교정 / visual value를 이용한 폐루프 grasp",
+      "proposed_difference": "폐루프 grasp 자체는 구현 기반. controller와 판단 모듈을 고정한 비교 필요.",
+      "overlap_level": "높음"
+    },
+    {
+      "source": "R11/R12",
+      "name": "Task-wrench / shaking 평가",
+      "overlap": "작업 외란을 고려한 grasp와 동적 안정성 시험",
+      "proposed_difference": "route 입력이나 흔들기 자체를 발명으로 주장할 수 없음. 정보 활용 효과를 따로 시험.",
+      "overlap_level": "높음"
+    }
+  ],
+  "sources": [
+    {
+      "id": "R01",
+      "title": "On Agentic Manipulation Policies / AMP1",
+      "verification_scope": "2026-11-06, arXiv. §§2D.2, 4A: 직접 행동·보조 루틴·관측 인터페이스 비교. 본문 확인.",
+      "url": "https://arxiv.org/html/2611.09892v1"
+    },
+    {
+      "id": "R02",
+      "title": "TAMPAgent: Agentic Belief-Space Planning for Mobile Manipulation",
+      "verification_scope": "2026-11-02, arXiv. §3, §7: 관측·행동 계획과 belief, 보정되지 않은 비용 판단의 한계. 본문 확인.",
+      "url": "https://arxiv.org/html/2611.03584v1"
+    },
+    {
+      "id": "R03",
+      "title": "DiMuRe: Diagnosis-Guided Multilevel Recovery",
+      "verification_scope": "2026-11-03, arXiv. §IV, Appendix A: 단계별 진단·제한된 복구·완료 검증. 본문 확인.",
+      "url": "https://arxiv.org/html/2611.04226v1"
+    },
+    {
+      "id": "R04",
+      "title": "CheckVLA: Execution-Time Verification",
+      "verification_scope": "2026-07-29, arXiv. §3: 실행 중 action-conditioned 검증·개입. 원문 method/평가 범위 확인.",
+      "url": "https://arxiv.org/html/2607.26789v1"
+    },
+    {
+      "id": "R05",
+      "title": "VeriVLA: Adaptive Test-Time Verification",
+      "verification_scope": "2026-10-15, arXiv. §3: trigger와 latent world-model 후보 순위화. 본문 확인.",
+      "url": "https://arxiv.org/html/2610.21985v1"
+    },
+    {
+      "id": "R06",
+      "title": "Cracking Mobile Manipulation",
+      "verification_scope": "2026-10-14, arXiv. §§5-6: fixed VLA, memory, base/EEF 조정. 본문 확인.",
+      "url": "https://arxiv.org/html/2610.19600v1"
+    },
+    {
+      "id": "R07",
+      "title": "ProbeAct: Probe-Guided Training-Free Failure Recovery",
+      "verification_scope": "2026-06-08, arXiv. §3.3: 물체와 팔의 운동 동기화로 grasp/drop 검증. probe는 hidden-state 추출기.",
+      "url": "https://arxiv.org/html/2606.09740v1"
+    },
+    {
+      "id": "R08",
+      "title": "Imagine then Verify / ATAP",
+      "verification_scope": "2026-09-20, arXiv. task affordance를 검증하기 위한 능동 시야 선택. 초록 확인; 세부 성능 재현은 하지 않음.",
+      "url": "https://arxiv.org/abs/2609.23504"
+    },
+    {
+      "id": "R09",
+      "title": "GraspCorrect",
+      "verification_scope": "2025-03-19, arXiv. §3: VLM 파지 검출·중간 visual goal·교정. 본문 확인; 학회 채택 여부는 확정하지 않음.",
+      "url": "https://arxiv.org/html/2503.15035v1"
+    },
+    {
+      "id": "R10",
+      "title": "Grasp-MPC",
+      "verification_scope": "ICRA 2026, NVIDIA 공식 publication. visual value와 MPC를 결합한 폐루프 grasp. 프로젝트/초록 확인.",
+      "url": "https://research.nvidia.com/labs/lpr/publication/yamada2026graspmpc/"
+    },
+    {
+      "id": "R11",
+      "title": "Task-Oriented Grasp Planning Based on Disturbance Distribution",
+      "verification_scope": "2016, Robotics Research chapter. 예상 작업 외란을 고려하는 grasp quality는 기존 개념. 기관 저장소 초록 확인.",
+      "url": "https://digitalcommons.usf.edu/esb_facpub/4/"
+    },
+    {
+      "id": "R12",
+      "title": "Statistical Stratification and Benchmarking of Robotic Grasping Performance",
+      "verification_scope": "2023 accepted manuscript. §III: lift/hold 뒤 shaking test. 동적 확인 자체의 선행 사례.",
+      "url": "https://qmro.qmul.ac.uk/xmlui/bitstream/123456789/90711/2/Jamone%20Statistical%20Stratification%20and%20Benchmarking%20of%20Robotic%20Grasping%20Performance%202023%20Accepted.pdf"
+    },
+    {
+      "id": "R13",
+      "title": "Claude Fable 5.2 공식 발표",
+      "verification_scope": "2026-11-09. RoboDojo Sim 64.9%는 Anthropic 내부, 최고 effort 평가. 우리 로봇 성능으로 전용하지 않음.",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+    },
+    {
+      "id": "R14",
+      "title": "Claude Fable 5.2 API 공식 문서",
+      "verification_scope": "2026-11-13 조회. ID, image/tool 지원, effort, 가격, 지원하지 않는 sampling 설정.",
+      "url": "https://platform.claude.com/docs/en/models/fable-5-2/overview"
+    },
+    {
+      "id": "R15",
+      "title": "LeRobot v0.7.0 릴리스",
+      "verification_scope": "2026-11-05. interactive/external planner, remote inference, WAM 통합.",
+      "url": "https://huggingface.co/blog/lerobot/lerobot-release-v070"
+    },
+    {
+      "id": "R16",
+      "title": "G0.5 및 SO-101 체크포인트",
+      "verification_scope": "LeRobot 0.7 문서. 저장 processor/6-joint 계약과 비상업용 라이선스. 초기 VLA 대안.",
+      "url": "https://huggingface.co/docs/lerobot/v0.7.0/g05"
+    },
+    {
+      "id": "R17",
+      "title": "FoundationPose 공식 demo",
+      "verification_scope": "register/track_one에 RGB·depth·intrinsics, 등록 시 mask 사용. 6D object pose와 grasp pose를 구분.",
+      "url": "https://github.com/NVlabs/FoundationPose/blob/main/run_demo.py"
+    },
+    {
+      "id": "R18",
+      "title": "NVIDIA GraspGenX 공식 구현",
+      "verification_scope": "새 gripper에 URDF·swept-volume 설정 필요. SO-101 즉시 호환을 주장하지 않음.",
+      "url": "https://github.com/NVlabs/GraspGenX"
+    },
+    {
+      "id": "R19",
+      "title": "NVIDIA cuRobo 공식 구현",
+      "verification_scope": "V2와 v1의 API 차이. motion/IK/collision을 grasp 판정과 분리.",
+      "url": "https://github.com/NVlabs/curobo"
+    },
+    {
+      "id": "R20",
+      "title": "MegaPose 공식 구현",
+      "verification_scope": "RGB+CAD 경로가 존재하는 depth 없는 구현 대안. 과제별 실제 정밀도 검증 필요.",
+      "url": "https://github.com/megapose6d/megapose6d"
+    },
+    {
+      "id": "R21",
+      "title": "RoboJev-27B 모델 카드",
+      "verification_scope": "완료 여부 심판 후보, bf16 80 GB 경로. 사진의 Jev와 동일하다고 식별하지 않음.",
+      "url": "https://huggingface.co/josefchen/RoboJev-27B"
+    },
+    {
+      "id": "R22",
+      "title": "NVIDIA Cosmos 3 / LeRobot 통합",
+      "verification_scope": "video/action 공동 예측과 실제 recipe의 메모리. 4주 핵심 일정 뒤 확장 후보.",
+      "url": "https://huggingface.co/docs/lerobot/v0.7.0/cosmos3"
+    },
+    {
+      "id": "R23",
+      "title": "RunPod GPU 가격",
+      "verification_scope": "2026-11-13 조회, 페이지 갱신 11-12. A6000 48 GB $0.69/h 표시; 실제 주문 가격/재고는 별도.",
+      "url": "https://www.runpod.io/pricing"
+    },
+    {
+      "id": "R24",
+      "title": "IEEE Robotics and Automation Letters 공식 scope",
+      "verification_scope": "혁신적 연구·유의미한 이론 및 응용 결과를 심사. 특정 계획의 채택을 보장하는 규칙은 아님.",
+      "url": "https://www.ieee-ras.org/publications/ieee-robotics-and-automation-letters/"
+    }
+  ]
+}

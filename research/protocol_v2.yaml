@@ -1,0 +1,106 @@
+# Proposed protocol only. No GPU rental or experiment is implied by this file.
+schema_version: 2
+status: proposed
+updated: '2026-11-13'
+platform: TurtleBot3_SO101_R4
+execution: cloud_only
+main_question: route_conditioned_verification_and_recovery
+primary_task: stopped_pick_then_carry_then_stopped_place
+executor:
+  preferred: lerobot/g05_so101
+  initial_mode: system1
+  comparison_or_fallback: allenai/MolmoAct2-SO100_101
+  checkpoint_revision: freeze_after_smoke_test
+  real_joint_channels: 6
+  preserve_saved_processors: true
+  action_mapping: calibrate_order_units_zero_sign_and_limits
+  base_action_from_arm_checkpoint: false
+feedback:
+  initial_vlm_candidate: Qwen/Qwen3-VL-8B-Instruct
+  allowed_skills: [observe, regrasp, carry, abort]
+  online_judge_inputs: past_and_current_only
+  calibrated_probability_from_free_text: false
+  offline_completion_comparator: josefchen/RoboJev-27B
+  initial_probe: stationary_base_wrist_reobservation
+  regrasp: put_down_on_support_then_pick_again
+risk:
+  initial_model: simple_supervised_classifier
+  inputs: [observed_visual_features, proprioception, intended_route, observation_age]
+  calibration_split_required: true
+  safety_guarantee_claimed: false
+wam:
+  status: optional_extension
+  preferred: lerobot/Cosmos3-Edge
+  alternative: black-forest-labs/flux-3-action-so101
+  train_both_at_scale: false
+  adaptation_dataset: same_task_demonstrations
+  preserve_history_and_action_semantics: true
+  generated_video_is_physical_evidence: false
+  pretrained_tabletop_policy_supports_base_actions: false
+  executor_selector_factorial: [vla_m0, vla_m3, wam_m0, wam_m3]
+inputs:
+  sensors: [wrist_rgb, belly_rgb, joint_state, odometry, lidar_2d, imu]
+  policy_privileged_inputs: false
+  evaluator_and_training_labels_only: [object_truth_pose, contact_truth, physical_mass, friction]
+  rgb_pair_is_calibrated_stereo: false
+  foundationpose_default_depth_available_on_real_robot: false
+contact:
+  fixed_attachment_allowed_for_grasp_claim: false
+  initial_object_size_m: [0.032, 0.032, 0.032]
+  initial_object_mass_kg: 0.010
+  proposed_lift_height_m: 0.020
+  proposed_hold_s: 2.0
+  freeze_thresholds_after_scale_check_before_trials: true
+pilot:
+  fresh_grasp_resets: 20
+  proposed_progression_lift_holds: 14
+  progression_is_safety_threshold: false
+  independent_reset_recipes: 20
+  route_profiles: [straight, left_turn, right_turn, deceleration]
+  proposed_continuations: 80
+  verify_full_state_branch_reproducibility: true
+  fallback_design: matched_fresh_reset_with_recorded_postgrasp_differences
+main:
+  methods: [m0_fixed_phase, m1_vlm_feedback, m2_route_passive, m3_route_selective_probe]
+  executor_fixed_across_methods: true
+  recovery_skill_fixed_across_methods: true
+  shared_time_and_retry_limits: true
+  invocation_and_extra_time_matched_comparison: true
+  example_new_blocks: 30
+  example_episodes: 120
+  block_definition: independent_reset_recipe_and_one_route
+  balance_routes_across_blocks: true
+  final_n: freeze_before_main_from_pilot_variance_throughput_and_target_effect
+  reuse_pilot_for_held_out_test: false
+development_data:
+  status: proposed_and_adjust_from_learning_curve
+  train_recipe_candidate: 50
+  train_continuation_candidate: 200
+  calibration_recipe_candidate: 15
+  calibration_continuation_candidate: 60
+  probe_data: randomized_probe_vs_no_probe_on_training_only_recipes
+  learned_information_value_requires_interventional_data: true
+controls: [always_slow, motion_and_wait_matched_sham, fixed_probe, route_removed_or_shuffled]
+splits:
+  separate: [training, calibration, held_out_test]
+  grouped_by: [reset_recipe, object_family, branch_family]
+metrics:
+  primary: end_to_end_pick_carry_place_completion
+  secondary: [initial_grasp_success, carry_success_given_grasp, drop_after_approval, approval_coverage, total_drops, robot_tips, retries, completion_time, queries, gpu_time]
+  report_denominators_and_confidence_intervals: true
+outcomes:
+  separate: [pickup_failure, lift_then_drop, transport_drop, robot_tip, occlusion_unknown, policy_error, infrastructure_timeout]
+cloud:
+  initial_gpu_candidate_vram_gb: 48
+  actual_concurrent_vram_and_latency: measure_before_scaleup
+  robojev_candidate_vram_gb: 80
+  same_host_latency_is_wan_latency: false
+  remote_policy_support: validate_exact_checkpoint_and_processors
+  gazebo_x86_headless_rgb: not_yet_validated
+  paid_compute_started_by_plan: false
+sim_to_real:
+  status: future
+  progression: [stationary_grasp, empty_base_drive, light_payload_slow_carry]
+  calibrate: [joint_zero_sign_units, motor_voltage_limits, cameras_tcp, mass_cg, contact, delay]
+  local_control_and_watchdog: required
+  separate_reports: [zero_shot, calibration_only, real_data_adaptation]

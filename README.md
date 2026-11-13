@@ -69,7 +69,7 @@ https://github.com/user-attachments/assets/a3e8268b-6383-4e0e-ad34-fb09c7dd1501
 | 로봇만 나오는 영상 | [Fusion MP4](media/fusion/R4_Robot_Only.mp4), [3D 재생 HTML](cad/R4/R4_3D_Playback.html) |
 | 물리 시험 | [MuJoCo 결과표](simulation/mujoco/results/scenarios.csv), [원본 조건](simulation/mujoco/results/cases.json) |
 | ROS·Gazebo 기록 | [71쪽 기술 보고서](docs/ubuntu/R4_Engineering_Handoff.pdf), [텍스트](docs/ubuntu/REPORT.md), [trial registry](evidence/ubuntu/metadata/experiment_registry.json) |
-| 다음 실험 | [20쪽 연구 계획](research/R4_Research_Plan_20261112.pdf), [가설·진행 순서](research/README.md) |
+| 다음 실험 | [4주 최종 연구계획](research/MORA_Final_Research_Plan_20261113.pdf), [신규성·진행 순서](research/README.md) |
 
 GitHub는 HTML을 직접 실행하지 않는다. 해당 폴더를 내려받아 브라우저에서 열면 된다.
 Fusion native storyboard와 브라우저 playback은 서로 다른 자료이며 둘 다 보존한다.
@@ -102,8 +102,8 @@ Fusion native storyboard와 브라우저 playback은 서로 다른 자료이며 
 
 현재 영상과 관절 상태에 앞으로의 주행 계획을 함께 주고, 계속 운반·추가 확인·감속·재파지를 선택한다.
 동일 reset recipe에 직진/좌·우회전/감속을 교차 적용하고, 항상 천천히 가는 기준과도 비교한다.
-WAM은 미래 위험 예측의 확장, LLM은 검증된 skill 조합의 상위 비교로 둔다.
-CheckVLA·DreamTrajectory·RoboJev 등 가까운 선행연구와의 차이를 [계획서](research/R4_Research_Plan_20261112.pdf)에 명시했다.
+Fable 5.2 피드백과 고정된 grasp·주행 skill 위에서, 예정된 주행에 맞춘 확인 행동 선택을 비교한다.
+AMP1·TAMPAgent·DiMuRe·CheckVLA 등과의 중복·차별성, sham·저속 비교와 4주 일정을 [최종 계획서](research/MORA_Final_Research_Plan_20261113.pdf)에 정리했다. 신규성·효과는 아직 검증할 가설이다.
 
 ```mermaid
 flowchart LR

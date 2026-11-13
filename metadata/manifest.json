@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8309,
-      "sha256": "e74e94433af4491f98bad63951eed5bf29df31e93e15e820f2117279e2fcf6fe"
+      "bytes": 8447,
+      "sha256": "e098b4a744480da5185a4e79f2b7a6cb52b560c9a7fdaa664d7aa5835ba44a6a"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -1418,8 +1418,8 @@
     },
     {
       "path": "metadata/reviewed_binary.json",
-      "bytes": 21176,
-      "sha256": "a47adc43cb1dcc22bb4efff49e1ab873be159b25baec91c663970250da3291da"
+      "bytes": 21296,
+      "sha256": "8662a2cc99451cdc4e47585fa6c25eb3612b0a7d946e4381e63b172343276d51"
     },
     {
       "path": "metadata/video_gallery.json",
@@ -1437,24 +1437,59 @@
       "sha256": "364ddfe619c918d48746b24f2ef430aed6535a9f9142e7fcb3ab2d1462ff7b88"
     },
     {
+      "path": "research/EXECUTION_PLAN_20261113.md",
+      "bytes": 23324,
+      "sha256": "86731a513010e571b4be85d995619c1963b9c3b190d81efea7c50ec433786422"
+    },
+    {
+      "path": "research/FINAL_PLAN_20261113.md",
+      "bytes": 27561,
+      "sha256": "2b7a2bba34e2c39afeeb187b2828d55e758d3f7f67a130000d6f471d15dde65f"
+    },
+    {
+      "path": "research/MORA_Final_Research_Plan_20261113.pdf",
+      "bytes": 212839,
+      "sha256": "1b6bda0faf2ebfad2165735caca7abd6f44d36798c42d0197c0021a02ea028df"
+    },
+    {
       "path": "research/R4_Research_Plan_20261112.pdf",
       "bytes": 270711,
       "sha256": "4370c1db4c26866d0c89ce3c67639315177072001bf0f71ff10f2c5bbc284896"
     },
     {
       "path": "research/README.md",
-      "bytes": 2701,
-      "sha256": "6383c2ca3cf03e0ace93e6430cf85458a7e6b3b2a411d73d5813d825aa4f1b74"
+      "bytes": 2911,
+      "sha256": "7a8a27b01245c71be88ac7b0d5dad4a5cb574c0447ddbea73382ffb65d38e965"
     },
     {
       "path": "research/REFERENCES.md",
-      "bytes": 5374,
-      "sha256": "3d62728eaa7e0b0a5b014885667da8edc644f2f90ca9fc4fffece80aba02c6fc"
+      "bytes": 5291,
+      "sha256": "99cc6b03ceabc503702f170a6a156861346465c50ef8606ddf9ac8e52ca673ba"
+    },
+    {
+      "path": "research/novelty_audit_20261113.json",
+      "bytes": 10536,
+      "sha256": "cb6c5e1b72ce7b65ea0091c9b646f883031709c30c48c26f14d418dd5c6adcb2"
     },
     {
       "path": "research/protocol.yaml",
+      "bytes": 6395,
+      "sha256": "2220b359f6094f96f719d6d1e10abc2fcbce513bdfabf35502c8cecb1bdafa64"
+    },
+    {
+      "path": "research/protocol_20261112.yaml",
       "bytes": 1258,
       "sha256": "eb1298a6ae40ecc11b021192630c058ceb4b34c48e753ebd6ca8b9e8f58cd186"
+    },
+    {
+      "path": "research/protocol_v2.yaml",
+      "bytes": 4684,
+      "sha256": "494585e8bf8eafb6fc19d9d7fb2b531de9e4e4c9bb6a149262a4f0488cfb40db"
+    },
+    {
+      "path": "research/protocol_v3.yaml",
+      "bytes": 6395,
+      "sha256": "2220b359f6094f96f719d6d1e10abc2fcbce513bdfabf35502c8cecb1bdafa64"
     },
     {
       "path": "scripts/export_public.py",

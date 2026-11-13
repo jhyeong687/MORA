@@ -1,29 +1,143 @@
-# Proposed protocol, not a record of completed trials.
-schema_version: 1
-status: proposed
-gpu_execution: cloud_only
+# Current proposed protocol. This file records no new trial or paid resource.
+schema_version: 3
+status: final_planning_revision_experiments_pending
+review_date: '2026-11-13'
+supersedes_execution_priority: EXECUTION_PLAN_20261113.md
+plan: FINAL_PLAN_20261113.md
+constraints:
+  gpu: cloud_only
+  hardware_available_in_about_weeks: 2
+  submission_target: '2026-12-13'
+  submission_target_is_acceptance_date: false
+  paid_compute_started: false
+main_question: predeparture_route_conditioned_active_grasp_verification
+contributions_status: hypotheses_not_established_novelty
 platform: TurtleBot3_SO101_R4
-sensors: [wrist_rgb, belly_rgb, lidar_2d, joint_state, odometry, imu]
-main_question: route_conditioned_carry_readiness
-fixture_allowed_for_contact_grasp_claim: false
-policy_privileged_inputs: false
-evaluation_only: [object_truth_pose, contact_truth, physical_mass, friction]
-pilot:
-  hold_fresh_resets: 20
-  paired_reset_recipes: 20
-  route_profiles: 4
-  proposed_continuations: 80
-main:
-  proposed_matched_blocks: 60
-  methods: [visual_completion, always_slow, route_conditioned_passive, selective_probe]
-  final_n: decide_from_pilot_before_test
-splits:
-  group_by: [initial_recipe, object_family, branch_family]
-  separate: [training, calibration, held_out_test]
-primary_metrics: [task_completion, drop_after_approval, approval_coverage, total_drops, completion_time, query_cost]
-required_controls: [route_input_removed, fixed_probe, motion_matched_sham, speed_matched]
-sim_to_real:
-  status: future
-  calibrate: [camera_extrinsics, tcp, joint_zero_sign_units, motor_voltage, mass, contact, delay]
-  separate_reports: [zero_shot, calibration_only, additional_training]
-  proposed_exploratory_real_episodes: 40
+task: stationary_pick_short_carry_stationary_place
+scope:
+  core_benchmark: valid_free_contact_postgrasp_transport_decisions
+  independent_end_to_end_diagnostic: true
+  simultaneous_driving_and_grasping: false
+  grasp_verification_guarantees_tip_safety: false
+stack:
+  object_pose: rgb_cad_path_first_depth_condition_separate
+  foundationpose_requires_valid_depth_path: true
+  grasp_candidates: known_object_candidates_then_graspgenx_if_validated
+  graspgenx_so101_immediate_compatibility_claimed: false
+  arm_motion: curobo_or_frozen_existing_planner_applied_to_all_methods
+  snapshot_initialization: physical_contact_no_fixed_attachment
+  low_level_controller: identical_across_methods
+  optional_executor: lerobot/g05_so101
+  large_wam_training_in_core_month: false
+reasoner:
+  preferred: claude-fable-5-2
+  provider: anthropic_cloud_api
+  effort: freeze_after_30_request_development_probe
+  unsupported_sampling_parameters_omitted: true
+  forced_tool_choice_unsupported_modes_omitted: true
+  output: structured_grasp_visibility_failure_status_and_allowed_skill
+  free_text_confidence_is_calibrated_probability: false
+  photograph_jev_product_identity: unverified
+  optional_offline_completion_comparator: josefchen/RoboJev-27B
+  baseline_reasoner_identical: true
+inputs:
+  observable: [wrist_rgb, belly_rgb, observed_relative_motion, gripper_position, arm_state, odometry, imu, timestamps, intended_route]
+  policy_privileged_inputs: false
+  evaluator_and_supervised_labels_only: [object_truth_pose, contact_truth, physical_mass, friction, future_outcome]
+  two_rgb_cameras_automatically_stereo: false
+verification:
+  candidates: [hold, belly_view_improving_arm_reposition, bounded_load_probe]
+  wrist_rigid_motion_assumed_new_object_view: false
+  candidate_duration_amplitude: freeze_after_feasibility_pilot
+  candidate_controller_returns_to_nominal_carry_pose: true
+  selector: one_step_expected_decision_loss_plus_time_and_query_cost
+  initial_learning: small_classifier_regressor
+  training_probe_assignment: randomized_balanced
+  crossfit_selection_targets: true
+  separate_calibration_split: true
+  safety_guarantee_claimed: false
+  maximum_extra_probe: 1
+  maximum_regrasp: 1
+  regrasp: supported_putdown_then_repick
+  task_deadline: freeze_from_pilot_before_main_test
+data:
+  object_instance_candidates:
+    train: 6
+    calibration: 3
+    test: 6
+  split_groups: [object_instance, reset_recipe, branch_family]
+  unseen_instance_equals_unseen_family: false
+  initial_smoke:
+    fresh_resets: 20
+    object_size_m: [0.032, 0.032, 0.032]
+    object_mass_kg: 0.010
+  route_pilot:
+    independent_grasps: 20
+    profiles: [straight, left_turn, right_turn, deceleration]
+    trials: 80
+  development:
+    training_recipes: 60
+    training_trials: 240
+    calibration_recipes: 24
+    calibration_trials: 96
+  main:
+    block_definition: one_independent_grasp_recipe_and_one_route
+    example_blocks: 120
+    balance_four_routes: true
+    methods: [b0_completion_feedback, b1_route_passive, b2_fable_full_context_active, b3_route_active]
+    full_context_baseline_receives: [intended_route, all_probe_tools, probe_costs, bounded_development_few_shot]
+    example_trials: 480
+    final_n: freeze_before_test_from_pilot_discordance_cluster_throughput_cost
+    repeated_frames_are_independent_samples: false
+  diagnostics:
+    reused_main_blocks: 40
+    added_methods: [fixed_probe, same_motion_without_new_evidence, always_slow, route_removed_from_selector]
+    additional_trials: 160
+  end_to_end:
+    fresh_recipes: 20
+    methods: [b2_fable_full_context_active, b3_route_active]
+    trials: 40
+  proposed_sim_trial_total: 1116
+  snapshots:
+    full_state_reproducibility_gate: true
+    fallback: fresh_matched_recipe_with_recorded_postgrasp_differences
+evaluation:
+  primary_comparison: b3_minus_b2
+  primary_metric: drop_free_transport_and_place_completion_before_deadline
+  probe_drop_counts_as_failure: true
+  abort_and_timeout_count_as_noncompletion: true
+  primary_test: paired_difference_ci_and_exact_mcnemar
+  secondary_comparisons: exploratory_or_multiplicity_adjusted
+  secondary_metrics: [total_drops, approval_coverage, regrasp_count, actual_time, actual_queries, actual_cost, body_tips]
+  controls: [fixed_probe, motion_and_wait_matched_evidence_hidden_sham, always_slow, route_removed]
+  same_limits: [reasoner_settings, grasp_executor, base_controller, tools, frame_budget, task_deadline, retry_limit]
+  original_whole_paper_baselines_reproduced: false
+cloud:
+  host: x86_linux_runpod
+  candidate_gpu_vram_gb: 48
+  raw_rgb_and_joint_topic_gate: required
+  inference_wait_physics: wall_paced_continuing_under_fixed_hold
+  paused_physics_diagnostics_separate: true
+  stale_response_rejection: request_generation_and_observation_age
+  record_model_id_timestamps_requests_responses_usage: true
+  immutable_api_snapshot_if_unavailable: disclose_drift_limit
+  max_cost_proposal_usd: 250
+  cost_and_throughput_must_be_measured_before_main: true
+real:
+  status: conditional_on_hardware_readiness
+  readiness_decision_date: '2026-12-03'
+  calibrate: [joint_zero_sign_units, motor_voltage_limits, cameras_tcp, mass_cg, contact, delay]
+  progression: [stationary_grasp, empty_base_drive, light_payload_short_carry]
+  example_objects: 3
+  example_routes: 2
+  resets_per_combination: 5
+  methods: [b2_fable_full_context_active, b3_route_active]
+  example_trials: 60
+  calibration_separate_from_real_test: true
+  no_real_result_means_no_sim_to_real_success_claim: true
+submission:
+  first_month_deliverable: submission_ready_manuscript_and_reproducible_sim_results
+  plausible_initial_scope: workshop_or_short_research_paper
+  international_full_paper_or_ral: conditional_on_method_distinction_controls_and_evidence
+  venue_deadline_verified: false
+  acceptance_probability_claimed: false
